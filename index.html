@@ -10,10 +10,10 @@
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px}button,select,input{font:inherit}button{cursor:pointer;border:0;border-radius:15px;padding:12px 16px;font-weight:750;transition:transform .12s,filter .12s}button:active{transform:scale(.98)}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}.primary{background:var(--purple);color:white}.soft{background:var(--purple2);color:var(--purple)}.plain{background:#f1f1f8;color:var(--ink)}.danger{background:#ffe4e4;color:#8e2424}.small{padding:8px 11px;font-size:.9rem}.hidden{display:none!important}
 header{background:linear-gradient(125deg,#5b55d8,#8178ed);color:white;padding:22px 18px 28px;border-radius:0 0 28px 28px}.head-inner,main{max-width:1000px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;width:54px;height:54px;border-radius:18px;background:#ffffff25;font-size:30px}.brand h1{font-size:clamp(1.45rem,4vw,2rem);margin:0}.brand p{margin:3px 0 0;color:#eeedff}.top-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.top-actions button{background:#ffffff20;color:white;border:1px solid #ffffff35}
 main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.5rem;margin:0 0 5px}.welcome p{color:var(--muted);margin:0;line-height:1.5}.section-title{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:24px 0 12px}.section-title h3{margin:0;font-size:1.15rem}.section-title p{margin:0;color:var(--muted);font-size:.9rem}
-.age-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.age-card{background:var(--card);border:2px solid transparent;border-radius:22px;padding:17px 12px;text-align:left;box-shadow:var(--shadow);min-height:145px;display:flex;flex-direction:column;gap:7px}.age-card[aria-pressed=true]{border-color:var(--purple);background:#f0efff}.age-emoji{font-size:30px}.age-card strong{font-size:1.1rem}.age-card span:last-child{font-size:.83rem;color:var(--muted);line-height:1.35}
+.collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:20px}.collection-card{background:var(--card);border:2px solid transparent;border-radius:22px;padding:17px 16px;text-align:left;box-shadow:var(--shadow);min-height:110px;display:flex;flex-direction:column;gap:7px}.collection-card[aria-pressed=true]{border-color:var(--purple);background:#f0efff}.collection-card .age-emoji{font-size:30px}.collection-card strong{font-size:1.1rem}.collection-card span:last-child{font-size:.83rem;color:var(--muted);line-height:1.35}.age-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.age-card{background:var(--card);border:2px solid transparent;border-radius:22px;padding:17px 12px;text-align:left;box-shadow:var(--shadow);min-height:145px;display:flex;flex-direction:column;gap:7px}.age-card[aria-pressed=true]{border-color:var(--purple);background:#f0efff}.age-emoji{font-size:30px}.age-card strong{font-size:1.1rem}.age-card span:last-child{font-size:.83rem;color:var(--muted);line-height:1.35}
 .topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.topic-card{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;min-height:154px}.topic-card:hover{filter:brightness(.99);border-color:#c8c4ff}.topic-icon{font-size:30px}.topic-card strong{font-size:1rem}.topic-card .desc{font-size:.86rem;line-height:1.4;color:var(--muted)}.topic-meta{font-size:.76rem;color:var(--purple);font-weight:800;margin-top:auto}
 .panel{background:white;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)}.crumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin-bottom:14px}.crumb button{padding:4px 8px;background:transparent;color:var(--purple)}.game-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.game-top h2{margin:0;font-size:1.4rem}.progress-track{height:9px;background:#efeff7;border-radius:20px;overflow:hidden;margin:18px 0}.progress-fill{height:100%;background:linear-gradient(90deg,#5b55d8,#45c7a2);width:0%;transition:width .2s}.question-count{font-size:.85rem;color:var(--muted);font-weight:700}.learning-objective{margin:8px 0 14px;padding:10px 13px;border-radius:12px;background:#f1f7ff;color:#40516f;font-size:.92rem;line-height:1.45}.prompt{font-size:clamp(1.25rem,4vw,2rem);font-weight:850;line-height:1.3;text-align:center;margin:24px auto 20px;max-width:680px}.visual{font-size:clamp(2.4rem,9vw,4.3rem);text-align:center;min-height:68px;margin:8px 0 14px;letter-spacing:4px}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:680px;margin:0 auto}.answer{background:#f3f2ff;color:var(--ink);border:2px solid transparent;min-height:66px;font-size:1.2rem;overflow-wrap:anywhere}.answer:hover{border-color:#c8c4ff}.answer.correct{background:#dff8ec;border-color:#4abf8a}.answer.wrong{background:#ffe3e3;border-color:#e67d7d}.feedback{text-align:center;font-weight:800;min-height:28px;margin:17px 0 4px}.feedback.good{color:#16784e}.feedback.bad{color:#b33a3a}.game-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.result{text-align:center;padding:20px 0}.result .big{font-size:3.8rem}.result h2{margin:5px}.result p{color:var(--muted)}.stat-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:18px 0}.stat{background:#f5f4ff;padding:12px 18px;border-radius:15px;min-width:100px}.stat strong{display:block;font-size:1.4rem}.adult-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.setting{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.setting:last-child{border-bottom:0}.setting label{font-weight:700}.setting small{display:block;color:var(--muted);font-weight:400;margin-top:3px}.setting select{max-width:180px;padding:9px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}.module-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.module-row:last-child{border-bottom:0}.module-row .module-name{flex:1}.module-row small{display:block;color:var(--muted)}.module-row input{width:20px;height:20px;accent-color:var(--purple)}.progress-list{display:grid;gap:10px}.progress-item{display:flex;align-items:center;gap:10px}.progress-item .name{flex:1}.mini-track{width:100px;height:8px;background:#eeeef7;border-radius:20px;overflow:hidden}.mini-track span{display:block;height:100%;background:#5b55d8}.notice{background:#fff7d8;border-radius:14px;padding:12px 14px;color:#6a5310;font-size:.9rem;line-height:1.5}footer{text-align:center;padding:10px 16px 28px;color:var(--muted);font-size:.82rem}
-@media(max-width:680px){.age-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.adult-grid{grid-template-columns:1fr}.panel{padding:15px}.age-card{min-height:130px}}
+@media(max-width:680px){.collection-grid{grid-template-columns:1fr}.age-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.adult-grid{grid-template-columns:1fr}.panel{padding:15px}.age-card{min-height:130px}}
 @media(max-width:390px){.topic-grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.answer{min-height:56px}.top-actions button{flex:1}}
 </style>
 </head>
@@ -25,8 +25,12 @@ main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.
 <main>
 <section id="homeScreen">
   <div class="welcome"><h2>Where shall we explore today?</h2><p>Choose an age group, pick an adventure and have a go. Every mistake is a chance to learn!</p></div>
-  <div class="section-title"><h3>Choose an age group</h3><p id="ageHint">Pick the best starting point</p></div>
-  <div class="age-grid" id="ageGrid"></div>
+  <div class="section-title"><h3>Choose a collection</h3><p>Explore by age or choose a special theme</p></div>
+  <div class="collection-grid" id="collectionGrid"></div>
+  <div id="agePickerSection">
+    <div class="section-title"><h3>Choose an age group</h3><p id="ageHint">Pick the best starting point</p></div>
+    <div class="age-grid" id="ageGrid"></div>
+  </div>
   <div class="section-title"><h3 id="topicHeading">Choose an adventure</h3><p id="topicSub">Short rounds · Helpful feedback</p></div>
   <div class="topic-grid" id="topicGrid"></div>
   <p class="notice" style="margin-top:18px">Learning guide: activities are inspired by the New Zealand Curriculum. Children develop at different rates, so use the difficulty setting and choose whichever level feels right.</p>
@@ -120,7 +124,12 @@ const MODULES = [
  {id:"logic4",ages:[4,5,6,7,8],title:"Logic Lab",icon:"🧩",desc:"Solve patterns, sequences, clues and sorting puzzles.",kind:"logic",area:"Mathematics / Digital Technologies",objective:"Identify rules, sort information and solve problems step by step.",enabled:true},
  {id:"world5",ages:[5,6,7,8],title:"Our World",icon:"🗺️",desc:"Learn about maps, places, communities and directions.",kind:"world",area:"Social Sciences",objective:"Describe places, use simple directions and understand how people contribute to communities.",enabled:true},
  {id:"life6",ages:[6,7,8],title:"Everyday Skills",icon:"🧭",desc:"Practise safety, choices, routines and helpful habits.",kind:"life",area:"Health and Physical Education",objective:"Recognise safe choices, helpful routines and ways people care for themselves and others.",enabled:true},
- {id:"music4",ages:[4,5,6,7,8],title:"Music & Patterns",icon:"🎵",desc:"Explore rhythm, beats, sound and creative patterns.",kind:"music",area:"The Arts",objective:"Recognise and create patterns using rhythm, sound and movement.",enabled:true} 
+ {id:"music4",ages:[4,5,6,7,8],title:"Music & Patterns",icon:"🎵",desc:"Explore rhythm, beats, sound and creative patterns.",kind:"music",area:"The Arts",objective:"Recognise and create patterns using rhythm, sound and movement.",enabled:true},
+ {id:"tractorBasics",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Parts & Jobs",icon:"🚜",desc:"Discover tractor parts and what tractors do on farms.",kind:"tractorBasics",area:"All About Tractors · Farm knowledge",objective:"Identify common tractor parts and describe how tractors help with farm jobs.",enabled:true},
+ {id:"tractorMath",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Maths",icon:"🔢",desc:"Count wheels, add hay bales and solve farm number puzzles.",kind:"tractorMath",area:"All About Tractors · Mathematics",objective:"Use counting, number patterns and simple arithmetic in tractor and farm situations.",enabled:true},
+ {id:"tractorWords",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Words & Sounds",icon:"🔤",desc:"Explore farm words, first sounds and tractor vocabulary.",kind:"tractorWords",area:"All About Tractors · English",objective:"Recognise tractor-related vocabulary and connect spoken words with their sounds.",enabled:true},
+ {id:"tractorScience",ages:[4,5,6,7,8],collection:"tractors",title:"Tractors & Science",icon:"⚙️",desc:"Explore wheels, engines, energy, soil and crops.",kind:"tractorScience",area:"All About Tractors · Science",objective:"Explain simple ideas about machines, movement, energy and farm environments.",enabled:true},
+ {id:"tractorLogic",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Puzzles",icon:"🧩",desc:"Solve tractor patterns, sequences and farm-job puzzles.",kind:"tractorLogic",area:"All About Tractors · Logic",objective:"Recognise patterns and use clues to solve tractor-themed problems.",enabled:true}
 ];
 const AGE_INFO = [
  {age:4,icon:"🧸",title:"Age 4",subtitle:"Play, pictures & first skills"},
@@ -131,19 +140,26 @@ const AGE_INFO = [
 ];
 const STORE="learningAdventures_v1";
 const defaults={difficulty:"steady",roundLength:8,soundOn:false,feedbackMode:"gentle",disabledModules:[],progress:{}};
-let state=loadState(),selectedAge=4,currentModule=null,questions=[],questionIndex=0,correctCount=0,answered=false,lastResult=null;
+let state=loadState(),selectedAge=4,selectedCollection="age",currentModule=null,questions=[],questionIndex=0,correctCount=0,answered=false,lastResult=null;
 const $=id=>document.getElementById(id);
 function loadState(){try{return {...defaults,...JSON.parse(localStorage.getItem(STORE)||"{}")}}catch(e){return {...defaults}}}
 function saveState(){try{localStorage.setItem(STORE,JSON.stringify(state));$("saveStatus").textContent="Saved on this device."}catch(e){$("saveStatus").textContent="Browser storage is unavailable; progress may not persist."}}
 function visibleModules(){return MODULES.filter(m=>m.enabled!==false&&!state.disabledModules.includes(m.id))}
 function showScreen(name){$("homeScreen").classList.toggle("hidden",name!=="home");$("gameScreen").classList.toggle("hidden",name!=="game");$("adultScreen").classList.toggle("hidden",name!=="adult");window.scrollTo({top:0,behavior:"smooth"})}
 function renderHome(){
+ const collections=[
+  {id:"age",icon:"🧒",title:"Explore by age",subtitle:"Choose activities for ages 4–8"},
+  {id:"tractors",icon:"🚜",title:"All About Tractors",subtitle:"A special collection: every activity is tractor-themed"}
+ ];
+ $("collectionGrid").innerHTML=collections.map(c=>`<button class="collection-card" data-collection="${c.id}" aria-pressed="${selectedCollection===c.id}"><span class="age-emoji">${c.icon}</span><strong>${c.title}</strong><span>${c.subtitle}</span></button>`).join("");
+ $("collectionGrid").querySelectorAll("[data-collection]").forEach(b=>b.addEventListener("click",()=>{selectedCollection=b.dataset.collection;renderHome()}));
+ $("agePickerSection").classList.toggle("hidden",selectedCollection!=="age");
  $("ageGrid").innerHTML=AGE_INFO.map(a=>`<button class="age-card" data-age="${a.age}" aria-pressed="${selectedAge===a.age}"><span class="age-emoji">${a.icon}</span><strong>${a.title}</strong><span>${a.subtitle}</span></button>`).join("");
  $("ageGrid").querySelectorAll("[data-age]").forEach(b=>b.addEventListener("click",()=>{selectedAge=Number(b.dataset.age);renderHome()}));
- const mods=visibleModules().filter(m=>m.ages.includes(selectedAge));
- $("topicHeading").textContent=`${AGE_INFO.find(a=>a.age===selectedAge).title}: choose an adventure`;
+ const mods=visibleModules().filter(m=>selectedCollection==="tractors"?m.collection==="tractors":(!m.collection&&m.ages.includes(selectedAge)));
+ $("topicHeading").textContent=selectedCollection==="tractors"?"All About Tractors: choose an adventure":`${AGE_INFO.find(a=>a.age===selectedAge).title}: choose an adventure`;
  $("topicSub").textContent=`${mods.length} activities available`;
- $("topicGrid").innerHTML=mods.length?mods.map(m=>{const p=state.progress[m.id]||{};return `<button class="topic-card" data-module="${m.id}"><span class="topic-icon">${m.icon}</span><strong>${m.title}</strong><span class="desc">${m.desc}</span><span class="topic-meta">${p.rounds?`${p.rounds} round${p.rounds===1?"":"s"} · ${p.accuracy}% overall`:"Ready to play"}</span></button>`}).join(""):`<p>No modules enabled for this age. Turn one on in the Grown-up corner.</p>`;
+ $("topicGrid").innerHTML=mods.length?mods.map(m=>{const p=state.progress[m.id]||{};return `<button class="topic-card" data-module="${m.id}"><span class="topic-icon">${m.icon}</span><strong>${m.title}</strong><span class="desc">${m.desc}</span><span class="topic-meta">${p.rounds?`${p.rounds} round${p.rounds===1?"":"s"} · ${p.accuracy}% overall`:"Ready to play"}</span></button>`}).join(""):`<p>No activities enabled in this collection. Turn one on in the Grown-up corner.</p>`;
  $("topicGrid").querySelectorAll("[data-module]").forEach(b=>b.addEventListener("click",()=>startGame(b.dataset.module)));
 }
 function rand(n){return Math.floor(Math.random()*n)}
@@ -210,6 +226,56 @@ function choiceQ(prompt,answer,distractors,visual="",explain="Have another look 
 }
 function makeQuestion(mod){
  const k=mod.kind,d=state.difficulty;
+ if(k==="tractorBasics"){
+  const qs=[
+   ["What is a tractor mainly used for on a farm?","Pulling equipment and doing farm jobs",["Flying people to the Moon","Swimming underwater","Baking bread"],"🚜","Tractors can pull tools and trailers to help with farm work."],
+   ["What do tractor tyres help the tractor do?","Grip the ground",["Grow crops","Make rain","Store milk"],"🛞","Tyres touch the ground and help the tractor move and grip."],
+   ["What might a tractor pull to move hay?","A trailer",["A submarine","A school desk","A kite"],"🚜🌾","A tractor can tow a trailer carrying hay or other farm loads."],
+   ["Which part helps a driver steer a tractor?","Steering wheel",["Bucket of apples","Headlight","Exhaust pipe"],"🛞","The steering wheel helps the driver choose the direction."],
+   ["Where might you see a tractor working?","On a farm",["At the bottom of the ocean","Inside a volcano","On the Moon"],"🌾","Tractors are commonly used for jobs on farms."],
+   ["Why should children stay away from moving farm machinery?","It can be dangerous",["It might turn into a bird","It makes plants disappear","It changes the weather"],"⚠️","Farm machinery is powerful. Children should stay with a trusted adult and keep a safe distance."]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorMath"){
+  const qs=[
+   ["A tractor has 4 wheels. How many wheels do 2 tractors have?","8",["4","6","10"],"🚜 🚜","Count four wheels for each tractor: 4 + 4 = 8."],
+   ["There are 3 hay bales by the tractor and 2 more arrive. How many are there?","5",["4","6","7"],"🌾🌾🌾 + 🌾🌾","Add the two groups: 3 + 2 = 5."],
+   ["What number comes next: 2, 4, 6, __?","8",["7","9","10"],"🚜 2, 4, 6, ?","The numbers go up by 2 each time."],
+   ["A trailer carries 5 pumpkins. The farmer loads 3 more. How many pumpkins now?","8",["7","9","6"],"🎃 + 🎃","Add 5 and 3 to get 8."],
+   ["There are 10 fence posts. The farmer fixes 4. How many are left to fix?","6",["5","7","14"],"🪵","Take away the 4 fixed posts: 10 − 4 = 6."],
+   ["One tractor is red and one is green. How many tractors are there?","2",["1","3","4"],"🔴🚜 🟢🚜","Count both tractors." ]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorWords"){
+  const qs=[
+   ["Which word starts with the /t/ sound?","tractor",["barn","hay","mud"],"🔤","Tractor starts with the /t/ sound."],
+   ["Which word names the machine shown?","tractor",["trailer","tyre","barn"],"🚜","The machine is a tractor."],
+   ["Which word rhymes with hay?","day",["mud","wheel","farm"],"🌾","Hay and day rhyme because their ending sounds match."],
+   ["What is a tractor's big round rubber part called?","tyre",["leaf","seed","feather"],"🛞","A tyre fits around a wheel and touches the ground."],
+   ["Which word names cut, dried grass that animals may eat?","hay",["mud","metal","steam"],"🌾","Hay is grass that has been cut and dried."],
+   ["Which word begins with the same sound as farm?","field",["tractor","barn","wheel"],"🌱","Farm and field both begin with the /f/ sound."]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorScience"){
+  const qs=[
+   ["What gives a tractor's engine the energy it needs?","Fuel or electricity, depending on the tractor",["Soil alone","Leaves growing on it","Moonlight only"],"⚙️","Engines need an energy source. Many tractors use fuel; some newer machines can be electric."],
+   ["Why do tractors have large tyres?","To help grip the ground and carry weight",["To help them fly","To grow seeds","To make clouds"],"🛞","Large tyres help spread the weight and provide grip."],
+   ["What can a farmer grow in soil?","Crops",["Glass bottles","Metal tools","Plastic wheels"],"🌱","Many crops grow in soil when they have suitable water, light and nutrients."],
+   ["What happens when a tractor pulls a trailer?","The trailer moves along behind it",["The trailer becomes a tree","The trailer flies by itself","The ground turns to water"],"🚜➡️","A pulling force from the tractor moves the trailer."],
+   ["Which material is commonly used to make a strong tractor frame?","Metal",["Paper tissue","Cotton wool","Jelly"],"🔩","Metal is strong and is commonly used in vehicle frames."],
+   ["Why might a tractor use a plough?","To turn over soil",["To wash windows","To paint a fence","To make ice"],"🌱","A plough is a tool used to turn and prepare soil." ]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorLogic"){
+  const qs=[
+   ["What comes next in the farm pattern: 🚜 🌾 🚜 🌾 __?","🚜",["🌾","🐄","🛞"],"🚜 🌾 🚜 🌾 ?","The tractor and hay symbols alternate."],
+   ["A farmer checks the tractor, then starts it. What should happen before driving?","Check that the area is safe",["Close their eyes","Run behind it","Ignore people nearby"],"🦺","Before moving machinery, the driver must check the surroundings are safe."],
+   ["Which item does not belong with tractor equipment?","A swimming flipper",["Trailer","Plough","Harrows"],"🧩","A swimming flipper is not a tool or attachment for farm work."],
+   ["The tractor is in the shed. The trailer is outside. Which one is outside?","The trailer",["The tractor","Both are in the shed","Neither"],"🏚️","Use the information in the sentence."],
+   ["Which job order makes sense for planting a crop?","Prepare soil, plant seeds, help the crop grow",["Harvest, plant, then prepare soil","Plant seeds after harvesting the crop","Water the empty field forever"],"🌱","Preparing the soil comes before planting; the crop grows afterward."],
+   ["There are two red tractors and one blue tractor. Which colour has fewer tractors?","Blue",["Red","They have the same number","There are no blue tractors"],"🔴🔴🔵","There is one blue tractor and two red tractors." ]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
  if(k==="alphabet"){let l=pick(letters);return choiceQ(`Which is the letter ${l.toLowerCase()}?`,l.toLowerCase(),[l,l.toLowerCase()==="a"?"o": "q", "m"].filter((x,i,a)=>x!==l.toLowerCase()&&a.indexOf(x)===i).slice(0,3),pick(["🌟","🐝","🍎","🚀"]),`This is the letter ${l}.`)}
  if(k==="count"){let max=rangeFor(k),n=1+rand(max);let emoji=pick(["⭐","🍎","🐞","🐟","🌼","🚗","🍓"]);return numericQuestion("How many can you count?",n,Array(Math.min(n,20)).fill(emoji).join(" "),`Count each picture once.`,max)}
  if(k==="count20"){let max=rangeFor(k),n=2+rand(Math.max(2,max-1));let mode=rand(3);if(mode===0){const answer=n+1;return numericQuestion("What number comes next?",answer,`${n-1}, ${n}, ?`,"Count forward one number at a time.",max+1)}if(mode===1)return choiceQ(`Which number is one more than ${n-1}?`,String(n),[String(Math.max(0,n-1)),String(n+1),String(Math.max(0,n-2))],"🔢","Look carefully at the digits shown in the question.");let x=1+rand(Math.min(9,max-1)),y=1+rand(Math.max(1,max-x));return numericQuestion(`What is ${x} + ${y}?`,x+y,"🔢","Count on from the bigger number.",max)}
@@ -550,6 +616,16 @@ function safeFallbackQuestion(mod,seed=0){
   const q=qs[seed%qs.length];
   return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Compare the values, or combine them if the question asks for a total.");
  }
+ if(["tractorBasics","tractorMath","tractorWords","tractorScience","tractorLogic"].includes(kind)){
+  const fallback={
+   tractorBasics:["What can a tractor pull?","A trailer",["A submarine","A cloud","A school desk"],"🚜","Tractors can pull trailers and farm equipment."],
+   tractorMath:["A tractor has 4 wheels. How many wheels do 2 tractors have?","8",["4","6","10"],"🚜 🚜","Four plus four equals eight."],
+   tractorWords:["Which word starts with the /t/ sound?","tractor",["barn","hay","mud"],"🔤","Tractor starts with the /t/ sound."],
+   tractorScience:["Why do tractors have tyres?","To grip the ground",["To grow crops","To make rain","To fly"],"🛞","Tyres help vehicles grip the ground."],
+   tractorLogic:["What comes next: 🚜 🌾 🚜 🌾 __?","🚜",["🌾","🐄","🛞"],"🚜 🌾 🚜 🌾 ?","The tractor and hay symbols alternate."]
+  }[kind];
+  return makeChoice(fallback[0],fallback[1],fallback[2],fallback[3],fallback[4]);
+ }
  if(["phonics","reading","writing","nature","scienceExpanded","logic","world","life","music"].includes(kind)){
   const fallback={
    phonics:["Which word starts with the /s/ sound?","sun",["map","dog","fish"],"🔊","Listen to the first sound."],
@@ -631,7 +707,7 @@ function finishGame(){
 function leaveGame(){$("alphabetPlaying").classList.add("hidden");$("gamePlaying").classList.remove("hidden");showScreen("home");renderHome()} 
 function renderAdult(){
  $("difficulty").value=state.difficulty;$("roundLength").value=String(state.roundLength);$("soundOn").checked=state.soundOn;$("feedbackMode").value=state.feedbackMode;
- $("moduleSettings").innerHTML=MODULES.map(m=>`<label class="module-row"><span style="font-size:1.35rem">${m.icon}</span><span class="module-name">${m.title}<small>Ages ${m.ages.join(", ")}</small></span><input type="checkbox" data-toggle="${m.id}" ${visibleModules().some(v=>v.id===m.id)?"checked":""} aria-label="Show ${m.title}"></label>`).join("");
+ $("moduleSettings").innerHTML=MODULES.map(m=>`<label class="module-row"><span style="font-size:1.35rem">${m.icon}</span><span class="module-name">${m.title}<small>${m.collection==="tractors"?"All About Tractors · Ages 4–8":`Ages ${m.ages.join(", ")}`}</small></span><input type="checkbox" data-toggle="${m.id}" ${visibleModules().some(v=>v.id===m.id)?"checked":""} aria-label="Show ${m.title}"></label>`).join("");
  $("moduleSettings").querySelectorAll("[data-toggle]").forEach(c=>c.addEventListener("change",()=>{let id=c.dataset.toggle;if(c.checked)state.disabledModules=state.disabledModules.filter(x=>x!==id);else if(!state.disabledModules.includes(id))state.disabledModules.push(id);saveState();renderHome()}));
  const vals=Object.values(state.progress);let total=vals.reduce((s,p)=>s+(p.rounds||0),0),correct=vals.reduce((s,p)=>s+(p.correct||0),0),answered=vals.reduce((s,p)=>s+(p.answered||0),0);
  $("totalRounds").textContent=total;$("overallAccuracy").textContent=answered?Math.round(correct/answered*100)+"%":"—";
