@@ -6,12 +6,15 @@
 <meta name="theme-color" content="#5b55d8">
 <title>Learning Adventures</title>
 <style>
-:root{--ink:#24243a;--muted:#696981;--paper:#f7f7ff;--card:#fff;--purple:#5b55d8;--purple2:#ebeaff;--mint:#dff8ec;--yellow:#fff1bb;--pink:#ffe3ed;--blue:#e2f3ff;--line:#e6e5f2;--shadow:0 8px 24px rgba(39,36,82,.12);--success:#2a9d6a;--danger:#d9534f}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px}button,select,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(91,85,216,.35);outline-offset:2px}.hidden{display:none!important}
-header{background:linear-gradient(125deg,#5b55d8,#8178ed);color:white;padding:22px 18px 28px;border-radius:0 0 28px 28px}.head-inner,main{max-width:1000px;margin:auto}.brand{display:flex;align-items:center;gap:14px}.logo{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:1.9rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}.brand h1{margin:0;font-size:clamp(1.6rem,2.5vw,2.4rem)}.brand p{margin:4px 0 0;color:rgba(255,255,255,.82)}.top-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:14px}.top-actions button,.crumb button,.game-controls button,.answer,.collection-card,.age-card,.topic-card,.module-row,.progress-item,.stat,.notice,.panel,.result,.setting{transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-.top-actions button,.crumb button,.game-controls button{border:none;border-radius:12px;padding:10px 14px;font-weight:700}.top-actions button{background:rgba(255,255,255,.12);color:#fff}.top-actions button:hover,.crumb button:hover,.game-controls button:hover{transform:translateY(-1px)}
-main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.5rem;margin:0 0 5px}.welcome p{color:var(--muted);margin:0;line-height:1.5}.section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:12px 0 10px}.section-title h3{margin:0;font-size:1.15rem}.section-title p{margin:0;color:var(--muted);font-size:.92rem}.collection-grid,.age-grid,.topic-grid,.answers,.stat-row,.adult-grid,.setting,.game-controls,.progress-list{display:grid;gap:12px}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:20px}.collection-card,.age-card,.topic-card,.panel,.result{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.collection-card,.age-card,.topic-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:18px;cursor:pointer;text-align:left;border:2px solid transparent}.collection-card:hover,.age-card:hover,.topic-card:hover{border-color:rgba(91,85,216,.35);transform:translateY(-2px)}.collection-card[aria-pressed="true"],.age-card[aria-pressed="true"],.topic-card[aria-pressed="true"]{border-color:var(--purple);background:linear-gradient(180deg,#fff,#f6f3ff)}.age-emoji,.topic-icon,.logo{display:grid;place-items:center}.age-emoji,.topic-icon{font-size:2rem}.collection-card strong,.age-card strong,.topic-card strong{font-size:1.02rem}.collection-card small,.age-card small,.topic-card small{color:var(--muted);line-height:1.4}.age-grid{grid-template-columns:repeat(5,minmax(0,1fr));margin-bottom:20px}.topic-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:20px}.topic-card{min-height:170px}.topic-card .meta-row{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:auto}.topic-card .module-progress{font-size:.78rem;color:var(--muted);background:var(--purple2);padding:5px 8px;border-radius:999px}.panel{padding:20px;box-shadow:var(--shadow)}.crumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.92rem;margin-bottom:12px}.crumb button{background:transparent;color:var(--ink);padding:0 2px;border-radius:8px}.game-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.game-top h2{margin:0;font-size:1.5rem}.question-count{font-size:.85rem;color:var(--muted);background:var(--purple2);padding:6px 10px;border-radius:999px}.learning-objective{margin:10px 0 12px;color:var(--muted);line-height:1.5}.progress-track{position:relative;height:12px;background:#efeef8;border-radius:999px;overflow:hidden;margin-bottom:18px}.progress-fill{display:block;height:100%;width:0;background:linear-gradient(90deg,#5149d6,#7a6cf0);border-radius:inherit;transition:width .2s ease}.visual{min-height:48px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:12px}.prompt{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:700;line-height:1.3;margin-bottom:18px}.answers{grid-template-columns:repeat(2,minmax(0,1fr));margin:10px 0 12px}.answer{min-height:72px;padding:14px 16px;border:1px solid var(--line);background:white;border-radius:18px;text-align:left;font-weight:600;color:var(--ink);box-shadow:0 2px 0 rgba(36,36,58,.03)}.answer:hover:not(:disabled){border-color:rgba(91,85,216,.38);transform:translateY(-1px)}.answer.correct{background:var(--mint);border-color:#bfe9d0;color:#225c3a}.answer.wrong{background:var(--pink);border-color:#f2bfd0;color:#8a3544}.answer:disabled{opacity:1;cursor:default}.feedback{min-height:42px;border-radius:14px;padding:12px 14px;font-weight:600;line-height:1.45}.feedback.good{background:var(--mint);color:#1d5f41}.feedback.bad{background:var(--pink);color:#7f2d44}.game-controls{grid-template-columns:auto auto;justify-content:flex-end;align-items:center;margin-top:12px}.button-primary{background:linear-gradient(135deg,#5b55d8,#7a6cf0);color:#fff;border:none;border-radius:14px;padding:12px 18px;font-weight:800}.button-soft{background:#f3f1ff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-weight:700}.button-plain{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:12px 18px;font-weight:700}.button-danger{background:#fff1f1;color:#a5313d;border:1px solid #f6c7d0;border-radius:12px;padding:12px 18px;font-weight:700}.result{padding:26px 20px 20px;text-align:center}.big{font-size:3rem;line-height:1}.result h2{margin:10px 0 8px;font-size:1.9rem}.result p{margin:0 auto 16px;max-width:40ch;color:var(--muted);line-height:1.5}.stat-row{grid-template-columns:repeat(3,minmax(0,1fr));margin:18px 0}.stat{background:var(--purple2);padding:16px 12px;border-radius:18px;display:flex;flex-direction:column;gap:4px}.stat strong{font-size:1.8rem;line-height:1}.stat span{color:var(--muted);font-size:.83rem}.adult-grid{grid-template-columns:1.2fr 1fr;gap:20px}.setting{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:18px}.setting label{font-weight:700;display:block}.setting small{display:block;color:var(--muted);margin-top:2px}.setting select,input[type="checkbox"]{accent-color:var(--purple)}.module-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:white;margin-bottom:10px}.module-row input{margin-left:auto;width:18px;height:18px}.module-name{display:flex;flex-direction:column;gap:2px;font-weight:700}.module-name small{color:var(--muted)}.notice{margin-top:18px;padding:14px 16px;background:var(--blue);border:1px solid rgba(69,136,216,.1);border-radius:16px;color:var(--ink);line-height:1.5}.progress-list{margin-top:16px}.progress-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:#fff}.progress-item .stack{display:flex;flex-direction:column;line-height:1.2}.progress-item .stack strong{font-size:.96rem}.progress-item .stack span{color:var(--muted);font-size:.8rem}.progress-item .pill{background:var(--purple2);color:var(--ink);padding:6px 8px;border-radius:999px;font-weight:700;font-size:.8rem}.empty-state{padding:18px;background:#f4f3ff;border:1px dashed rgba(91,85,216,.3);border-radius:18px;color:var(--muted);text-align:center}.footer{padding:18px 12px 24px;text-align:center;color:var(--muted);font-size:.9rem}
-@media(max-width:680px){.collection-grid{grid-template-columns:1fr}.age-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.adult-grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.game-controls{grid-template-columns:1fr}.top-actions{justify-content:flex-start}.stat-row{grid-template-columns:1fr}}@media(max-width:390px){.topic-grid{grid-template-columns:1fr}.answer{min-height:58px}.top-actions button{flex:1 1 calc(50% - 10px)}}
+:root{--ink:#24243a;--muted:#696981;--paper:#f7f7ff;--card:#fff;--purple:#5b55d8;--purple2:#ebeaff;--mint:#dff8ec;--yellow:#fff1bb;--pink:#ffe3ed;--blue:#e2f3ff;--line:#e6e5f2;--shadow:0 8px 24px #27245b12}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px}button,select,input{font:inherit}button{cursor:pointer;border:0;border-radius:15px;padding:12px 16px;font-weight:750;transition:transform .12s,filter .12s}button:active{transform:scale(.98)}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffbf47;outline-offset:3px}.primary{background:var(--purple);color:white}.soft{background:var(--purple2);color:var(--purple)}.plain{background:#f1f1f8;color:var(--ink)}.danger{background:#ffe4e4;color:#8e2424}.small{padding:8px 11px;font-size:.9rem}.hidden{display:none!important}
+header{background:linear-gradient(125deg,#5b55d8,#8178ed);color:white;padding:22px 18px 28px;border-radius:0 0 28px 28px}.head-inner,main{max-width:1000px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;width:54px;height:54px;border-radius:18px;background:#ffffff25;font-size:30px}.brand h1{font-size:clamp(1.45rem,4vw,2rem);margin:0}.brand p{margin:3px 0 0;color:#eeedff}.top-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.top-actions button{background:#ffffff20;color:white;border:1px solid #ffffff35}
+main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.5rem;margin:0 0 5px}.welcome p{color:var(--muted);margin:0;line-height:1.5}.section-title{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:24px 0 12px}.section-title h3{margin:0;font-size:1.15rem}.section-title p{margin:0;color:var(--muted);font-size:.9rem}
+.collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:20px}.collection-card{background:var(--card);border:2px solid transparent;border-radius:22px;padding:17px 16px;text-align:left;box-shadow:var(--shadow);min-height:110px;display:flex;flex-direction:column;gap:7px}.collection-card[aria-pressed=true]{border-color:var(--purple);background:#f0efff}.collection-card .age-emoji{font-size:30px}.collection-card strong{font-size:1.1rem}.collection-card span:last-child{font-size:.83rem;color:var(--muted);line-height:1.35}.age-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.age-card{background:var(--card);border:2px solid transparent;border-radius:22px;padding:17px 12px;text-align:left;box-shadow:var(--shadow);min-height:145px;display:flex;flex-direction:column;gap:7px}.age-card[aria-pressed=true]{border-color:var(--purple);background:#f0efff}.age-emoji{font-size:30px}.age-card strong{font-size:1.1rem}.age-card span:last-child{font-size:.83rem;color:var(--muted);line-height:1.35}
+.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.topic-card{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:8px;min-height:154px}.topic-card:hover{filter:brightness(.99);border-color:#c8c4ff}.topic-icon{font-size:30px}.topic-card strong{font-size:1rem}.topic-card .desc{font-size:.86rem;line-height:1.4;color:var(--muted)}.topic-meta{font-size:.76rem;color:var(--purple);font-weight:800;margin-top:auto}
+.panel{background:white;border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow)}.crumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin-bottom:14px}.crumb button{padding:4px 8px;background:transparent;color:var(--purple)}.game-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.game-top h2{margin:0;font-size:1.4rem}.progress-track{height:9px;background:#efeff7;border-radius:20px;overflow:hidden;margin:18px 0}.progress-fill{height:100%;background:linear-gradient(90deg,#5b55d8,#45c7a2);width:0%;transition:width .2s}.question-count{font-size:.85rem;color:var(--muted);font-weight:700}.learning-objective{margin:8px 0 14px;padding:10px 13px;border-radius:12px;background:#f1f7ff;color:#40516f;font-size:.92rem;line-height:1.45}.prompt{font-size:clamp(1.25rem,4vw,2rem);font-weight:850;line-height:1.3;text-align:center;margin:24px auto 20px;max-width:680px}.visual{font-size:clamp(2.4rem,9vw,4.3rem);text-align:center;min-height:68px;margin:8px 0 14px;letter-spacing:4px}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:680px;margin:0 auto}.answer{background:#f3f2ff;color:var(--ink);border:2px solid transparent;min-height:66px;font-size:1.2rem;overflow-wrap:anywhere}.answer:hover{border-color:#c8c4ff}.answer.correct{background:#dff8ec;border-color:#4abf8a}.answer.wrong{background:#ffe3e3;border-color:#e67d7d}.feedback{text-align:center;font-weight:800;min-height:28px;margin:17px 0 4px}.feedback.good{color:#16784e}.feedback.bad{color:#b33a3a}.game-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.result{text-align:center;padding:20px 0}.result .big{font-size:3.8rem}.result h2{margin:5px}.result p{color:var(--muted)}.stat-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:18px 0}.stat{background:#f5f4ff;padding:12px 18px;border-radius:15px;min-width:100px}.stat strong{display:block;font-size:1.4rem}.adult-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.setting{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.setting:last-child{border-bottom:0}.setting label{font-weight:700}.setting small{display:block;color:var(--muted);font-weight:400;margin-top:3px}.setting select{max-width:180px;padding:9px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink)}.module-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.module-row:last-child{border-bottom:0}.module-row .module-name{flex:1}.module-row small{display:block;color:var(--muted)}.module-row input{width:20px;height:20px;accent-color:var(--purple)}.progress-list{display:grid;gap:10px}.progress-item{display:flex;align-items:center;gap:10px}.progress-item .name{flex:1}.mini-track{width:100px;height:8px;background:#eeeef7;border-radius:20px;overflow:hidden}.mini-track span{display:block;height:100%;background:#5b55d8}.notice{background:#fff7d8;border-radius:14px;padding:12px 14px;color:#6a5310;font-size:.9rem;line-height:1.5}footer{text-align:center;padding:10px 16px 28px;color:var(--muted);font-size:.82rem}
+@media(max-width:680px){.collection-grid{grid-template-columns:1fr}.age-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.adult-grid{grid-template-columns:1fr}.panel{padding:15px}.age-card{min-height:130px}}
+@media(max-width:390px){.topic-grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.answer{min-height:56px}.top-actions button{flex:1}}
 </style>
 </head>
 <body>
@@ -30,7 +33,7 @@ main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.
   </div>
   <div class="section-title"><h3 id="topicHeading">Choose an adventure</h3><p id="topicSub">Short rounds · Helpful feedback</p></div>
   <div class="topic-grid" id="topicGrid"></div>
-  <p class="notice" style="margin-top:18px">Learning guide: activities are inspired by the New Zealand Curriculum. Children develop at different rates, so use the difficulty setting and choose whichever level feels right for your learner.</p>
+  <p class="notice" style="margin-top:18px">Learning guide: activities are inspired by the New Zealand Curriculum. Children develop at different rates, so use the difficulty setting and choose whichever level feels right.</p>
 </section>
 <section id="gameScreen" class="hidden">
   <div class="crumb"><button id="backToTopics">← All adventures</button><span>›</span><span id="crumbTopic"></span></div>
@@ -38,20 +41,21 @@ main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.
     <div id="gamePlaying">
       <div class="game-top"><h2 id="gameTitle"></h2><span class="question-count" id="questionCount"></span></div>
       <p id="learningObjective" class="learning-objective"></p>
+      <p id="roundNotice" class="notice hidden" aria-live="polite"></p>
       <div class="progress-track"><div class="progress-fill" id="roundProgress"></div></div>
       <div class="visual" id="visual"></div>
       <div class="prompt" id="prompt"></div>
       <div class="answers" id="answers"></div>
       <div class="feedback" id="feedback" aria-live="polite"></div>
-      <div class="game-controls"><button id="nextBtn" class="button-primary hidden">Next question →</button><button id="quitBtn" class="button-plain">Finish for now</button></div>
+      <div class="game-controls"><button id="nextBtn" class="primary hidden">Next question →</button><button id="quitBtn" class="plain">Finish for now</button></div>
     </div>
     <div id="alphabetPlaying" class="hidden" style="margin:-20px;">
       <iframe id="alphabetFrame" title="Alphabet Adventure flash cards" style="display:block;width:100%;height:1650px;border:0;border-radius:18px;background:#edf5ff" loading="eager"></iframe>
     </div>
     <div id="gameResult" class="result hidden">
       <div class="big" id="resultEmoji">🎉</div><h2 id="resultTitle">Adventure complete!</h2><p id="resultText"></p>
-      <div class="stat-row"><div class="stat"><strong id="resultCorrect">0</strong><span>Correct</span></div><div class="stat"><strong id="resultTotal">0</strong><span>Questions</span></div><div class="stat"><strong id="resultPercent">0%</strong><span>Accuracy</span></div></div>
-      <div class="game-controls"><button id="retryBtn" class="button-primary">Play again</button><button id="resultHomeBtn" class="button-soft">Back to adventures</button></div>
+      <div class="stat-row"><div class="stat"><strong id="resultCorrect">0</strong><span>Correct</span></div><div class="stat"><strong id="resultTotal">0</strong><span>Questions</span></div><div class="stat"><strong id="resultPercent">0%</strong><span>Score</span></div></div>
+      <div class="game-controls"><button id="retryBtn" class="primary">Play again</button><button id="resultHomeBtn" class="soft">Back to adventures</button></div>
     </div>
   </div>
 </section>
@@ -61,10 +65,10 @@ main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.
   <div class="adult-grid">
     <div class="panel">
       <h3 style="margin-top:0">Learning settings</h3>
-      <div class="setting"><div><label for="difficulty">Difficulty</label><small>Changes the range of questions</small></div><select id="difficulty"><option value="gentle">Gentle</option><option value="steady">Steady</option><option value="challenge">Challenge</option><option value="expert">Expert</option></select></div>
-      <div class="setting"><div><label for="roundLength">Questions per round</label><small>Short sessions are fine</small></div><select id="roundLength"><option value="5">5</option><option value="8">8</option><option value="10">10</option><option value="12">12</option></select></div>
-      <div class="setting"><div><label for="soundOn">Read questions aloud</label><small>Uses your browser's speech voice</small></div><input id="soundOn" type="checkbox" style="width:22px;height:22px;"></div>
-      <div class="setting"><div><label for="feedbackMode">Feedback</label><small>Encouraging, without pressure</small></div><select id="feedbackMode"><option value="gentle">Gentle</option><option value="steady">Steady</option><option value="direct">Direct</option></select></div>
+      <div class="setting"><div><label for="difficulty">Difficulty</label><small>Changes the range of questions</small></div><select id="difficulty"><option value="gentle">Gentle</option><option value="steady" selected>Steady</option><option value="challenge">Challenge</option></select></div>
+      <div class="setting"><div><label for="roundLength">Questions per round</label><small>Short sessions are fine</small></div><select id="roundLength"><option value="5">5</option><option value="8" selected>8</option><option value="10">10</option><option value="15">15</option></select></div>
+      <div class="setting"><div><label for="soundOn">Read questions aloud</label><small>Uses your browser's speech voice</small></div><input id="soundOn" type="checkbox" style="width:22px;height:22px;accent-color:var(--purple)"></div>
+      <div class="setting"><div><label for="feedbackMode">Feedback</label><small>Encouraging, without pressure</small></div><select id="feedbackMode"><option value="gentle">Gentle</option><option value="direct">Direct</option></select></div>
       <h3>Collection modules</h3>
       <p style="color:var(--muted);font-size:.9rem">Untick a module to hide it from the home screen. Your code can be extended with more modules later.</p>
       <div id="moduleSettings"></div>
@@ -72,18 +76,18 @@ main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.
     <div class="panel">
       <h3 style="margin-top:0">Progress on this device</h3>
       <p style="color:var(--muted);font-size:.9rem">Progress is saved in this browser only.</p>
-      <div class="stat-row"><div class="stat"><strong id="totalRounds">0</strong><span>Rounds played</span></div><div class="stat"><strong id="overallAccuracy">—</strong><span>Overall accuracy</span></div><div class="stat"><strong id="moduleCount">0</strong><span>Modules used</span></div></div>
+      <div class="stat-row"><div class="stat"><strong id="totalRounds">0</strong><span>Rounds played</span></div><div class="stat"><strong id="overallAccuracy">—</strong><span>Overall accuracy</span></div></div>
       <div id="progressList" class="progress-list"></div>
       <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
-      <button id="clearProgress" class="button-danger">🗑️ Clear all progress</button>
+      <button id="clearProgress" class="danger">🗑️ Clear all progress</button>
       <p style="color:var(--muted);font-size:.85rem">This clears scores and round history but keeps your settings and visible modules.</p>
       <div id="saveStatus" role="status" style="color:var(--muted);font-size:.85rem;margin-top:12px"></div>
     </div>
   </div>
-  <p class="notice" style="margin-top:16px">Curriculum note: activities include suggested learning objectives across English, Mathematics, Science, Social Sciences, Health and Physical Education, The Arts, and digital technology strands. They are designed to support flexible practice and adult guidance.</p>
+  <p class="notice" style="margin-top:16px">Curriculum note: activities include suggested learning objectives across English, Mathematics, Science, Social Sciences, Health and Physical Education, The Arts, and Digital Technologies. These are informal practice targets inspired by the New Zealand Curriculum, not a verified curriculum mapping or a complete assessment programme.</p>
 </section>
 </main>
-<footer class="footer">Made for curious minds · Works as a standalone HTML file · Progress stays in this browser</footer>
+<footer>Made for curious minds · Works as a standalone HTML file · Progress stays in this browser</footer>
 <script>
 "use strict";
 /*
@@ -92,41 +96,41 @@ Each entry in MODULES is an independent topic shown on the home screen.
 To add a topic, add a new entry with a unique id, age list, title, icon, description and kind.
 To remove a topic, delete its entry or set enabled:false. The question generator is in makeQuestion().
 */
-const ALPHABET_HTML_B64 = "PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIiwgY2FudmFzLW1heC13aWR0aD0xMDAwKTs+CjxzdHlsZT4KOm9vdHtjb2xvcjpyZ2IoMjIsMjksNTMpO2JhY2tncm91bmQ6IyVkNjRlN2E7Y29sb3I6IzExMTQxZjt9Kmd7Ym94LXNpemluZzpib3JkZXJib3g7bWFyZ2luOjA7Zm9udC1mYW1pbHk6QXJpYWwsIHNhbnMtc2VyaWY7fQpib2R5e3RleHQtYWxpZ246Y2VudGVyO21hcmdpbjowO2JhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KDEwNTBkZWcsICNmZmY1YjMsICNmYjQ5Yjc0KTtjb2xvcjojMDAwO3Bvc2l0aW9uOnJlbGF0aXZlO2JvcmRlcjowO2NvbG9yOnZhcigtbGV0dGVyKTt9Cmh0e2Zvb3Q6aG92ZXI7bWFyZ2luOjA7fS5jb250YWluZXJ7bWF4LXdpZHRoOjM5MHB4O21hcmdpbjowIGF1dG87cGFkZGluZzo4cHggMTRweDt9LnJvdyhkaXNwbGF5OmZsZXg7ZmxleC13cmFwOndyYXA7Z2FwOjEycHg7aGVpZ2h0OjcwcHg7bWF4LXdpZHRoOjQ2cHg7bWFyZ2luOjAgYXV0bzt9LmNhcmQ7YmFja2dyb3VuZDpjb3JuZmxvd2VyO21pbi13aWR0aDo4MHB4O3dpZHRoOi84MHB4O2JvcmRlcjpyZ2JhKDY3LDQ2LDY3LDAsLjE4KTtib3JkZXI6MnB4IHNvbGlkIHJnYmEoNDIsMTE4LDY2LCAwLjM2KTtib3JkZXJyYWRpdXM6MTJweDtib3gvc2hhZG93OjA4cHggMTJweCAxMHB4IHJnYmEoMjEsMjEsMjEsLjA0KTttYXJnaW46MnB4IDU3cHg7cGFkZGluZzo0cHggMTJweDtib3hzaXppbmc6Ym9yZGVyLWJveDt9LmxldHRlcnN7d2lkdGg6NThweDt0ZXh0LWFsaWduOmNlbnRlcjtkaXNwbGF5OmZsZXg7bWFya2V0OmlubGluZS1ibG9jaztjb2xvcjpncmF5KDExMywxMTMsMTEzKTtyb3VuZGluZzo2cHggbGF0ZXI7fS5sZXQte1i6d2lkdGg6NTBweDt0ZXh0LWFsaWduOmNlbnRlcjttYXJnaW46MTJweCAwOyB9LmJvYXJkO3Bvc2l0aW9uOnJlbGF0aXZlO3dpZHRoOjEwMCU7bWF4LXdpZHRoOjQ3MHB4O3BhdGNoOjc1cHggMTJweDtycm9zdHlsZTppbmQ7c2hvdzowIDQgcHggMTAwcHggcmdiYSgyOSwyOSw0NSw0KTtjb2xvcm86dmFyKC0tbGV0dGVyKTt9Lm9wdGlvbjtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2N1cnNvcjpwb2ludGVyO2JvcmRlcjpyZ2JhKDY0LDY1LDgwLDAsLjE5KTtib3JkZXI6MXB4IHNvbGlkIHJnYmEoNDgsNTg1LDExMiw0N3QpO2JhY2tncm91bmQ6P3doaXRlO3BhZGRpbmcuO2JvcmRlci1yYWRpdXM6MThweDt0ZXh0LWFsaWduOmNlbnRlcjtiYWNrZ3JvdW5kOnJnYmEoMjY0LDI2Niw2NzksLjBox3J0bA==";
+const ALPHABET_HTML_B64 = "PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KPHRpdGxlPkFscGhhYmV0IEFkdmVudHVyZSDigJQgRmxhc2ggQ2FyZHM8L3RpdGxlPgo8c3R5bGU+CiAgOnJvb3QgeyAtLWluazojMjQzMjQ3OyAtLWJsdWU6IzViOGRlZjsgLS15ZWxsb3c6I2ZmZDE2NjsgLS1waW5rOiNmZjhmYWI7IC0tZ3JlZW46IzhiZDNhODsgLS1wYXBlcjojZmZmZGY4OyB9CiAgKiB7IGJveC1zaXppbmc6Ym9yZGVyLWJveDsgfQogIGJvZHkgeyBtYXJnaW46MDsgbWluLWhlaWdodDoxMDB2aDsgZm9udC1mYW1pbHk6ICJUcmVidWNoZXQgTVMiLCBBcmlhbCwgc2Fucy1zZXJpZjsgY29sb3I6dmFyKC0taW5rKTsKICAgIGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjaXJjbGUgYXQgMTIlIDE1JSwgI2ZmZjBjMiAwIDglLCB0cmFuc3BhcmVudCA4LjUlKSwKICAgICAgICAgICAgICAgIHJhZGlhbC1ncmFkaWVudChjaXJjbGUgYXQgOTAlIDIyJSwgI2Q5ZjRlNSAwIDclLCB0cmFuc3BhcmVudCA3LjUlKSwKICAgICAgICAgICAgICAgIGxpbmVhci1ncmFkaWVudCgxMzVkZWcsI2VkZjVmZiwjZmZmM2Y3KTsgZGlzcGxheTpmbGV4OyBqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyOyBwYWRkaW5nOjI0cHggMTRweDsgfQogIG1haW4geyB3aWR0aDptaW4oNzYwcHgsMTAwJSk7IHRleHQtYWxpZ246Y2VudGVyOyB9CiAgaDEgeyBmb250LXNpemU6Y2xhbXAoMnJlbSw1dncsMy4xcmVtKTsgbWFyZ2luOjZweCAwIDRweDsgbGV0dGVyLXNwYWNpbmc6LTFweDsgfQogIC5zdWJ0aXRsZSB7IG1hcmdpbjowIDAgMjBweDsgZm9udC1zaXplOjEuMDhyZW07IH0KICAudG9vbGJhciB7IGRpc3BsYXk6ZmxleDsgZmxleC13cmFwOndyYXA7IGp1c3RpZnktY29udGVudDpjZW50ZXI7IGdhcDo4cHg7IG1hcmdpbi1ib3R0b206MThweDsgfQogIGJ1dHRvbiwgc2VsZWN0IHsgZm9udDppbmhlcml0OyBmb250LXdlaWdodDo3MDA7IGJvcmRlcjoycHggc29saWQgI2Q4ZTBlZDsgYm9yZGVyLXJhZGl1czoxNHB4OyBwYWRkaW5nOjExcHggMTVweDsgYmFja2dyb3VuZDp3aGl0ZTsgY29sb3I6dmFyKC0taW5rKTsgY3Vyc29yOnBvaW50ZXI7IH0KICBidXR0b246aG92ZXIgeyB0cmFuc2Zvcm06dHJhbnNsYXRlWSgtMXB4KTsgYm94LXNoYWRvdzowIDRweCAwICNkOWUxZWQ7IH0KICBidXR0b246Zm9jdXMtdmlzaWJsZSwgc2VsZWN0OmZvY3VzLXZpc2libGUgeyBvdXRsaW5lOjNweCBzb2xpZCAjMjQzMjQ3OyBvdXRsaW5lLW9mZnNldDozcHg7IH0KICAubW9kZS5hY3RpdmUgeyBiYWNrZ3JvdW5kOiMyNDMyNDc7IGNvbG9yOndoaXRlOyBib3JkZXItY29sb3I6IzI0MzI0NzsgfQogIC5jYXJkLXdyYXAgeyBwZXJzcGVjdGl2ZToxMDAwcHg7IG1hcmdpbjowIGF1dG87IHdpZHRoOm1pbig1MTBweCwxMDAlKTsgfQogIC5jYXJkIHsgd2lkdGg6MTAwJTsgbWluLWhlaWdodDozNzBweDsgYm9yZGVyOjA7IGJvcmRlci1yYWRpdXM6MzBweDsgYmFja2dyb3VuZDp2YXIoLS1wYXBlcik7IGJveC1zaGFkb3c6MCAxNHB4IDAgcmdiYSgzNiw1MCw3MSwuMTIpLDAgMjJweCA0NXB4IHJnYmEoMzYsNTAsNzEsLjEyKTsKICAgIGRpc3BsYXk6ZmxleDsgZmxleC1kaXJlY3Rpb246Y29sdW1uOyBhbGlnbi1pdGVtczpjZW50ZXI7IGp1c3RpZnktY29udGVudDpjZW50ZXI7IHBhZGRpbmc6MjJweDsgcG9zaXRpb246cmVsYXRpdmU7IG92ZXJmbG93OmhpZGRlbjsgfQogIC5jYXJkOmJlZm9yZSwuY2FyZDphZnRlciB7IGNvbnRlbnQ6IiI7IHBvc2l0aW9uOmFic29sdXRlOyBib3JkZXItcmFkaXVzOjUwJTsgd2lkdGg6MTEwcHg7IGhlaWdodDoxMTBweDsgb3BhY2l0eTouNTsgfQogIC5jYXJkOmJlZm9yZSB7IGJhY2tncm91bmQ6dmFyKC0teWVsbG93KTsgdG9wOi00NXB4OyBsZWZ0Oi0zMHB4OyB9CiAgLmNhcmQ6YWZ0ZXIgeyBiYWNrZ3JvdW5kOnZhcigtLWdyZWVuKTsgYm90dG9tOi01MnB4OyByaWdodDotMjVweDsgfQogIC5leWVicm93IHsgZm9udC1zaXplOjFyZW07IGZvbnQtd2VpZ2h0OjgwMDsgbGV0dGVyLXNwYWNpbmc6MnB4OyB0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7IGNvbG9yOiM2MjcxOGE7IHotaW5kZXg6MTsgfQogIC5sZXR0ZXJzIHsgZGlzcGxheTpmbGV4OyBhbGlnbi1pdGVtczpiYXNlbGluZTsganVzdGlmeS1jb250ZW50OmNlbnRlcjsgZ2FwOmNsYW1wKDE0cHgsNXZ3LDM0cHgpOyBsaW5lLWhlaWdodDoxLjA1OyB6LWluZGV4OjE7IG1hcmdpbjoxMnB4IDAgNnB4OyB9CiAgLnVwcGVyIHsgZm9udC1zaXplOmNsYW1wKDdyZW0sMjV2dywxMXJlbSk7IGZvbnQtd2VpZ2h0OjkwMDsgY29sb3I6dmFyKC0tYmx1ZSk7IH0KICAubG93ZXIgeyBmb250LXNpemU6Y2xhbXAoNnJlbSwyMXZ3LDlyZW0pOyBmb250LXdlaWdodDo5MDA7IGNvbG9yOiNmMDc4OWE7IH0KICAucHJvbXB0IHsgZm9udC1zaXplOjEuMXJlbTsgbWFyZ2luOjRweCAwIDEycHg7IHotaW5kZXg6MTsgfQogIC5waWN0dXJlIHsgZm9udC1zaXplOmNsYW1wKDVyZW0sMTZ2dyw4cmVtKTsgbGluZS1oZWlnaHQ6MS4xOyBtYXJnaW46NHB4IDAgMTJweDsgei1pbmRleDoxOyB9CiAgLmNvbnRyb2xzIHsgZGlzcGxheTpmbGV4OyBmbGV4LXdyYXA6d3JhcDsganVzdGlmeS1jb250ZW50OmNlbnRlcjsgZ2FwOjEwcHg7IG1hcmdpbjoyMnB4IDAgMTJweDsgfQogIC5wcmltYXJ5IHsgYmFja2dyb3VuZDp2YXIoLS15ZWxsb3cpOyBib3JkZXItY29sb3I6I2YyYzM0ZTsgfQogIC5uZXh0IHsgYmFja2dyb3VuZDp2YXIoLS1ibHVlKTsgYm9yZGVyLWNvbG9yOnZhcigtLWJsdWUpOyBjb2xvcjp3aGl0ZTsgfQogIC5zY29yZSB7IG1hcmdpbjoxNHB4IDAgMDsgZm9udC13ZWlnaHQ6ODAwOyBmb250LXNpemU6MS4wNXJlbTsgfQogIC5jb3JyZWN0IHsgYmFja2dyb3VuZDojZGZmN2U3OyBib3JkZXItY29sb3I6IzY5YmQ4NjsgY29sb3I6IzIwNWMzNjsgfQogIC5pbmNvcnJlY3QgeyBiYWNrZ3JvdW5kOiNmZmU1ZTU7IGJvcmRlci1jb2xvcjojZTk5YTlhOyBjb2xvcjojOGMyOTI5OyB9CiAgLmNvcnJlY3Quc2VsZWN0ZWQgeyBiYWNrZ3JvdW5kOiMyMDVjMzY7IGJvcmRlci1jb2xvcjojMjA1YzM2OyBjb2xvcjp3aGl0ZTsgfQogIC5pbmNvcnJlY3Quc2VsZWN0ZWQgeyBiYWNrZ3JvdW5kOiM4YzI5Mjk7IGJvcmRlci1jb2xvcjojOGMyOTI5OyBjb2xvcjp3aGl0ZTsgfQogIC5wcm9ncmVzcyB7IG1hcmdpbjoxMnB4IGF1dG8gMDsgbWF4LXdpZHRoOjUxMHB4OyBkaXNwbGF5OmZsZXg7IGFsaWduLWl0ZW1zOmNlbnRlcjsgZ2FwOjEwcHg7IH0KICAudHJhY2sgeyBmbGV4OjE7IGhlaWdodDoxMHB4OyBiYWNrZ3JvdW5kOiNkY2U1ZjI7IGJvcmRlci1yYWRpdXM6OTlweDsgb3ZlcmZsb3c6aGlkZGVuOyB9CiAgLmZpbGwgeyBoZWlnaHQ6MTAwJTsgd2lkdGg6My44NSU7IGJhY2tncm91bmQ6dmFyKC0tYmx1ZSk7IHRyYW5zaXRpb246d2lkdGggLjJzOyB9CiAgI2NvdW50IHsgZm9udC13ZWlnaHQ6ODAwOyBtaW4td2lkdGg6NjBweDsgdGV4dC1hbGlnbjpyaWdodDsgfQogIC5wYXJlbnQtdG9vbHMgeyBtYXJnaW46MTZweCBhdXRvIDA7IHBhZGRpbmc6MTRweDsgbWF4LXdpZHRoOjU2MHB4OyBiYWNrZ3JvdW5kOnJnYmEoMjU1LDI1NSwyNTUsLjcyKTsgYm9yZGVyOjJweCBzb2xpZCAjZDhlMGVkOyBib3JkZXItcmFkaXVzOjE4cHg7IH0KICAucGFyZW50LXRvb2xzIGgyIHsgbWFyZ2luOjAgMCA4cHg7IGZvbnQtc2l6ZToxLjE1cmVtOyB9CiAgLnBhcmVudC10b29scyBwIHsgbWFyZ2luOjZweCAwIDEwcHg7IGNvbG9yOiM1MzYyN2E7IGZvbnQtc2l6ZTouOTJyZW07IH0KICAucGFyZW50LXJvdyB7IGRpc3BsYXk6ZmxleDsgZmxleC13cmFwOndyYXA7IGFsaWduLWl0ZW1zOmNlbnRlcjsganVzdGlmeS1jb250ZW50OmNlbnRlcjsgZ2FwOjhweDsgfQogIC5wYXJlbnQtcm93IGxhYmVsIHsgZm9udC13ZWlnaHQ6NzAwOyB9CiAgLnBhcmVudC1yb3cgc2VsZWN0IHsgbWF4LXdpZHRoOjEwMCU7IH0KICAucGFyZW50LW9wdGlvbnMgeyBkaXNwbGF5OmZsZXg7IGZsZXgtd3JhcDp3cmFwOyBqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyOyBhbGlnbi1pdGVtczpjZW50ZXI7IGdhcDo4cHggMTRweDsgbWFyZ2luLXRvcDoxMHB4OyB9CiAgLnBhcmVudC1vcHRpb25zIGxhYmVsIHsgZGlzcGxheTpmbGV4OyBhbGlnbi1pdGVtczpjZW50ZXI7IGdhcDo2cHg7IGZvbnQtd2VpZ2h0OjcwMDsgZm9udC1zaXplOi45MnJlbTsgfQogIC5wYXJlbnQtb3B0aW9ucyBpbnB1dCB7IHdpZHRoOjE4cHg7IGhlaWdodDoxOHB4OyBhY2NlbnQtY29sb3I6IzViOGRlZjsgfQogICNyZXZpZXdTZXNzaW9uIHsgYmFja2dyb3VuZDojZTRlZmZmOyBib3JkZXItY29sb3I6IzljYmNmNTsgfQogICNyZXZpZXdTZXNzaW9uLnJldmlld2luZyB7IGJhY2tncm91bmQ6IzI0MzI0NzsgY29sb3I6d2hpdGU7IGJvcmRlci1jb2xvcjojMjQzMjQ3OyB9CiAgLmhpbnQgeyBtYXJnaW46MjBweCBhdXRvIDA7IG1heC13aWR0aDo1NDBweDsgY29sb3I6IzUzNjI3YTsgZm9udC1zaXplOi45NXJlbTsgbGluZS1oZWlnaHQ6MS41OyB9CiAgLnN0YXIgeyBkaXNwbGF5OmlubGluZS1ibG9jazsgY29sb3I6I2YyYjYzMjsgbWFyZ2luOjAgNHB4OyB9CiAgQG1lZGlhKG1heC13aWR0aDo0MzBweCkgeyAuY2FyZCB7bWluLWhlaWdodDozMjBweDt9IGJ1dHRvbixzZWxlY3Qge3BhZGRpbmc6MTBweCAxMnB4O30gfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8bWFpbj4KICA8aDE+8J+MiCBBbHBoYWJldCBBZHZlbnR1cmU8L2gxPgogIDxwIGNsYXNzPSJzdWJ0aXRsZSI+TGV04oCZcyBtZWV0IHRoZSBsZXR0ZXJzLCBiaWcgYW5kIHNtYWxsITwvcD4KCiAgPGRpdiBjbGFzcz0idG9vbGJhciIgYXJpYS1sYWJlbD0iQ2FyZCBvcHRpb25zIj4KICAgIDxidXR0b24gY2xhc3M9Im1vZGUgYWN0aXZlIiBpZD0iYm90aE1vZGUiIHR5cGU9ImJ1dHRvbiI+QWEgQmlnICsgc21hbGw8L2J1dHRvbj4KICAgIDxidXR0b24gY2xhc3M9Im1vZGUiIGlkPSJ1cHBlck1vZGUiIHR5cGU9ImJ1dHRvbiI+QUJDIEJpZyBsZXR0ZXJzPC9idXR0b24+CiAgICA8YnV0dG9uIGNsYXNzPSJtb2RlIiBpZD0ibG93ZXJNb2RlIiB0eXBlPSJidXR0b24iPmFiYyBTbWFsbCBsZXR0ZXJzPC9idXR0b24+CiAgICA8YnV0dG9uIGlkPSJzaHVmZmxlIiB0eXBlPSJidXR0b24iPvCflIAgTWl4IHRoZW0gdXA8L2J1dHRvbj4KICAgIDxidXR0b24gaWQ9InBpY3R1cmVUb2dnbGUiIHR5cGU9ImJ1dHRvbiIgYXJpYS1wcmVzc2VkPSJ0cnVlIj7wn5a877iPIEhpZGUgcGljdHVyZXM8L2J1dHRvbj4KICA8L2Rpdj4KCiAgPHNlY3Rpb24gY2xhc3M9ImNhcmQtd3JhcCIgYXJpYS1saXZlPSJwb2xpdGUiPgogICAgPGRpdiBjbGFzcz0iY2FyZCIgaWQ9ImNhcmQiPgogICAgICA8ZGl2IGNsYXNzPSJleWVicm93IiBpZD0iZXllYnJvdyI+TGV0dGVyIDE8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0ibGV0dGVycyI+PHNwYW4gY2xhc3M9InVwcGVyIiBpZD0idXBwZXIiPkE8L3NwYW4+PHNwYW4gY2xhc3M9Imxvd2VyIiBpZD0ibG93ZXIiPmE8L3NwYW4+PC9kaXY+CiAgICAgIDxwIGNsYXNzPSJwcm9tcHQiIGlkPSJwcm9tcHQiPkNhbiB5b3Ugc2F5IHRoaXMgbGV0dGVyPzwvcD4KICAgICAgPGRpdiBjbGFzcz0icGljdHVyZSIgaWQ9InBpY3R1cmUiIGFyaWEtbGFiZWw9IlBpY3R1cmUgZXhhbXBsZSI+8J+NjjwvZGl2PgogICAgPC9kaXY+CiAgPC9zZWN0aW9uPgoKICA8ZGl2IGNsYXNzPSJjb250cm9scyI+CiAgICA8YnV0dG9uIGlkPSJwcmV2IiB0eXBlPSJidXR0b24iPuKGkCBQcmV2aW91czwvYnV0dG9uPgogICAgPGJ1dHRvbiBpZD0ic3BlYWtQaWN0dXJlIiB0eXBlPSJidXR0b24iPvCfl6PvuI8gU2F5IHBpY3R1cmUgbmFtZTwvYnV0dG9uPgogICAgPGJ1dHRvbiBpZD0ic3BlYWsiIHR5cGU9ImJ1dHRvbiI+8J+UiiBTYXkgaXQ8L2J1dHRvbj4KICAgIDxidXR0b24gY2xhc3M9ImNvcnJlY3QiIGlkPSJtYXJrQ29ycmVjdCIgdHlwZT0iYnV0dG9uIiBhcmlhLXByZXNzZWQ9ImZhbHNlIj7inJMgQ29ycmVjdDwvYnV0dG9uPgogICAgPGJ1dHRvbiBjbGFzcz0iaW5jb3JyZWN0IiBpZD0ibWFya0luY29ycmVjdCIgdHlwZT0iYnV0dG9uIiBhcmlhLXByZXNzZWQ9ImZhbHNlIj7inJcgSW5jb3JyZWN0PC9idXR0b24+CiAgICA8YnV0dG9uIGNsYXNzPSJuZXh0IiBpZD0ibmV4dCIgdHlwZT0iYnV0dG9uIj5OZXh0IOKGkjwvYnV0dG9uPgogIDwvZGl2PgogIDxwIGNsYXNzPSJzY29yZSIgaWQ9InNjb3JlIiBhcmlhLWxpdmU9InBvbGl0ZSI+Q29ycmVjdDogMCDCtyBJbmNvcnJlY3Q6IDAgwrcgVW5tYXJrZWQ6IDI2PC9wPgogIDxzZWN0aW9uIGNsYXNzPSJwYXJlbnQtdG9vbHMiIGFyaWEtbGFiZWw9IlBhcmVudCB0b29scyI+CiAgICA8aDI+8J+RqOKAjfCfkanigI3wn5GnIEdyb3duLXVwIGNvcm5lcjwvaDI+CiAgICA8cCBpZD0icmV2aWV3SW5mbyI+TWFyayBsZXR0ZXJzIGFzIGluY29ycmVjdCwgdGhlbiBzdGFydCBhIHNob3J0IHJldmlzaW9uIHNlc3Npb24gdG8gcHJhY3Rpc2UgdGhvc2UgbGV0dGVycyBhZ2Fpbi48L3A+CiAgICA8ZGl2IGNsYXNzPSJwYXJlbnQtcm93Ij4KICAgICAgPGJ1dHRvbiBpZD0icmV2aWV3U2Vzc2lvbiIgdHlwZT0iYnV0dG9uIj7wn5OaIFJldmlldyBpbmNvcnJlY3QgKDApPC9idXR0b24+CiAgICAgIDxidXR0b24gaWQ9ImNsZWFyUHJvZ3Jlc3MiIHR5cGU9ImJ1dHRvbiI+8J+Xke+4jyBDbGVhciBwcm9ncmVzczwvYnV0dG9uPgogICAgPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJwYXJlbnQtb3B0aW9ucyI+CiAgICAgIDxsYWJlbD48aW5wdXQgdHlwZT0iY2hlY2tib3giIGlkPSJhdXRvU2F5UGljdHVyZSI+IFNheSBwaWN0dXJlIG5hbWUgd2l0aCBsZXR0ZXI8L2xhYmVsPgogICAgPC9kaXY+CiAgICA8cCBpZD0ic2F2ZVN0YXR1cyI+UHJvZ3Jlc3MgYW5kIHNldHRpbmdzIGFyZSBzYXZlZCBvbiB0aGlzIGRldmljZSB3aGVuIGxvY2FsIHN0b3JhZ2UgaXMgYXZhaWxhYmxlLjwvcD4KICA8L3NlY3Rpb24+CiAgPGRpdiBjbGFzcz0icHJvZ3Jlc3MiIGFyaWEtbGFiZWw9IlByb2dyZXNzIHRocm91Z2ggYWxwaGFiZXQiPgogICAgPGRpdiBjbGFzcz0idHJhY2siPjxkaXYgY2xhc3M9ImZpbGwiIGlkPSJmaWxsIj48L2Rpdj48L2Rpdj4KICAgIDxzcGFuIGlkPSJjb3VudCI+MSAvIDI2PC9zcGFuPgogIDwvZGl2PgogIDxwIGNsYXNzPSJoaW50Ij48c3BhbiBjbGFzcz0ic3RhciI+4piFPC9zcGFuPiBHcm93bi11cCB0aXA6IGFzayDigJxXaGF0IGxldHRlciBpcyB0aGlzP+KAnSBiZWZvcmUgdXNpbmcgdGhlIHNwZWFraW5nIGJ1dHRvbnMuIEtlZXAgaXQgcGxheWZ1bCDigJQgZ28gZm9yd2FyZHMsIGJhY2t3YXJkcywgb3IgbWl4IHRoZSBjYXJkcyB1cCE8L3A+CjwvbWFpbj4KPHNjcmlwdD4KKCgpID0+IHsKICBjb25zdCBsZXR0ZXJzID0gIkFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaIi5zcGxpdCgiIik7CiAgbGV0IG9yZGVyID0gbGV0dGVycy5tYXAoKF8sIGkpID0+IGkpOwogIGxldCBwb3NpdGlvbiA9IDA7CiAgbGV0IG1vZGUgPSAiYm90aCI7CiAgbGV0IHNob3dQaWN0dXJlcyA9IHRydWU7CiAgbGV0IHJldmlld0RlY2sgPSBudWxsOwogIGxldCBhdXRvU2F5UGljdHVyZSA9IGZhbHNlOwogIGNvbnN0IHJlc3VsdHMgPSBuZXcgTWFwKCk7CiAgY29uc3QgU1RPUkFHRV9LRVkgPSAiYWxwaGFiZXRBZHZlbnR1cmVGbGFzaGNhcmRzX3YyIjsKICBsZXQgc3RvcmFnZUF2YWlsYWJsZSA9IGZhbHNlOwoKICBmdW5jdGlvbiBzYXZlU3RhdGUoKSB7CiAgICBpZiAoIXN0b3JhZ2VBdmFpbGFibGUpIHJldHVybjsKICAgIHRyeSB7CiAgICAgIGxvY2FsU3RvcmFnZS5zZXRJdGVtKFNUT1JBR0VfS0VZLCBKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgcmVzdWx0czogT2JqZWN0LmZyb21FbnRyaWVzKHJlc3VsdHMpLCBvcmRlciwgbW9kZSwgc2hvd1BpY3R1cmVzLAogICAgICAgIGF1dG9TYXlQaWN0dXJlCiAgICAgIH0pKTsKICAgICAgJCgic2F2ZVN0YXR1cyIpLnRleHRDb250ZW50ID0gIlByb2dyZXNzIGFuZCBzZXR0aW5ncyBzYXZlZCBvbiB0aGlzIGRldmljZS4iOwogICAgfSBjYXRjaCAoZSkgewogICAgICAkKCJzYXZlU3RhdHVzIikudGV4dENvbnRlbnQgPSAiQ291bGQgbm90IHNhdmUgb24gdGhpcyBkZXZpY2UuIFlvdXIgYnJvd3NlciBtYXkgYmxvY2sgbG9jYWwgc3RvcmFnZS4iOwogICAgfQogIH0KICBmdW5jdGlvbiBsb2FkU3RhdGUoKSB7CiAgICB0cnkgewogICAgICBjb25zdCByYXcgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbShTVE9SQUdFX0tFWSk7CiAgICAgIHN0b3JhZ2VBdmFpbGFibGUgPSB0cnVlOwogICAgICBpZiAoIXJhdykgcmV0dXJuOwogICAgICBjb25zdCBzYXZlZCA9IEpTT04ucGFyc2UocmF3KTsKICAgICAgaWYgKHNhdmVkLnJlc3VsdHMgJiYgdHlwZW9mIHNhdmVkLnJlc3VsdHMgPT09ICJvYmplY3QiKSB7CiAgICAgICAgT2JqZWN0LmVudHJpZXMoc2F2ZWQucmVzdWx0cykuZm9yRWFjaCgoW2xldHRlciwgcmVzdWx0XSkgPT4gewogICAgICAgICAgaWYgKGxldHRlcnMuaW5jbHVkZXMobGV0dGVyKSAmJiBbImNvcnJlY3QiLCAiaW5jb3JyZWN0Il0uaW5jbHVkZXMocmVzdWx0KSkgcmVzdWx0cy5zZXQobGV0dGVyLCByZXN1bHQpOwogICAgICAgIH0pOwogICAgICB9CiAgICAgIGlmIChBcnJheS5pc0FycmF5KHNhdmVkLm9yZGVyKSAmJiBzYXZlZC5vcmRlci5sZW5ndGggPT09IDI2ICYmIHNhdmVkLm9yZGVyLmV2ZXJ5KG4gPT4gTnVtYmVyLmlzSW50ZWdlcihuKSAmJiBuID49IDAgJiYgbiA8IDI2KSAmJiBuZXcgU2V0KHNhdmVkLm9yZGVyKS5zaXplID09PSAyNikgb3JkZXIgPSBzYXZlZC5vcmRlcjsKICAgICAgaWYgKFsiYm90aCIsICJ1cHBlciIsICJsb3dlciJdLmluY2x1ZGVzKHNhdmVkLm1vZGUpKSBtb2RlID0gc2F2ZWQubW9kZTsKICAgICAgaWYgKHR5cGVvZiBzYXZlZC5zaG93UGljdHVyZXMgPT09ICJib29sZWFuIikgc2hvd1BpY3R1cmVzID0gc2F2ZWQuc2hvd1BpY3R1cmVzOwogICAgICBpZiAodHlwZW9mIHNhdmVkLmF1dG9TYXlQaWN0dXJlID09PSAiYm9vbGVhbiIpIGF1dG9TYXlQaWN0dXJlID0gc2F2ZWQuYXV0b1NheVBpY3R1cmU7CiAgICB9IGNhdGNoIChlKSB7CiAgICAgIHN0b3JhZ2VBdmFpbGFibGUgPSBmYWxzZTsKICAgICAgJCgic2F2ZVN0YXR1cyIpLnRleHRDb250ZW50ID0gIkxvY2FsIHN0b3JhZ2UgaXMgdW5hdmFpbGFibGUgaGVyZTsgcHJvZ3Jlc3MgbWF5IHJlc2V0IHdoZW4geW91IGNsb3NlIHRoZSBwYWdlLiI7CiAgICB9CiAgfQogIGNvbnN0ICQgPSBpZCA9PiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCk7CiAgbG9hZFN0YXRlKCk7CiAgY29uc3QgdXBwZXIgPSAkKCJ1cHBlciIpLCBsb3dlciA9ICQoImxvd2VyIik7CgogIGZ1bmN0aW9uIGRlY2soKSB7IHJldHVybiByZXZpZXdEZWNrID09PSBudWxsID8gb3JkZXIgOiByZXZpZXdEZWNrOyB9CiAgZnVuY3Rpb24gY3VycmVudCgpIHsgcmV0dXJuIGxldHRlcnNbZGVjaygpW3Bvc2l0aW9uXV07IH0KICBmdW5jdGlvbiByZW5kZXIoKSB7CiAgICBjb25zdCBhY3RpdmVEZWNrID0gZGVjaygpOwogICAgaWYgKHBvc2l0aW9uID49IGFjdGl2ZURlY2subGVuZ3RoKSBwb3NpdGlvbiA9IE1hdGgubWF4KDAsIGFjdGl2ZURlY2subGVuZ3RoIC0gMSk7CiAgICBjb25zdCBsZXR0ZXIgPSBjdXJyZW50KCk7CiAgICB1cHBlci50ZXh0Q29udGVudCA9IGxldHRlcjsKICAgIGxvd2VyLnRleHRDb250ZW50ID0gbGV0dGVyLnRvTG93ZXJDYXNlKCk7CiAgICB1cHBlci5oaWRkZW4gPSBtb2RlID09PSAibG93ZXIiOwogICAgbG93ZXIuaGlkZGVuID0gbW9kZSA9PT0gInVwcGVyIjsKICAgICQoImV5ZWJyb3ciKS50ZXh0Q29udGVudCA9IHJldmlld0RlY2sgPT09IG51bGwgPyBgTGV0dGVyICR7cG9zaXRpb24gKyAxfWAgOiBgUmV2aXNpb24gJHtwb3NpdGlvbiArIDF9IG9mICR7YWN0aXZlRGVjay5sZW5ndGh9YDsKICAgICQoInByb21wdCIpLnRleHRDb250ZW50ID0gIkNhbiB5b3Ugc2F5IHRoaXMgbGV0dGVyPyI7CiAgICAkKCJwaWN0dXJlIikudGV4dENvbnRlbnQgPSBwaWN0dXJlc1tsZXR0ZXJdOwogICAgJCgicGljdHVyZSIpLmhpZGRlbiA9ICFzaG93UGljdHVyZXM7CiAgICAkKCJwaWN0dXJlVG9nZ2xlIikudGV4dENvbnRlbnQgPSBzaG93UGljdHVyZXMgPyAi8J+WvO+4jyBIaWRlIHBpY3R1cmVzIiA6ICLwn5a877iPIFNob3cgcGljdHVyZXMiOwogICAgJCgicGljdHVyZVRvZ2dsZSIpLnNldEF0dHJpYnV0ZSgiYXJpYS1wcmVzc2VkIiwgU3RyaW5nKHNob3dQaWN0dXJlcykpOwogICAgJCgiY291bnQiKS50ZXh0Q29udGVudCA9IGAke3Bvc2l0aW9uICsgMX0gLyAke2FjdGl2ZURlY2subGVuZ3RofWA7CiAgICAkKCJmaWxsIikuc3R5bGUud2lkdGggPSBgJHsoKHBvc2l0aW9uICsgMSkgLyBhY3RpdmVEZWNrLmxlbmd0aCkgKiAxMDB9JWA7CiAgICAkKCJwcmV2IikuZGlzYWJsZWQgPSBwb3NpdGlvbiA9PT0gMDsKICAgICQoIm5leHQiKS50ZXh0Q29udGVudCA9IHBvc2l0aW9uID09PSBhY3RpdmVEZWNrLmxlbmd0aCAtIDEgPyAocmV2aWV3RGVjayA9PT0gbnVsbCA/ICJTdGFydCBhZ2FpbiDihrsiIDogIkZpbmlzaCByZXZpc2lvbiDinJMiKSA6ICJOZXh0IOKGkiI7CiAgICBjb25zdCBpbmNvcnJlY3RMZXR0ZXJzID0gbGV0dGVycy5maWx0ZXIobCA9PiByZXN1bHRzLmdldChsKSA9PT0gImluY29ycmVjdCIpOwogICAgJCgicmV2aWV3U2Vzc2lvbiIpLnRleHRDb250ZW50ID0gcmV2aWV3RGVjayA9PT0gbnVsbCA/IGDwn5OaIFJldmlldyBpbmNvcnJlY3QgKCR7aW5jb3JyZWN0TGV0dGVycy5sZW5ndGh9KWAgOiAi4oapIEV4aXQgcmV2aXNpb24gc2Vzc2lvbiI7CiAgICAkKCJyZXZpZXdTZXNzaW9uIikuY2xhc3NMaXN0LnRvZ2dsZSgicmV2aWV3aW5nIiwgcmV2aWV3RGVjayAhPT0gbnVsbCk7CiAgICAkKCJyZXZpZXdJbmZvIikudGV4dENvbnRlbnQgPSByZXZpZXdEZWNrID09PSBudWxsCiAgICAgID8gKGluY29ycmVjdExldHRlcnMubGVuZ3RoID8gYFRoZXJlICR7aW5jb3JyZWN0TGV0dGVycy5sZW5ndGggPT09IDEgPyAiaXMiIDogImFyZSJ9ICR7aW5jb3JyZWN0TGV0dGVycy5sZW5ndGh9IGxldHRlciR7aW5jb3JyZWN0TGV0dGVycy5sZW5ndGggPT09IDEgPyAiIiA6ICJzIn0gbWFya2VkIGluY29ycmVjdC4gUmV2aXNpb24gb25seSBpbmNsdWRlcyB0aG9zZSBsZXR0ZXJzLmAgOiAiTWFyayBsZXR0ZXJzIGFzIGluY29ycmVjdCwgdGhlbiBzdGFydCBhIHNob3J0IHJldmlzaW9uIHNlc3Npb24gdG8gcHJhY3Rpc2UgdGhvc2UgbGV0dGVycyBhZ2Fpbi4iKQogICAgICA6IGBSZXZpc2lvbiBzZXNzaW9uOiAke2FjdGl2ZURlY2subGVuZ3RofSBsZXR0ZXIke2FjdGl2ZURlY2subGVuZ3RoID09PSAxID8gIiIgOiAicyJ9IHRvIHByYWN0aXNlLiBZb3UgY2FuIGNoYW5nZSBlYWNoIHJlc3VsdCBhcyB5b3UgZ28uYDsKICAgIGNvbnN0IHJlc3VsdCA9IHJlc3VsdHMuZ2V0KGxldHRlcikgfHwgInVubWFya2VkIjsKICAgICQoIm1hcmtDb3JyZWN0IikuY2xhc3NMaXN0LnRvZ2dsZSgic2VsZWN0ZWQiLCByZXN1bHQgPT09ICJjb3JyZWN0Iik7CiAgICAkKCJtYXJrSW5jb3JyZWN0IikuY2xhc3NMaXN0LnRvZ2dsZSgic2VsZWN0ZWQiLCByZXN1bHQgPT09ICJpbmNvcnJlY3QiKTsKICAgICQoIm1hcmtDb3JyZWN0IikudGV4dENvbnRlbnQgPSByZXN1bHQgPT09ICJjb3JyZWN0IiA/ICLinJMgQ29ycmVjdCAodGFwIHRvIGNsZWFyKSIgOiAi4pyTIENvcnJlY3QiOwogICAgJCgibWFya0luY29ycmVjdCIpLnRleHRDb250ZW50ID0gcmVzdWx0ID09PSAiaW5jb3JyZWN0IiA/ICLinJcgSW5jb3JyZWN0ICh0YXAgdG8gY2xlYXIpIiA6ICLinJcgSW5jb3JyZWN0IjsKICAgICQoIm1hcmtDb3JyZWN0Iikuc2V0QXR0cmlidXRlKCJhcmlhLXByZXNzZWQiLCBTdHJpbmcocmVzdWx0ID09PSAiY29ycmVjdCIpKTsKICAgICQoIm1hcmtJbmNvcnJlY3QiKS5zZXRBdHRyaWJ1dGUoImFyaWEtcHJlc3NlZCIsIFN0cmluZyhyZXN1bHQgPT09ICJpbmNvcnJlY3QiKSk7CiAgICBjb25zdCBjb3JyZWN0Q291bnQgPSBbLi4ucmVzdWx0cy52YWx1ZXMoKV0uZmlsdGVyKHYgPT4gdiA9PT0gImNvcnJlY3QiKS5sZW5ndGg7CiAgICBjb25zdCBpbmNvcnJlY3RDb3VudCA9IFsuLi5yZXN1bHRzLnZhbHVlcygpXS5maWx0ZXIodiA9PiB2ID09PSAiaW5jb3JyZWN0IikubGVuZ3RoOwogICAgJCgic2NvcmUiKS50ZXh0Q29udGVudCA9IGBDb3JyZWN0OiAke2NvcnJlY3RDb3VudH0gwrcgSW5jb3JyZWN0OiAke2luY29ycmVjdENvdW50fSDCtyBVbm1hcmtlZDogJHtsZXR0ZXJzLmxlbmd0aCAtIGNvcnJlY3RDb3VudCAtIGluY29ycmVjdENvdW50fWA7CiAgICAkKCJhdXRvU2F5UGljdHVyZSIpLmNoZWNrZWQgPSBhdXRvU2F5UGljdHVyZTsKICAgIGlmIChzdG9yYWdlQXZhaWxhYmxlKSBzYXZlU3RhdGUoKTsKICB9CiAgY29uc3QgZXhhbXBsZXMgPSB7CiAgICBBOiJhcHBsZSIsQjoiYmFsbCIsQzoiY2F0IixEOiJkb2ciLEU6ImVsZXBoYW50IixGOiJmaXNoIixHOiJnb2F0IixIOiJoYXQiLEk6ImljZSBjcmVhbSIsCiAgICBKOiJqZWxseWZpc2giLEs6ImtpdGUiLEw6Imxpb24iLE06Im1vb24iLE46Im5lc3QiLE86Im9jdG9wdXMiLFA6InBlbmd1aW4iLFE6InF1ZWVuIixSOiJyYWJiaXQiLAogICAgUzoic3VuIixUOiJ0aWdlciIsVToidW1icmVsbGEiLFY6InZhbiIsVzoid2hhbGUiLFg6Inh5bG9waG9uZSIsWToieW8teW8iLFo6InplYnJhIgogIH07CiAgY29uc3QgcGljdHVyZXMgPSB7CiAgICBBOiLwn42OIixCOiLimr0iLEM6IvCfkLEiLEQ6IvCfkLYiLEU6IvCfkJgiLEY6IvCfkJ8iLEc6IvCfkJAiLEg6IvCfjqkiLEk6IvCfjaYiLEo6IvCfqrwiLEs6IvCfqoEiLAogICAgTDoi8J+mgSIsTToi8J+MmSIsTjoi8J+quiIsTzoi8J+QmSIsUDoi8J+QpyIsUToi8J+RkSIsUjoi8J+QsCIsUzoi4piA77iPIixUOiLwn5CvIixVOiLimILvuI8iLFY6IvCfmpAiLAogICAgVzoi8J+QsyIsWDoi8J+puyIsWToi8J+qgCIsWjoi8J+mkyIKICB9OwogIGZ1bmN0aW9uIHNldE1vZGUobmV4dE1vZGUpIHsKICAgIG1vZGUgPSBuZXh0TW9kZTsKICAgIFsiYm90aE1vZGUiLCJ1cHBlck1vZGUiLCJsb3dlck1vZGUiXS5mb3JFYWNoKGlkID0+ICQoaWQpLmNsYXNzTGlzdC5yZW1vdmUoImFjdGl2ZSIpKTsKICAgICQoKHtib3RoOiJib3RoTW9kZSIsdXBwZXI6InVwcGVyTW9kZSIsbG93ZXI6Imxvd2VyTW9kZSJ9KVttb2RlXSkuY2xhc3NMaXN0LmFkZCgiYWN0aXZlIik7CiAgICByZW5kZXIoKTsKICB9CiAgJCgiYm90aE1vZGUiKS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsICgpID0+IHNldE1vZGUoImJvdGgiKSk7CiAgJCgidXBwZXJNb2RlIikuYWRkRXZlbnRMaXN0ZW5lcigiY2xpY2siLCAoKSA9PiBzZXRNb2RlKCJ1cHBlciIpKTsKICAkKCJsb3dlck1vZGUiKS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsICgpID0+IHNldE1vZGUoImxvd2VyIikpOwogIHNldE1vZGUobW9kZSk7CiAgJCgicHJldiIpLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgKCkgPT4geyBpZiAocG9zaXRpb24gPiAwKSBwb3NpdGlvbi0tOyByZW5kZXIoKTsgfSk7CiAgJCgibmV4dCIpLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgKCkgPT4gewogICAgY29uc3QgdG90YWwgPSBkZWNrKCkubGVuZ3RoOwogICAgaWYgKHBvc2l0aW9uIDwgdG90YWwgLSAxKSB7IHBvc2l0aW9uKys7IHJlbmRlcigpOyB9CiAgICBlbHNlIGlmIChyZXZpZXdEZWNrICE9PSBudWxsKSB7IHJldmlld0RlY2sgPSBudWxsOyBwb3NpdGlvbiA9IDA7IHJlbmRlcigpOyB9CiAgICBlbHNlIHsgcG9zaXRpb24gPSAwOyByZW5kZXIoKTsgfQogIH0pOwogICQoInJldmlld1Nlc3Npb24iKS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsICgpID0+IHsKICAgIGlmIChyZXZpZXdEZWNrICE9PSBudWxsKSB7IHJldmlld0RlY2sgPSBudWxsOyBwb3NpdGlvbiA9IDA7IHJlbmRlcigpOyByZXR1cm47IH0KICAgIHJldmlld0RlY2sgPSBvcmRlci5maWx0ZXIoaW5kZXggPT4gcmVzdWx0cy5nZXQobGV0dGVyc1tpbmRleF0pID09PSAiaW5jb3JyZWN0Iik7CiAgICBpZiAoIXJldmlld0RlY2subGVuZ3RoKSB7IHJldmlld0RlY2sgPSBudWxsOyBhbGVydCgiTm8gaW5jb3JyZWN0IGFuc3dlcnMgeWV0LiBNYXJrIGFueSBsZXR0ZXJzIHRoZSBjaGlsZCBtaXNzZWQgYXMgSW5jb3JyZWN0IGZpcnN0LiIpOyByZXR1cm47IH0KICAgIHBvc2l0aW9uID0gMDsgcmVuZGVyKCk7CiAgfSk7CiAgJCgiY2xlYXJQcm9ncmVzcyIpLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgKCkgPT4gewogICAgaWYgKCFyZXN1bHRzLnNpemUpIHsKICAgICAgYWxlcnQoIlRoZXJlIGlzIG5vIHNhdmVkIHByb2dyZXNzIHRvIGNsZWFyLiIpOwogICAgICByZXR1cm47CiAgICB9CiAgICBpZiAoIWNvbmZpcm0oIkNsZWFyIGFsbCBDb3JyZWN0IGFuZCBJbmNvcnJlY3QgbWFya3MgZm9yIGFsbCBsZXR0ZXJzPyBZb3VyIHNldHRpbmdzIGFuZCBzaHVmZmxlZCBvcmRlciB3aWxsIGJlIGtlcHQuIikpIHJldHVybjsKICAgIHJlc3VsdHMuY2xlYXIoKTsKICAgIHJldmlld0RlY2sgPSBudWxsOwogICAgcG9zaXRpb24gPSAwOwogICAgc2F2ZVN0YXRlKCk7CiAgICByZW5kZXIoKTsKICAgICQoInNhdmVTdGF0dXMiKS50ZXh0Q29udGVudCA9ICJQcm9ncmVzcyBjbGVhcmVkLiBZb3VyIHNldHRpbmdzIGhhdmUgYmVlbiBrZXB0LiI7CiAgfSk7CiAgJCgibWFya0NvcnJlY3QiKS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsICgpID0+IHsKICAgIGlmIChyZXN1bHRzLmdldChjdXJyZW50KCkpID09PSAiY29ycmVjdCIpIHJlc3VsdHMuZGVsZXRlKGN1cnJlbnQoKSk7CiAgICBlbHNlIHJlc3VsdHMuc2V0KGN1cnJlbnQoKSwgImNvcnJlY3QiKTsKICAgIHJlbmRlcigpOwogIH0pOwogICQoIm1hcmtJbmNvcnJlY3QiKS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsICgpID0+IHsKICAgIGlmIChyZXN1bHRzLmdldChjdXJyZW50KCkpID09PSAiaW5jb3JyZWN0IikgcmVzdWx0cy5kZWxldGUoY3VycmVudCgpKTsKICAgIGVsc2UgcmVzdWx0cy5zZXQoY3VycmVudCgpLCAiaW5jb3JyZWN0Iik7CiAgICByZW5kZXIoKTsKICB9KTsKICAkKCJwaWN0dXJlVG9nZ2xlIikuYWRkRXZlbnRMaXN0ZW5lcigiY2xpY2siLCAoKSA9PiB7IHNob3dQaWN0dXJlcyA9ICFzaG93UGljdHVyZXM7IHJlbmRlcigpOyB9KTsKICAkKCJhdXRvU2F5UGljdHVyZSIpLmFkZEV2ZW50TGlzdGVuZXIoImNoYW5nZSIsICgpID0+IHsgYXV0b1NheVBpY3R1cmUgPSAkKCJhdXRvU2F5UGljdHVyZSIpLmNoZWNrZWQ7IHNhdmVTdGF0ZSgpOyB9KTsKICAkKCJzaHVmZmxlIikuYWRkRXZlbnRMaXN0ZW5lcigiY2xpY2siLCAoKSA9PiB7CiAgICBmb3IgKGxldCBpID0gb3JkZXIubGVuZ3RoIC0gMTsgaSA+IDA7IGktLSkgewogICAgICBjb25zdCBqID0gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogKGkgKyAxKSk7CiAgICAgIFtvcmRlcltpXSwgb3JkZXJbal1dID0gW29yZGVyW2pdLCBvcmRlcltpXV07CiAgICB9CiAgICBwb3NpdGlvbiA9IDA7IHJlbmRlcigpOwogIH0pOwogIC8vIFNwZWVjaCBzeW50aGVzaXMgdXNlcyB0aGUgZGV2aWNlJ3MgZGVmYXVsdCB2b2ljZTsgdm9pY2Ugc2VsZWN0aW9uIGlzIGludGVudGlvbmFsbHkgb21pdHRlZC4KICBmdW5jdGlvbiBzcGVhayh0ZXh0KSB7CiAgICBpZiAoISgic3BlZWNoU3ludGhlc2lzIiBpbiB3aW5kb3cpKSB7IGFsZXJ0KCJTcGVlY2ggaXMgbm90IGF2YWlsYWJsZSBpbiB0aGlzIGJyb3dzZXIuIik7IHJldHVybjsgfQogICAgd2luZG93LnNwZWVjaFN5bnRoZXNpcy5jYW5jZWwoKTsKICAgIGNvbnN0IHV0dGVyYW5jZSA9IG5ldyBTcGVlY2hTeW50aGVzaXNVdHRlcmFuY2UodGV4dCk7CiAgICB1dHRlcmFuY2UucmF0ZSA9IDAuNzU7CiAgICB3aW5kb3cuc3BlZWNoU3ludGhlc2lzLnNwZWFrKHV0dGVyYW5jZSk7CiAgfQogICQoInNwZWFrIikuYWRkRXZlbnRMaXN0ZW5lcigiY2xpY2siLCAoKSA9PiB7CiAgICBjb25zdCBsZXR0ZXIgPSBjdXJyZW50KCk7CiAgICBzcGVhayhhdXRvU2F5UGljdHVyZSA/IGAke2xldHRlcn0uICR7bGV0dGVyfSBpcyBmb3IgJHtleGFtcGxlc1tsZXR0ZXJdfS5gIDogbGV0dGVyKTsKICB9KTsKICAkKCJzcGVha1BpY3R1cmUiKS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsICgpID0+IHNwZWFrKGV4YW1wbGVzW2N1cnJlbnQoKV0pKTsKCiAgZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigia2V5ZG93biIsIGUgPT4gewogICAgaWYgKGUua2V5ID09PSAiQXJyb3dSaWdodCIpICQoIm5leHQiKS5jbGljaygpOwogICAgaWYgKGUua2V5ID09PSAiQXJyb3dMZWZ0IikgJCgicHJldiIpLmNsaWNrKCk7CiAgfSk7CiAgcmVuZGVyKCk7Cn0pKCk7Cjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4=";
 function decodeEmbeddedHtml(b64){const binary=atob(b64);const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));return new TextDecoder("utf-8").decode(bytes)}
 const MODULES = [
- {id:"alphabet",ages:[4],title:"Alphabet Adventure",icon:"🔤",desc:"Recognise letters and their sounds.",kind:"alphabet",area:'English',objective:'Recognise uppercase and lowercase letters and connect letters with sounds.'},
- {id:"count4",ages:[4],title:"Count the Things",icon:"🐞",desc:"Count objects and spot numbers to 10.",kind:"count",area:'Mathematics',objective:'Count objects one by one and connect quantities with written numbers.'},
- {id:"shapes4",ages:[4],title:"Colours & Shapes",icon:"🎨",desc:"Match colours, shapes and simple patterns.",kind:"shapes",area:'Mathematics / The Arts',objective:'Recognise common shapes, colours and repeating patterns.'},
- {id:"animals4",ages:[4,5,6],title:"Animal Explorer",icon:"🐢",desc:"Animals, habitats and nature facts.",kind:"animals",area:'Science',objective:'Describe animal features, habitats and how living things survive.'},
- {id:"count5",ages:[5,6],title:"Numbers to 20",icon:"🔢",desc:"Count, compare and recognise numbers.",kind:"count20",area:'Mathematics',objective:'Count, compare numbers and reason about what number comes next.'},
- {id:"add5",ages:[5,6],title:"Early Addition",icon:"🍎",desc:"Add small groups with picture clues.",kind:"add5",area:'Mathematics',objective:'Combine groups and build early addition strategies.'},
- {id:"words5",ages:[5,6],title:"First Words",icon:"📚",desc:"Letter sounds, beginning sounds and simple words.",kind:"words",area:'English',objective:'Hear initial sounds and connect spoken sounds with written words.'},
- {id:"patterns5",ages:[5,6],title:"Patterns & Shapes",icon:"🟣",desc:"Continue patterns and recognise shapes.",kind:"patterns",area:'Mathematics',objective:'Recognise and extend repeating patterns.'},
- {id:"add7",ages:[7,8],title:"Addition & Subtraction",icon:"➕",desc:"Build fluency with number facts and larger sums.",kind:"add",area:'Mathematics',objective:'Choose addition or subtraction strategies to solve problems.'},
- {id:"times7",ages:[7,8],title:"Times Tables",icon:"✖️",desc:"Explore multiplication as equal groups.",kind:"times",area:'Mathematics',objective:'Understand multiplication as equal groups and repeated addition.'},
- {id:"fractions7",ages:[7,8],title:"Fraction Friends",icon:"🍕",desc:"Halves, quarters and equal parts.",kind:"fractions",area:'Mathematics',objective:'Recognise equal parts and find simple fractions of amounts.'},
- {id:"money7",ages:[7,8],title:"Money & Time",icon:"🕒",desc:"Everyday maths with coins, clocks and calendars.",kind:"moneytime",area:'Mathematics',objective:'Use everyday time and money facts to solve practical problems.'},
- {id:"spelling7",ages:[7,8],title:"Spelling Sprint",icon:"✍️",desc:"Build spelling and word knowledge.",kind:"spelling",area:'English',objective:'Recognise common spelling patterns and use words in context.'},
- {id:"science7",ages:[7,8],title:"Science Explorers",icon:"🌱",desc:"Plants, space, weather and the living world.",kind:"science",area:'Science',objective:'Explain simple facts about plants, materials, space and weather.'},
- {id:"multiply8",ages:[8],title:"Multiplication & Division",icon:"🧮",desc:"Use facts, groups and sharing problems.",kind:"divide",area:'Mathematics',objective:'Use multiplication and division to solve practical questions.'},
- {id:"place8",ages:[8],title:"Place Value & Patterns",icon:"💯",desc:"Tens, hundreds, number sequences and logic.",kind:"place",area:'Mathematics',objective:'Use place value and number patterns to reason about quantities.'},
- {id:"measure8",ages:[8],title:"Measure It!",icon:"📏",desc:"Length, mass, capacity and shapes.",kind:"measure",area:'Mathematics',objective:'Choose suitable units and tools for measuring and describing objects.'},
- {id:"data8",ages:[8],title:"Data Detectives",icon:"📊",desc:"Read simple tables, tallies and picture graphs.",kind:"data",area:'Mathematics',objective:'Read, compare and explain simple data displays.'},
- {id:"phonics4",ages:[4,5,6],title:"Sound Safari",icon:"🔊",desc:"Hear first sounds, rhymes and syllables.",kind:"phonics",area:"English",objective:"Notice sounds in spoken words and connect sounds with learning words."},
- {id:"reading6",ages:[6,7,8],title:"Story Detectives",icon:"📖",desc:"Read short passages and understand what they mean.",kind:"reading",area:"English",objective:"Find stated information and make simple inferences from text."},
- {id:"writing6",ages:[6,7,8],title:"Word & Sentence Workshop",icon:"✏️",desc:"Build vocabulary and choose clear sentences.",kind:"writing",area:"English",objective:"Use vocabulary, punctuation and sentence structure effectively."},
- {id:"nature4",ages:[4,5,6],title:"Nature Neighbours",icon:"🌿",desc:"Explore plants, animals, habitats and the seasons.",kind:"nature",area:"Science",objective:"Recognise living things, their needs and where they live."},
- {id:"science6",ages:[6,7,8],title:"Science Lab",icon:"🧪",desc:"Explore materials, forces, light, sound and experiments.",kind:"scienceExpanded",area:"Science",objective:"Make predictions and explain observations using evidence."},
- {id:"logic4",ages:[4,5,6,7,8],title:"Logic Lab",icon:"🧩",desc:"Solve patterns, sequences, clues and sorting puzzles.",kind:"logic",area:"Mathematics / Digital Technologies",objective:"Identify rules, compare clues and make logical decisions."},
- {id:"world5",ages:[5,6,7,8],title:"Our World",icon:"🗺️",desc:"Learn about maps, places, communities and directions.",kind:"world",area:"Social Sciences",objective:"Describe places, use simple directions and interpret community features."},
- {id:"life6",ages:[6,7,8],title:"Everyday Skills",icon:"🧭",desc:"Practise safety, choices, routines and helpful habits.",kind:"life",area:"Health and Physical Education",objective:"Recognise safe choices, routines and respectful actions."},
- {id:"music4",ages:[4,5,6,7,8],title:"Music & Patterns",icon:"🎵",desc:"Explore rhythm, beats, sound and creative patterns.",kind:"music",area:"The Arts",objective:"Recognise and create patterns using sound and rhythm."},
- {id:"tractorBasics",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Parts & Jobs",icon:"🚜",desc:"Discover tractor parts and what tractors do on farms.",kind:"tractorBasics",area:"All About Tractors",objective:"Identify tractor parts and explain their jobs on a farm."},
- {id:"tractorMath",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Maths",icon:"🔢",desc:"Count wheels, add hay bales and solve farm number puzzles.",kind:"tractorMath",area:"All About Tractors",objective:"Use number patterns and simple operations in a farm context."},
- {id:"tractorWords",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Words & Sounds",icon:"🔤",desc:"Explore farm words, first sounds and tractor vocabulary.",kind:"tractorWords",area:"All About Tractors",objective:"Listen carefully to farm words and match sounds with letters."},
- {id:"tractorScience",ages:[4,5,6,7,8],collection:"tractors",title:"Tractors & Science",icon:"⚙️",desc:"Explore wheels, engines, energy, soil and crops.",kind:"tractorScience",area:"All About Tractors",objective:"Explain how tractors work and how farm systems depend on science."},
- {id:"tractorLogic",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Puzzles",icon:"🧩",desc:"Solve tractor patterns, sequences and farm-job puzzles.",kind:"tractorLogic",area:"All About Tractors",objective:"Use rules, sequence clues and logical thinking to solve problems."}
+ {id:"alphabet",ages:[4],title:"Alphabet Adventure",icon:"🔤",desc:"Recognise letters and their sounds.",kind:"alphabet",area:'English',objective:'Recognise uppercase and lowercase letters and connect letters with their sounds.',enabled:true},
+ {id:"count4",ages:[4],title:"Count the Things",icon:"🐞",desc:"Count objects and spot numbers to 10.",kind:"count",area:'Mathematics',objective:'Count objects one by one and connect quantities with number names.',enabled:true},
+ {id:"shapes4",ages:[4],title:"Colours & Shapes",icon:"🎨",desc:"Match colours, shapes and simple patterns.",kind:"shapes",area:'Mathematics / The Arts',objective:'Recognise common shapes, colours and repeating visual patterns.',enabled:true},
+ {id:"animals4",ages:[4,5,6],title:"Animal Explorer",icon:"🐢",desc:"Animals, habitats and nature facts.",kind:"animals",area:'Science',objective:'Describe animal features, habitats and how living things meet their needs.',enabled:true},
+ {id:"count5",ages:[5,6],title:"Numbers to 20",icon:"🔢",desc:"Count, compare and recognise numbers.",kind:"count20",area:'Mathematics',objective:'Count, compare numbers and reason about what number comes next.',enabled:true},
+ {id:"add5",ages:[5,6],title:"Early Addition",icon:"🍎",desc:"Add small groups with picture clues.",kind:"add5",area:'Mathematics',objective:'Combine groups and build early addition strategies.',enabled:true},
+ {id:"words5",ages:[5,6],title:"First Words",icon:"📚",desc:"Letter sounds, beginning sounds and simple words.",kind:"words",area:'English',objective:'Hear initial sounds and connect spoken sounds with written words.',enabled:true},
+ {id:"patterns5",ages:[5,6],title:"Patterns & Shapes",icon:"🟣",desc:"Continue patterns and recognise shapes.",kind:"patterns",area:'Mathematics',objective:'Recognise and extend repeating patterns.',enabled:true},
+ {id:"add7",ages:[7,8],title:"Addition & Subtraction",icon:"➕",desc:"Build fluency with number facts and larger sums.",kind:"add",area:'Mathematics',objective:'Choose addition or subtraction strategies to solve number problems.',enabled:true},
+ {id:"times7",ages:[7,8],title:"Times Tables",icon:"✖️",desc:"Explore multiplication as equal groups.",kind:"times",area:'Mathematics',objective:'Understand multiplication as equal groups and repeated addition.',enabled:true},
+ {id:"fractions7",ages:[7,8],title:"Fraction Friends",icon:"🍕",desc:"Halves, quarters and equal parts.",kind:"fractions",area:'Mathematics',objective:'Recognise equal parts and find simple fractions of quantities.',enabled:true},
+ {id:"money7",ages:[7,8],title:"Money & Time",icon:"🕒",desc:"Everyday maths with coins, clocks and calendars.",kind:"moneytime",area:'Mathematics',objective:'Use everyday time and money facts to solve practical problems.',enabled:true},
+ {id:"spelling7",ages:[7,8],title:"Spelling Sprint",icon:"✍️",desc:"Build spelling and word knowledge.",kind:"spelling",area:'English',objective:'Recognise common spelling patterns and use words in context.',enabled:true},
+ {id:"science7",ages:[7,8],title:"Science Explorers",icon:"🌱",desc:"Plants, space, weather and the living world.",kind:"science",area:'Science',objective:'Explain simple facts about plants, materials, weather and space.',enabled:true},
+ {id:"multiply8",ages:[8],title:"Multiplication & Division",icon:"🧮",desc:"Use facts, groups and sharing problems.",kind:"divide",area:'Mathematics',objective:'Use multiplication and division to solve equal-group problems.',enabled:true},
+ {id:"place8",ages:[8],title:"Place Value & Patterns",icon:"💯",desc:"Tens, hundreds, number sequences and logic.",kind:"place",area:'Mathematics',objective:'Use place value and number patterns to reason about numbers.',enabled:true},
+ {id:"measure8",ages:[8],title:"Measure It!",icon:"📏",desc:"Length, mass, capacity and shapes.",kind:"measure",area:'Mathematics',objective:'Choose suitable units and tools for measuring and describing shapes.',enabled:true},
+ {id:"data8",ages:[8],title:"Data Detectives",icon:"📊",desc:"Read simple tables, tallies and picture graphs.",kind:"data",area:'Mathematics',objective:'Read, compare and explain simple data displays.',enabled:true},
+ {id:"phonics4",ages:[4,5,6],title:"Sound Safari",icon:"🔊",desc:"Hear first sounds, rhymes and syllables.",kind:"phonics",area:"English",objective:"Notice sounds in spoken words and connect sounds with words.",enabled:true},
+ {id:"reading6",ages:[6,7,8],title:"Story Detectives",icon:"📖",desc:"Read short passages and understand what they mean.",kind:"reading",area:"English",objective:"Find stated information and make simple inferences from a text.",enabled:true},
+ {id:"writing6",ages:[6,7,8],title:"Word & Sentence Workshop",icon:"✏️",desc:"Build vocabulary and choose clear sentences.",kind:"writing",area:"English",objective:"Use vocabulary, punctuation and sentence structure to communicate clearly.",enabled:true},
+ {id:"nature4",ages:[4,5,6],title:"Nature Neighbours",icon:"🌿",desc:"Explore plants, animals, habitats and the seasons.",kind:"nature",area:"Science",objective:"Recognise living things, their needs and their environments.",enabled:true},
+ {id:"science6",ages:[6,7,8],title:"Science Lab",icon:"🧪",desc:"Explore materials, forces, light, sound and experiments.",kind:"scienceExpanded",area:"Science",objective:"Make predictions and explain simple observations about the natural and physical world.",enabled:true},
+ {id:"logic4",ages:[4,5,6,7,8],title:"Logic Lab",icon:"🧩",desc:"Solve patterns, sequences, clues and sorting puzzles.",kind:"logic",area:"Mathematics / Digital Technologies",objective:"Identify rules, sort information and solve problems step by step.",enabled:true},
+ {id:"world5",ages:[5,6,7,8],title:"Our World",icon:"🗺️",desc:"Learn about maps, places, communities and directions.",kind:"world",area:"Social Sciences",objective:"Describe places, use simple directions and understand how people contribute to communities.",enabled:true},
+ {id:"life6",ages:[6,7,8],title:"Everyday Skills",icon:"🧭",desc:"Practise safety, choices, routines and helpful habits.",kind:"life",area:"Health and Physical Education",objective:"Recognise safe choices, helpful routines and ways people care for themselves and others.",enabled:true},
+ {id:"music4",ages:[4,5,6,7,8],title:"Music & Patterns",icon:"🎵",desc:"Explore rhythm, beats, sound and creative patterns.",kind:"music",area:"The Arts",objective:"Recognise and create patterns using rhythm, sound and movement.",enabled:true},
+ {id:"tractorBasics",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Parts & Jobs",icon:"🚜",desc:"Discover tractor parts and what tractors do on farms.",kind:"tractorBasics",area:"All About Tractors · Farm knowledge",objective:"Identify common tractor parts and describe how tractors help with farm jobs.",enabled:true},
+ {id:"tractorMath",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Maths",icon:"🔢",desc:"Count wheels, add hay bales and solve farm number puzzles.",kind:"tractorMath",area:"All About Tractors · Mathematics",objective:"Use counting, number patterns and simple arithmetic in tractor and farm situations.",enabled:true},
+ {id:"tractorWords",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Words & Sounds",icon:"🔤",desc:"Explore farm words, first sounds and tractor vocabulary.",kind:"tractorWords",area:"All About Tractors · English",objective:"Recognise tractor-related vocabulary and connect spoken words with their sounds.",enabled:true},
+ {id:"tractorScience",ages:[4,5,6,7,8],collection:"tractors",title:"Tractors & Science",icon:"⚙️",desc:"Explore wheels, engines, energy, soil and crops.",kind:"tractorScience",area:"All About Tractors · Science",objective:"Explain simple ideas about machines, movement, energy and farm environments.",enabled:true},
+ {id:"tractorLogic",ages:[4,5,6,7,8],collection:"tractors",title:"Tractor Puzzles",icon:"🧩",desc:"Solve tractor patterns, sequences and farm-job puzzles.",kind:"tractorLogic",area:"All About Tractors · Logic",objective:"Recognise patterns and use clues to solve tractor-themed problems.",enabled:true}
 ];
 const AGE_INFO = [
  {age:4,icon:"🧸",title:"Age 4",subtitle:"Play, pictures & first skills"},
@@ -136,67 +140,41 @@ const AGE_INFO = [
  {age:8,icon:"🦉",title:"Age 8",subtitle:"Ready for a challenge"}
 ];
 const STORE="learningAdventures_v1";
-const defaults={difficulty:"steady",roundLength:8,soundOn:false,feedbackMode:"gentle",disabledModules:[],progress:{}};
-let state=loadState(),selectedAge=4,selectedCollection="age",currentModule=null,questions=[],questionIndex=0,correctCount=0,answered=false;
+const defaults={difficulty:"steady",roundLength:8,soundOn:false,feedbackMode:"gentle",disabledModules:[],progress:{},questionHistory:{}};
+let state=loadState(),selectedAge=4,selectedCollection="age",currentModule=null,questions=[],questionIndex=0,correctCount=0,answered=false,lastResult=null;
 const $=id=>document.getElementById(id);
-function normalizeQuestionKey(q){
- const text = String(q && q.prompt ? q.prompt : "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
- return text;
-}
-function getDifficultyIndex(){
- const d = state.difficulty || "steady";
- if (d === "gentle") return 0;
- if (d === "challenge") return 2;
- if (d === "expert") return 3;
- return 1;
-}
-function loadState(){
- try{return {...defaults,...JSON.parse(localStorage.getItem(STORE)||"{}")}}catch(e){return {...defaults}}
-}
-function saveState(){
- try{localStorage.setItem(STORE,JSON.stringify(state));const status=$("saveStatus");if(status)status.textContent="Saved on this device.";}catch(e){const status=$("saveStatus");if(status)status.textContent="Browser storage is unavailable; your progress may not save.";}
-}
+function loadState(){try{return {...defaults,...JSON.parse(localStorage.getItem(STORE)||"{}")}}catch(e){return {...defaults}}}
+function saveState(){try{localStorage.setItem(STORE,JSON.stringify(state));$("saveStatus").textContent="Saved on this device."}catch(e){$("saveStatus").textContent="Browser storage is unavailable; progress may not persist."}}
 function visibleModules(){return MODULES.filter(m=>m.enabled!==false&&!state.disabledModules.includes(m.id))}
-function showScreen(name){
- $("homeScreen").classList.toggle("hidden",name!=="home");
- $("gameScreen").classList.toggle("hidden",name!=="game");
- $("adultScreen").classList.toggle("hidden",name!=="adult");
-}
+function showScreen(name){$("homeScreen").classList.toggle("hidden",name!=="home");$("gameScreen").classList.toggle("hidden",name!=="game");$("adultScreen").classList.toggle("hidden",name!=="adult");window.scrollTo({top:0,behavior:"smooth"})}
 function renderHome(){
  const collections=[
   {id:"age",icon:"🧒",title:"Explore by age",subtitle:"Choose activities for ages 4–8"},
   {id:"tractors",icon:"🚜",title:"All About Tractors",subtitle:"A special collection: every activity is tractor-themed"}
  ];
- $("collectionGrid").innerHTML=collections.map(c=>`<button class="collection-card" data-collection="${c.id}" aria-pressed="${selectedCollection===c.id}"><span class="age-emoji">${c.icon}</span><strong>${c.title}</strong><small>${c.subtitle}</small></button>`).join("");
- $("collectionGrid").querySelectorAll("[data-collection]").forEach(b=>b.addEventListener("click",()=>{selectedCollection=b.dataset.collection;renderHome();}));
+ $("collectionGrid").innerHTML=collections.map(c=>`<button class="collection-card" data-collection="${c.id}" aria-pressed="${selectedCollection===c.id}"><span class="age-emoji">${c.icon}</span><strong>${c.title}</strong><span>${c.subtitle}</span></button>`).join("");
+ $("collectionGrid").querySelectorAll("[data-collection]").forEach(b=>b.addEventListener("click",()=>{selectedCollection=b.dataset.collection;renderHome()}));
  $("agePickerSection").classList.toggle("hidden",selectedCollection!=="age");
- $("ageGrid").innerHTML=AGE_INFO.map(a=>`<button class="age-card" data-age="${a.age}" aria-pressed="${selectedAge===a.age}"><span class="age-emoji">${a.icon}</span><strong>${a.title}</strong><small>${a.subtitle}</small></button>`).join("");
- $("ageGrid").querySelectorAll("[data-age]").forEach(b=>b.addEventListener("click",()=>{selectedAge=Number(b.dataset.age);renderHome();}));
+ $("ageGrid").innerHTML=AGE_INFO.map(a=>`<button class="age-card" data-age="${a.age}" aria-pressed="${selectedAge===a.age}"><span class="age-emoji">${a.icon}</span><strong>${a.title}</strong><span>${a.subtitle}</span></button>`).join("");
+ $("ageGrid").querySelectorAll("[data-age]").forEach(b=>b.addEventListener("click",()=>{selectedAge=Number(b.dataset.age);renderHome()}));
  const mods=visibleModules().filter(m=>selectedCollection==="tractors"?m.collection==="tractors":(!m.collection&&m.ages.includes(selectedAge)));
  $("topicHeading").textContent=selectedCollection==="tractors"?"All About Tractors: choose an adventure":`${AGE_INFO.find(a=>a.age===selectedAge).title}: choose an adventure`;
  $("topicSub").textContent=`${mods.length} activities available`;
- if(!mods.length){
-  $("topicGrid").innerHTML='<div class="empty-state">No activities are available for this age yet. Try a different age or switch the collection in the adult settings.</div>';
-  return;
- }
- $("topicGrid").innerHTML=mods.map(m=>{const p=state.progress[m.id]||{}; const accuracy = p.answered ? `${Math.round((p.correct||0)/(p.answered||1)*100)}%` : 'Fresh start'; return `<button class="topic-card" data-module="${m.id}"><span class="topic-icon">${m.icon}</span><strong>${m.title}</strong><small>${m.desc}</small><div class="meta-row"><span>${m.area}</span><span class="module-progress">${accuracy}</span></div></button>`;}).join("");
+ $("topicGrid").innerHTML=mods.length?mods.map(m=>{const p=state.progress[m.id]||{};return `<button class="topic-card" data-module="${m.id}"><span class="topic-icon">${m.icon}</span><strong>${m.title}</strong><span class="desc">${m.desc}</span><span class="topic-meta">${p.rounds?`${p.rounds} round${p.rounds===1?"":"s"} · ${p.accuracy}% overall`:"Ready to play"}</span></button>`}).join(""):`<p>No activities enabled in this collection. Turn one on in the Grown-up corner.</p>`;
  $("topicGrid").querySelectorAll("[data-module]").forEach(b=>b.addEventListener("click",()=>startGame(b.dataset.module)));
 }
 function rand(n){return Math.floor(Math.random()*n)}
 function pick(arr){return arr[rand(arr.length)]}
 function shuffle(arr){const out=[...arr];for(let i=out.length-1;i>0;i--){const j=rand(i+1);[out[i],out[j]]=[out[j],out[i]]}return out}
 function rangeFor(kind){
- const level = getDifficultyIndex();
- const ranges = {
-  count:[5,10,15,20],
-  count20:[10,20,30,40],
-  add5:[5,10,20,30],
-  add:[20,50,100,150],
-  times:[5,10,12,15],
-  divide:[5,10,12,15],
-  default:[10,10,12,15]
- };
- return (ranges[kind] || ranges.default)[level] || 10;
+ const d=state.difficulty;
+ if(kind==="count")return d==="gentle"?5:d==="challenge"?15:10;
+ if(kind==="count20")return d==="gentle"?10:d==="challenge"?30:20;
+ if(kind==="add5")return d==="gentle"?5:d==="challenge"?20:10;
+ if(kind==="add")return d==="gentle"?20:d==="challenge"?100:50;
+ if(kind==="times")return d==="gentle"?5:d==="challenge"?12:10;
+ if(kind==="divide")return d==="gentle"?5:d==="challenge"?12:10;
+ return 10;
 }
 function numericQuestion(prompt,answer,visual="",explain="Think it through, then have another go.",max=20){
  const answerText=String(answer),numericAnswer=Number(answer),options=new Set([answerText]);let tries=0;
@@ -247,219 +225,545 @@ function choiceQ(prompt,answer,distractors,visual="",explain="Have another look 
  while(options.length<4){const candidate=`Try ${++filler}`;if(!options.includes(candidate)&&candidate!==answerText)options.push(candidate)}
  return {prompt,answer:answerText,options:shuffle(options),visual,explain};
 }
-function questionPoolForDifficulty(basePool, kind){
- if (!Array.isArray(basePool)) return basePool;
- const level = getDifficultyIndex();
- if (level >= 3 && kind !== "alphabet") return basePool.concat(basePool.map(item => item));
- return basePool;
-}
 function makeQuestion(mod){
  const k=mod.kind,d=state.difficulty;
- if(k==="tractorBasics"){const qs=[["What is a tractor mainly used for on a farm?","Pulling equipment and doing farm jobs",["Flying people to the Moon","Swimming underwater","Baking bread"],"🚜","Tractors can pull tools and trailers to do farm jobs."],["What do tractor tyres help the tractor do?","Grip the ground",["Grow crops","Make rain","Store milk"],"🛞","Tyres touch the ground and help the tractor move and grip."],["What might a tractor pull to move hay?","A trailer",["A submarine","A school desk","A kite"],"🚜🌾","A tractor can tow a trailer carrying hay or other farm loads."],["Which part helps a driver steer a tractor?","Steering wheel",["Bucket of apples","Headlight","Exhaust pipe"],"🛞","The steering wheel helps the driver choose the direction."],["Where might you see a tractor working?","On a farm",["At the bottom of the ocean","Inside a volcano","On the Moon"],"🌾","Tractors are commonly used for jobs on farms."],["Why should children stay away from moving farm machinery?","It can be dangerous",["It might turn into a bird","It makes plants disappear","It changes the weather"],"⚠️","Farm machinery is powerful and needs careful respect."]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);}
- if(k==="tractorMath"){const qs=[["A tractor has 4 wheels. How many wheels do 2 tractors have?","8",["4","6","10"],"🚜 🚜","Count four wheels for each tractor: 4 + 4 = 8."],["There are 3 hay bales by the tractor and 2 more arrive. How many are there?","5",["4","6","7"],"🌾🌾🌾 + 🌾🌾","Add the two groups: 3 + 2 = 5."],["What number comes next: 2, 4, 6, __?","8",["7","9","10"],"🚜 2, 4, 6, ?","The numbers go up by 2 each time."],["A trailer carries 5 pumpkins. The farmer loads 3 more. How many pumpkins now?","8",["7","9","6"],"🎃 + 🎃","Add 5 and 3 to get 8."],["There are 10 fence posts. The farmer fixes 4. How many are left to fix?","6",["5","7","14"],"🪵","Take away the 4 fixed posts: 10 − 4 = 6."],["One tractor is red and one is green. How many tractors are there?","2",["1","3","4"],"🔴🚜 🟢🚜","Count both tractors."]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);}
- if(k==="tractorWords"){const qs=[["Which word starts with the /t/ sound?","tractor",["barn","hay","mud"],"🔤","Tractor starts with the /t/ sound."],["Which word names the machine shown?","tractor",["trailer","tyre","barn"],"🚜","The machine is a tractor."],["Which word rhymes with hay?","day",["mud","wheel","farm"],"🌾","Hay and day rhyme because their ending sounds match."],["What is a tractor's big round rubber part called?","tyre",["leaf","seed","feather"],"🛞","A tyre fits around a wheel and touches the ground."],["Which word names cut, dried grass that animals may eat?","hay",["mud","metal","steam"],"🌾","Hay is grass that has been cut and dried."],["Which word begins with the same sound as farm?","field",["tractor","barn","wheel"],"🌱","Farm and field both begin with the /f/ sound."]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);}
- if(k==="tractorScience"){const qs=[["What gives a tractor's engine the energy it needs?","Fuel or electricity, depending on the tractor",["Soil alone","Leaves growing on it","Moonlight only"],"⚙️","Engines need an energy source to work."],["Why do tractors have large tyres?","To help grip the ground and carry weight",["To help them fly","To grow seeds","To make clouds"],"🛞","Large tyres help spread the weight and provide grip."],["What can a farmer grow in soil?","Crops",["Glass bottles","Metal tools","Plastic wheels"],"🌱","Many crops grow in soil when they have suitable water, light and nutrients."],["What happens when a tractor pulls a trailer?","The trailer moves along behind it",["The trailer becomes a tree","The trailer flies by itself","The ground turns to water"],"🚜➡️","A pulling force makes the trailer move with the tractor."],["Which material is commonly used to make a strong tractor frame?","Metal",["Paper tissue","Cotton wool","Jelly"],"🔩","Metal is strong and is commonly used in vehicle frames."],["Why might a tractor use a plough?","To turn over soil",["To wash windows","To paint a fence","To make ice"],"🌱","A plough is a tool used to turn and prepare soil."]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);}
- if(k==="tractorLogic"){const qs=[["What comes next in the farm pattern: 🚜 🌾 🚜 🌾 __?","🚜",["🌾","🐄","🛞"],"🚜 🌾 🚜 🌾 ?","The tractor and hay symbols alternate."],["A farmer checks the tractor, then starts it. What should happen before driving?","Check that the area is safe",["Close their eyes","Run behind it","Ignore people nearby"],"🦺","Before moving machinery, people should make sure the area is safe."],["Which item does not belong with tractor equipment?","A swimming flipper",["Trailer","Plough","Harrows"],"🧩","A swimming flipper is not a tool or attachment for farm work."],["The tractor is in the shed. The trailer is outside. Which one is outside?","The trailer",["The tractor","Both are in the shed","Neither"],"🏚️","Use the information in the sentence."],["Which job order makes sense for planting a crop?","Prepare soil, plant seeds, help the crop grow",["Harvest, plant, then prepare soil","Plant seeds after harvesting the crop","Water the empty field"],"🌱","Good growing starts with soil prep and then planting."],["There are two red tractors and one blue tractor. Which colour has fewer tractors?","Blue",["Red","They have the same number","There are no blue tractors"],"🔴🔴🔵","There is one blue tractor, so it has fewer."]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);}
- if(k==="alphabet"){let l=pick(letters);return choiceQ(`Which is the letter ${l.toLowerCase()}?`,l.toLowerCase(),[l,l.toLowerCase()==="a"?"o":"q","m"].filter((x,i,a)=>x!==l.toLowerCase()&&a.indexOf(x)===i),"🔤","This question asks you to match the lowercase letter to the correct uppercase form.");}
- if(k==="count"){let max=rangeFor(k),n=1+rand(max);let emoji=pick(["⭐","🍎","🐞","🐟","🌼","🚗","🍓"]);return numericQuestion("How many can you count?",n,Array(Math.min(n,20)).fill(emoji).join(" "),"Count each picture once.",10);}
- if(k==="count20"){let max=rangeFor(k),n=2+rand(Math.max(2,max-1));let mode=rand(3);if(mode===0){const answer=n+1;return numericQuestion("What number comes next?",answer,`${n-1}, ${n}, ?`,"Count forward one number at a time.",20)}if(mode===1){const answer=n-1;return numericQuestion("What number comes before?",answer,`? ${n}, ${n+1}`,"Count backwards and check the sequence.",20)}return numericQuestion("How many are there altogether?",n,`🔢 ${"• ".repeat(Math.min(n,10))}`,"Count carefully and keep track of each number.",20);}
- if(k==="shapes"){let shapes=[["circle","🔴"],["square","🟦"],["triangle","🔺"],["star","⭐"],["heart","❤️"]];let s=pick(shapes);return choiceQ(`Which shape or symbol is shown?`,s[0],shapes.filter(x=>x[0]!==s[0]).map(x=>x[0]),s[1],`The picture shows a ${s[0]}.`);}
- if(k==="animals"){let qs=[["Which animal lives in the ocean?","Dolphin",["Sheep","Kea","Rabbit"],"🐬"],["Which animal can fly?","Butterfly",["Eel","Seal","Cow"],"🦋"],["What do bees help many flowers do?","Make seeds",["Turn into rocks","Make snow","Grow feathers"],"🐝"],["Which animal is a bird?","Kea",["Gecko","Tuna","Wētā"],"🦜"],["Which animal can live on land and in water?","Frog",["Dolphin","Rabbit","Kea"],"🐸"],["Which animal has a shell?","Turtle",["Butterfly","Sheep","Kea"],"🐢"],["Which animal has black and white stripes?","Zebra",["Lion","Rabbit","Dolphin"],"🦓"],["Which animal has a long trunk?","Elephant",["Horse","Sheep","Penguin"],"🐘"],["Which animal hops and has long ears?","Rabbit",["Tuna","Gecko","Butterfly"],"🐰"],["Which animal is a fish?","Tuna",["Kea","Frog","Cat"],"🐟"],["Which animal is known for making honey?","Bee",["Seal","Horse","Turtle"],"🐝"],["Which animal has a pouch for its baby?","Kangaroo",["Dolphin","Penguin","Frog"],"🦘"],["Which animal has dry, scaly skin?","Gecko",["Sheep","Butterfly","Dolphin"],"🦎"],["Which animal is often kept for wool?","Sheep",["Tuna","Kea","Turtle"],"🐑"],["Which animal has eight arms?","Octopus",["Spider","Dolphin","Crab"],"🐙"]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],`Think about the animal and its features.`)}
- if(k==="add5"){let a=rand(rangeFor(k)+1),b=rand(Math.max(2,rangeFor(k)-a+1));return numericQuestion(`What is ${a} + ${b}?`,a+b,`${"🍎 ".repeat(Math.min(a,8))} + ${"🍎 ".repeat(Math.min(b,8))}`,"Put the two groups together.",20)}
- if(k==="words"){let w=pick(words);return choiceQ(`Which word starts with the “${w[1]}” sound?`,w[0],words.filter(x=>x[1]!==w[1]).map(x=>x[0]).slice(0,3),"🔊",`Listen for the first sound in ${w[0]}.`)}
- if(k==="patterns"){const palette=["🔴","🔵","🟢","🟡","🟣","🟠"];const a=pick(palette),b=pick(palette.filter(x=>x!==a)),c=pick(palette.filter(x=>x!==a&&x!==b));const mode=rand(3);let visual,answer;if(mode===0){visual=`${a} ${b} ${a} ${b} ?`;answer=a}else if(mode===1){visual=`${a} ${a} ${b} ${a} ${a} ?`;answer=b}else{visual=`${a} ${b} ${c} ${a} ${b} ?`;answer=c}const distractors=shuffle(palette.filter(x=>x!==answer)).slice(0,3);return choiceQ("What comes next in the pattern?",answer,distractors,visual,"Look for the part that repeats.");}
- if(k==="add"){let max=rangeFor(k),a=rand(max)+1,b=rand(Math.max(2,Math.min(max, max-a+1)))+1;if(d==="gentle"){a=rand(10)+1;b=rand(10)+1}if(d==="expert"){a=rand(100)+10;b=rand(50)+10}let sub=Math.random()<.4;if(sub&&b>a)[a,b]=[b,a];return numericQuestion(`What is ${a} + ${b}?`,a+b,`${a} + ${b}`,"Use number facts or a place-value strategy.",Math.max(50, max*2));}
- if(k==="times"){let max=rangeFor(k),a=2+rand(Math.max(2,max-1)),b=2+rand(10);if(d==="gentle"){a=2+rand(4);b=2+rand(5)}if(d==="expert"){a=3+rand(10);b=4+rand(12)}return numericQuestion(`What is ${a} × ${b}?`,a*b,`${a} groups of ${b}`,"Multiplication is equal groups added together.",150);}
- if(k==="fractions"){let qs=[["What is half of 8?",4,"🍕🍕🍕🍕🍕🍕🍕🍕"],["How many quarters make one whole?",4,"🟡"],["Which fraction means one out of two equal parts?","1/2","◐"],["What is one quarter of 12?",3,"🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎"],["What is half of 10?",5,"🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪"],["What is half of 14?",7,"🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓"],["What is one quarter of 20?",5,"🍊🍊🍊🍊🍊🍊🍊🍊"],["How many halves make one whole?",2,"◐"],["Which is bigger: one half or one quarter?","One half",["One quarter","They are equal","Neither"],"🍕"],["What is one third of 9?",3,"🔵🔵🔵🔵🔵🔵🔵🔵🔵"],["What is one quarter of 16?",4,"🟩🟩🟩🟩"],["Which fraction means one out of four equal parts?","1/4","◴"]];let q=pick(qs);return choiceQ(q[0],q[1],Array.isArray(q[2])?q[2]:(typeof q[1]==="number"?[q[1]+1,q[1]+2,Math.max(0,q[1]-1)]:["1/4","1/3","2/2"]),Array.isArray(q[3])?q[3]:q[2],"Equal parts need to be the same size.");}
- if(k==="moneytime"){let qs=[["How many cents are in one dollar?","100 cents",["10 cents","50 cents","20 cents"],"💰"],["How many minutes are in one hour?","60 minutes",["30 minutes","100 minutes","24 minutes"],"🕒"],["Which coin is worth 20 cents?","20c",["10c","50c","$1"],"🪙"],["What time is 30 minutes after 3:00?","3:30",["3:15","4:00","2:30"],"⏰"],["How many 10-cent coins make 50 cents?","5",["4","6","10"],"🪙"],["How many days are in one week?","7",["5","10","12"],"📅"],["What time is 15 minutes after 2:00?","2:15",["2:30","1:45","3:15"],"⏰"],["Which amount is the same as 50 cents?","5 ten-cent coins",["2 ten-cent coins","3 ten-cent coins","10 ten-cent coins"],"💰"],["How many months are in one year?","12",["10","7","24"],"📅"],["If you have 20 cents and spend 5 cents, how much is left?","15 cents",["10 cents","25 cents","5 cents"],"🪙"],["What time is 1 hour after 4:00?","5:00",["4:30","3:00","6:00"],"🕒"],["Which is the shortest amount of time?","One minute",["One hour","One day","One week"],"⏱️"]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Think about the units and the amount of time or money.")}
+ if(k==="tractorBasics"){
+  const qs=[
+   ["What is a tractor mainly used for on a farm?","Pulling equipment and doing farm jobs",["Flying people to the Moon","Swimming underwater","Baking bread"],"🚜","Tractors can pull tools and trailers to help with farm work."],
+   ["What do tractor tyres help the tractor do?","Grip the ground",["Grow crops","Make rain","Store milk"],"🛞","Tyres touch the ground and help the tractor move and grip."],
+   ["What might a tractor pull to move hay?","A trailer",["A submarine","A school desk","A kite"],"🚜🌾","A tractor can tow a trailer carrying hay or other farm loads."],
+   ["Which part helps a driver steer a tractor?","Steering wheel",["Bucket of apples","Headlight","Exhaust pipe"],"🛞","The steering wheel helps the driver choose the direction."],
+   ["Where might you see a tractor working?","On a farm",["At the bottom of the ocean","Inside a volcano","On the Moon"],"🌾","Tractors are commonly used for jobs on farms."],
+   ["Why should children stay away from moving farm machinery?","It can be dangerous",["It might turn into a bird","It makes plants disappear","It changes the weather"],"⚠️","Farm machinery is powerful. Children should stay with a trusted adult and keep a safe distance."]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorMath"){
+  const qs=[
+   ["A tractor has 4 wheels. How many wheels do 2 tractors have?","8",["4","6","10"],"🚜 🚜","Count four wheels for each tractor: 4 + 4 = 8."],
+   ["There are 3 hay bales by the tractor and 2 more arrive. How many are there?","5",["4","6","7"],"🌾🌾🌾 + 🌾🌾","Add the two groups: 3 + 2 = 5."],
+   ["What number comes next: 2, 4, 6, __?","8",["7","9","10"],"🚜 2, 4, 6, ?","The numbers go up by 2 each time."],
+   ["A trailer carries 5 pumpkins. The farmer loads 3 more. How many pumpkins now?","8",["7","9","6"],"🎃 + 🎃","Add 5 and 3 to get 8."],
+   ["There are 10 fence posts. The farmer fixes 4. How many are left to fix?","6",["5","7","14"],"🪵","Take away the 4 fixed posts: 10 − 4 = 6."],
+   ["One tractor is red and one is green. How many tractors are there?","2",["1","3","4"],"🔴🚜 🟢🚜","Count both tractors." ]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorWords"){
+  const qs=[
+   ["Which word starts with the /t/ sound?","tractor",["barn","hay","mud"],"🔤","Tractor starts with the /t/ sound."],
+   ["Which word names the machine shown?","tractor",["trailer","tyre","barn"],"🚜","The machine is a tractor."],
+   ["Which word rhymes with hay?","day",["mud","wheel","farm"],"🌾","Hay and day rhyme because their ending sounds match."],
+   ["What is a tractor's big round rubber part called?","tyre",["leaf","seed","feather"],"🛞","A tyre fits around a wheel and touches the ground."],
+   ["Which word names cut, dried grass that animals may eat?","hay",["mud","metal","steam"],"🌾","Hay is grass that has been cut and dried."],
+   ["Which word begins with the same sound as farm?","field",["tractor","barn","wheel"],"🌱","Farm and field both begin with the /f/ sound."]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorScience"){
+  const qs=[
+   ["What gives a tractor's engine the energy it needs?","Fuel or electricity, depending on the tractor",["Soil alone","Leaves growing on it","Moonlight only"],"⚙️","Engines need an energy source. Many tractors use fuel; some newer machines can be electric."],
+   ["Why do tractors have large tyres?","To help grip the ground and carry weight",["To help them fly","To grow seeds","To make clouds"],"🛞","Large tyres help spread the weight and provide grip."],
+   ["What can a farmer grow in soil?","Crops",["Glass bottles","Metal tools","Plastic wheels"],"🌱","Many crops grow in soil when they have suitable water, light and nutrients."],
+   ["What happens when a tractor pulls a trailer?","The trailer moves along behind it",["The trailer becomes a tree","The trailer flies by itself","The ground turns to water"],"🚜➡️","A pulling force from the tractor moves the trailer."],
+   ["Which material is commonly used to make a strong tractor frame?","Metal",["Paper tissue","Cotton wool","Jelly"],"🔩","Metal is strong and is commonly used in vehicle frames."],
+   ["Why might a tractor use a plough?","To turn over soil",["To wash windows","To paint a fence","To make ice"],"🌱","A plough is a tool used to turn and prepare soil." ]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="tractorLogic"){
+  const qs=[
+   ["What comes next in the farm pattern: 🚜 🌾 🚜 🌾 __?","🚜",["🌾","🐄","🛞"],"🚜 🌾 🚜 🌾 ?","The tractor and hay symbols alternate."],
+   ["A farmer checks the tractor, then starts it. What should happen before driving?","Check that the area is safe",["Close their eyes","Run behind it","Ignore people nearby"],"🦺","Before moving machinery, the driver must check the surroundings are safe."],
+   ["Which item does not belong with tractor equipment?","A swimming flipper",["Trailer","Plough","Harrows"],"🧩","A swimming flipper is not a tool or attachment for farm work."],
+   ["The tractor is in the shed. The trailer is outside. Which one is outside?","The trailer",["The tractor","Both are in the shed","Neither"],"🏚️","Use the information in the sentence."],
+   ["Which job order makes sense for planting a crop?","Prepare soil, plant seeds, help the crop grow",["Harvest, plant, then prepare soil","Plant seeds after harvesting the crop","Water the empty field forever"],"🌱","Preparing the soil comes before planting; the crop grows afterward."],
+   ["There are two red tractors and one blue tractor. Which colour has fewer tractors?","Blue",["Red","They have the same number","There are no blue tractors"],"🔴🔴🔵","There is one blue tractor and two red tractors." ]
+  ];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],q[4]);
+ }
+ if(k==="alphabet"){let l=pick(letters);return choiceQ(`Which is the letter ${l.toLowerCase()}?`,l.toLowerCase(),[l,l.toLowerCase()==="a"?"o": "q", "m"].filter((x,i,a)=>x!==l.toLowerCase()&&a.indexOf(x)===i).slice(0,3),pick(["🌟","🐝","🍎","🚀"]),`This is the letter ${l}.`)}
+ if(k==="count"){
+  let max=rangeFor(k),n=1+rand(max);const items=[["⭐","stars"],["🍎","apples"],["🐞","ladybirds"],["🐟","fish"],["🌼","flowers"],["🚗","cars"],["🍓","strawberries"]];const [emoji,noun]=pick(items);const prompts=[`How many ${noun} can you count?`,`Count the ${noun}. How many are there?`,`How many ${noun} are shown?`];
+  return numericQuestion(pick(prompts),n,Array(Math.min(n,20)).fill(emoji).join(" "),`Count each picture once.`,max)
+ }
+ if(k==="count20"){let max=rangeFor(k),n=2+rand(Math.max(2,max-1));let mode=rand(3);if(mode===0){const answer=n+1;return numericQuestion("What number comes next?",answer,`${n-1}, ${n}, ?`,"Count forward one number at a time.",max+1)}if(mode===1)return choiceQ(`Which number is one more than ${n-1}?`,String(n),[String(Math.max(0,n-1)),String(n+1),String(Math.max(0,n-2))],"🔢","Look carefully at the digits shown in the question.");let x=1+rand(Math.min(9,max-1)),y=1+rand(Math.max(1,max-x));return numericQuestion(`What is ${x} + ${y}?`,x+y,"🔢","Count on from the bigger number.",max)}
+ if(k==="shapes"){let shapes=[["circle","🔴"],["square","🟦"],["triangle","🔺"],["star","⭐"],["heart","❤️"]];let s=pick(shapes);return choiceQ(`Which shape or symbol is shown?`,s[0],shapes.filter(x=>x[0]!==s[0]).slice(0,3).map(x=>x[0]),s[1],`The picture shows a ${s[0]}.`)}
+ if(k==="animals"){let qs=[
+ ["Which animal lives in the ocean?","Dolphin",["Sheep","Kea","Rabbit"],"🐬"],
+ ["Which animal can fly?","Butterfly",["Eel","Seal","Cow"],"🦋"],
+ ["What do bees help many flowers do?","Make seeds",["Turn into rocks","Make snow","Grow feathers"],"🐝"],
+ ["Which animal is a bird?","Kea",["Gecko","Tuna","Wētā"],"🦜"],
+ ["Which animal can live on land and in water?","Frog",["Dolphin","Rabbit","Kea"],"🐸"],
+ ["Which animal has a shell?","Turtle",["Butterfly","Sheep","Kea"],"🐢"],
+ ["Which animal has black and white stripes?","Zebra",["Lion","Rabbit","Dolphin"],"🦓"],
+ ["Which animal has a long trunk?","Elephant",["Horse","Sheep","Penguin"],"🐘"],
+ ["Which animal hops and has long ears?","Rabbit",["Tuna","Gecko","Butterfly"],"🐰"],
+ ["Which animal is a fish?","Tuna",["Kea","Frog","Cat"],"🐟"],
+ ["Which animal is known for making honey?","Bee",["Seal","Horse","Turtle"],"🐝"],
+ ["Which animal has a pouch for its baby?","Kangaroo",["Dolphin","Penguin","Frog"],"🦘"],
+ ["Which animal has dry, scaly skin?","Gecko",["Sheep","Butterfly","Dolphin"],"🦎"],
+ ["Which animal is often kept for wool?","Sheep",["Tuna","Kea","Turtle"],"🐑"],
+ ["Which animal has eight arms?","Octopus",["Spider","Dolphin","Crab"],"🐙"]
+];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],`Think about the animal and its features.`)}
+ if(k==="count20"){return numericQuestion("What number comes next?",rand(15)+2, "🔢", "Count forward one number at a time.",20)}
+ if(k==="add5"){let a=rand(rangeFor(k)+1),b=rand(Math.max(2,rangeFor(k)-a+1));return numericQuestion(`What is ${a} + ${b}?`,a+b,`${"🍎 ".repeat(Math.min(a,8))}  +  ${"🍎 ".repeat(Math.min(b,8))}`,"Put the two groups together.",20)}
+ if(k==="words"){let w=pick(words);return choiceQ(`Which word starts with the “${w[1]}” sound?`,w[0],[...words.filter(x=>x[1]!==w[1]).map(x=>x[0])].slice(0,3),"🔊",`Listen for the first sound in ${w[0]}.`)}
+ if(k==="patterns"){
+ const palette=["🔴","🔵","🟢","🟡","🟣","🟠"];
+ const a=pick(palette),b=pick(palette.filter(x=>x!==a)),c=pick(palette.filter(x=>x!==a&&x!==b));
+ const mode=rand(3);let visual,answer;
+ if(mode===0){visual=`${a} ${b} ${a} ${b} ?`;answer=a}
+ else if(mode===1){visual=`${a} ${a} ${b} ${a} ${a} ?`;answer=b}
+ else {visual=`${a} ${b} ${c} ${a} ${b} ?`;answer=c}
+ const distractors=shuffle(palette.filter(x=>x!==answer)).slice(0,3);
+ return choiceQ("What comes next in the pattern?",answer,distractors,visual,"Look for the part that repeats.");
+}
+ if(k==="add"){let max=rangeFor(k),a=rand(max)+1,b=rand(Math.max(2,Math.min(max, max-a+1)))+1;if(d==="gentle"){a=rand(10)+1;b=rand(10)+1}let sub=Math.random()<.4; if(sub&&b>a)[a,b]=[b,a];return numericQuestion(sub?`What is ${a} − ${b}?`:`What is ${a} + ${b}?`,sub?a-b:a+b,"🧠","Try splitting a number into smaller parts.",max*2)}
+ if(k==="times"){let max=rangeFor(k),a=2+rand(Math.max(2,max-1)),b=2+rand(10);if(d==="gentle"){a=2+rand(4);b=2+rand(5)}return numericQuestion(`What is ${a} × ${b}?`,a*b,`${a} groups of ${b}`,"Multiplication is equal groups added together.",150)}
+ if(k==="fractions"){let qs=[
+ ["What is half of 8?",4,"🍕🍕🍕🍕🍕🍕🍕🍕"],
+ ["How many quarters make one whole?",4,"🟡"],
+ ["Which fraction means one out of two equal parts?","1/2","◐"],
+ ["What is one quarter of 12?",3,"🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎"],
+ ["What is half of 10?",5,"🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪"],
+ ["What is half of 14?",7,"🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓"],
+ ["What is one quarter of 20?",5,"🍊🍊🍊🍊🍊🍊🍊🍊"],
+ ["How many halves make one whole?",2,"◐"],
+ ["Which is bigger: one half or one quarter?","One half",["One quarter","They are equal","Neither"],"🍕"],
+ ["What is one third of 9?",3,"🔵🔵🔵🔵🔵🔵🔵🔵🔵"],
+ ["What is one quarter of 16?",4,"🟩🟩🟩🟩"],
+ ["Which fraction means one out of four equal parts?","1/4","◴"]
+];let q=pick(qs);return choiceQ(q[0],q[1],Array.isArray(q[2])?q[2]:(typeof q[1]==="number"?[q[1]+1,q[1]+2,Math.max(0,q[1]-1)]:(q[1]==="1/2"?["1/4","1/3","2/2"]:["1/2","1/3","2/2"])),Array.isArray(q[2])?"🍕":q[2],"Equal parts must be the same size.")}
+ if(k==="moneytime"){let qs=[
+ ["How many cents are in one dollar?","100 cents",["10 cents","50 cents","20 cents"],"💰"],
+ ["How many minutes are in one hour?","60 minutes",["30 minutes","100 minutes","24 minutes"],"🕒"],
+ ["Which coin is worth 20 cents?","20c",["10c","50c","$1"],"🪙"],
+ ["What time is 30 minutes after 3:00?","3:30",["3:15","4:00","2:30"],"⏰"],
+ ["How many 10-cent coins make 50 cents?","5",["4","6","10"],"🪙"],
+ ["How many days are in one week?","7",["5","10","12"],"📅"],
+ ["What time is 15 minutes after 2:00?","2:15",["2:30","1:45","3:15"],"⏰"],
+ ["Which amount is the same as 50 cents?","5 ten-cent coins",["2 ten-cent coins","3 ten-cent coins","10 ten-cent coins"],"💰"],
+ ["How many months are in one year?","12",["10","7","24"],"📅"],
+ ["If you have 20 cents and spend 5 cents, how much is left?","15 cents",["10 cents","25 cents","5 cents"],"🪙"],
+ ["What time is 1 hour after 4:00?","5:00",["4:30","3:00","6:00"],"🕒"],
+ ["Which is the shortest amount of time?","One minute",["One hour","One day","One week"],"⏱️"]
+];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Think about the units and the amount of time or money.")}
  if(k==="spelling"){let q=pick(spellings);return choiceQ(q[1],q[0],q[2],"🔤",`Look carefully at the order of the letters in ${q[0]}.`)}
  if(k==="science"){let q=pick(science);return choiceQ(q[0],q[1],q[2],pick(["🌱","🌦️","🪐","🦋"]),q[3])}
- if(k==="divide"){if(Math.random()<.5){let a=2+rand(10),b=2+rand(10);return numericQuestion(`What is ${a} × ${b}?`,a*b,"🧮","Use equal groups or a known times-table fact.",150)}let b=2+rand(9),a=b*(2+rand(7));return numericQuestion(`What is ${a} ÷ ${b}?`,a/b,"🍬","Sharing into equal groups can help.",100)}
- if(k==="place"){let qs=[["What is the value of the 4 in 342?","40",["4","400","42"],"🔢"],["What number is 10 more than 68?","78",["69","77","178"],"➕"],["What comes next: 5, 10, 15, 20, …?","25",["21","30","24"],"🔁"],["Which number is the largest?","408",["84","398","401"],"💯"],["What is the value of the 7 in 572?","70",["7","700","72"],"🔢"],["What number is 100 more than 245?","345",["255","145","445"],"➕"],["What comes next: 2, 4, 6, 8, …?","10",["9","11","12"],"🔁"],["Which number is the smallest?","156",["165","516","561"],"💯"],["How many tens are in 80?","8",["80","18","10"],"🔢"],["What number is 10 less than 63?","53",["73","62","43"],"➖"],["What comes next: 10, 20, 30, 40, …?","50",["41","45","60"],"🔁"],["Which number has 3 hundreds, 2 tens and 6 ones?","326",["362","236","306"],"💯"]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Look at the place value or the pattern.")}
- if(k==="measure"){let qs=[["Which unit is best for measuring a pencil?","Centimetres",["Kilometres","Litres","Kilograms"],"📏"],["Which unit measures how heavy a bag is?","Kilograms",["Metres","Litres","Hours"],"⚖️"],["How many sides does a hexagon have?","6",["5","7","8"],"⬡"],["Which is usually the longest?","A school bus",["A pencil","A spoon","A shoe"],"📐"],["Which unit would you use to measure a long road?","Kilometres",["Centimetres","Grams","Litres"],"🛣️"],["Which unit is used to measure how much juice is in a bottle?","Litres",["Metres","Kilograms","Hours"],"🧃"],["How many sides does a triangle have?","3",["4","5","6"],"🔺"],["Which tool is best for measuring a table's length?","A ruler or tape measure",["A clock","A scale","A compass"],"📏"],["Which is heavier?","A full school bag",["A paper clip","A feather","An empty cup"],"⚖️"],["How many corners does a rectangle have?","4",["3","5","6"],"▭"],["Which unit measures time?","Minutes",["Metres","Litres","Kilograms"],"⏱️"],["Which shape has no corners?","Circle",["Square","Triangle","Rectangle"],"🔵"]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Think about what is being measured.")}
- if(k==="data"){let qs=[["A class votes: cats 5, dogs 8, fish 3. Which got the most votes?","Dogs",["Cats","Fish","They tied"],"📊"],["A tally shows 4 red, 6 blue and 2 green counters. How many counters altogether?","12",["10","11","14"],"🔴🔵🟢"],["In a pictograph, each ⭐ means 2 votes. Three stars mean how many votes?","6",["3","5","8"],"⭐ ⭐ ⭐"],["A chart shows 7 apples and 4 pears. How many more apples than pears?","3",["2","11","4"],"🍎🍐"],["There are 3 sunny days, 2 rainy days and 1 windy day. How many days are listed?","6",["5","4","7"],"🌞🌧️💨"],["A class chooses red 6 times and blue 6 times. What is true?","They are tied",["Red has more","Blue has more","There were no votes"],"📊"],["A pictograph uses 1 ⭐ for 5 votes. Two stars mean how many votes?","10",["2","5","7"],"⭐ ⭐"],["A tally shows 9 votes for cats and 5 for dogs. How many votes altogether?","14",["4","13","15"],"📊"],["Which category has the fewest: apples 8, pears 3, bananas 6?","Pears",["Apples","Bananas","They tie"],"🍎🍐🍌"],["A chart has 4 red, 4 blue and 4 green counters. How many counters are there?","12",["8","10","16"],"🔴🔵🟢"],["A picture graph shows 5 stars for Monday and 3 for Tuesday. How many more on Monday?","2",["3","8","5"],"⭐"],["Cats got 6 votes and dogs got 4 votes. How many more votes did cats get?","2",["1","10","3"],"📊"]];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Compare the values, or combine them if the question asks for a total.")}
- if(k==="phonics"){const sets4=[["Which word starts with the /s/ sound?","sun",["map","dog","fish"],"☀️"],["Which two words rhyme?","cat and hat",["cat and sun","dog and map","fish and bed"],"🐱"],["Which word should come next in the rhyme: tap, cap, __?","lap",["sun","map","dog"],"🧢"]];const sets6=[["Which word begins with the /sh/ sound?","ship",["sip","chip","tip"],"🚢"],["Which word rhymes with light?","night",["late","lit","lot"],"🌙"],["Which word has the same first sound as chair?","cheese",["ship","moon","shoe"],"🧁"]];const q=pick(selectedAge<=5?sets4:sets6);return choiceQ(q[0],q[1],q[2],q[3],"Say the words aloud and listen carefully to their sounds.");}
- if(k==="reading"){const pool=selectedAge===6?[["Mia put on her coat because it was raining. Why did she put it on?","To stay dry",["To go swimming","To feel sleepy","To make it sunny"],"🌧️"],["Tom fed the small brown dog. What did Tom do?","Fed the dog",["Walked a cat","Read a book","Watered a plant"],"🐕"],["The bell rang and the children went inside. What happened first?","The bell rang",["They ate dinner","They went home","They went inside"],"🔔"]]:selectedAge===7?[["Aroha planted seeds and watered them each day. What helped the seeds grow?","Watering them",["Keeping them in a box","Taking away the soil","Leaving them dry"],"🌱"],["Ben looked at the dark clouds and took an umbrella. What did he think might happen?","It might rain",["It would snow indoors","The sun would set at noon","The clouds would disappear at once"],"☔"],["Luca had three books. He borrowed two more from the library. How many books did he have then?","Five",["One","Four","Six"],"📚"]]:[["The path was slippery after the rain, so Hana walked carefully. Why did she walk carefully?","The path could make her slip",["She was racing a friend","She wanted to get wet","She had forgotten her shoes"],"🌧️"],["A seedling leaned towards the sunny window. What does this suggest about the plant?","It grows towards light",["It prefers complete darkness","It does not need water","It is an animal"],"🌿"],["Sam checked the timetable before leaving. Why might he do that?","To find out when something happens",["To measure his height","To choose a new colour","To count the clouds"],"🗓️"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Look for clues in the passage and connect them to the question.");}
- if(k==="writing"){const pool=selectedAge===6?[["Which sentence starts with a capital letter and ends with a full stop?","The dog is happy.",["the dog is happy.","The dog is happy","the Dog is happy."],"🐶"],["Which word completes this sentence: Birds can ___. ","fly",["blue","quickly","because"],"🐦"],["Which word describes a fluffy kitten?","soft",["yesterday","under","seven"],"🐱"]]:selectedAge===7?[["Choose the sentence with the correct end mark.","Where is my bag?",["Where is my bag.","Where is my bag!.","Where is my bag,"],"🎒"],["Which word is closest in meaning to 'tiny'?","Small",["Huge","Loud","Late"],"🐜"],["Choose the best joining word: I wore a coat ___ it was cold.","because",["but","or","under"],"🧥"]]:[["Which sentence uses a comma in a list correctly?","We packed apples, bread and cheese.",["We, packed apples bread and cheese.","We packed, apples bread and cheese.","We packed apples bread, and cheese."],"🛒"],["Which word is an adjective in 'The bright kite flew high'?","bright",["kite","flew","high"],"🪁"],["Which sentence is the clearest way to explain the result?","The ice melted because it got warm.",["Warm because the ice.","The melted warm got it.","Because warm ice result."],"🧊"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Read each option aloud and check that it communicates the idea clearly.");}
- if(k==="nature"){const pool=[["What does a plant need to grow?","Water and light",["Plastic and darkness","Only stones","Toy blocks"],"🌱"],["Which animal is active mostly at night?","Owl",["Butterfly in daylight","Chicken at lunchtime","Bee in sunshine"],"🦉"],["Where would a fish usually live?","In water",["In a dry cupboard","In a tree nest","Under a bed"],"🐟"],["Which season is often the coldest in New Zealand?","Winter",["Summer","Late spring","Early autumn"],"❄️"],["Which part of a tree takes in water from the soil?","Roots",["Flowers","Fruit","Branches"],"🌳"],["Which of these is a living thing?","Fern",["Rock","Glass cup","Plastic spoon"],"🌿"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Think about what living things need and where they live.");}
- if(k==="scienceExpanded"){const pool=selectedAge===6?[["Which material is usually attracted to a magnet?","Iron",["Paper","Wood","Rubber"],"🧲"],["What happens to a shadow when an object blocks light?","A dark shape appears",["The object becomes invisible forever","Sound stops","The object gets colder at once"],"🔦"],["Which object is most likely to float in water?","A cork",["A metal key","A stone","A steel spoon"],"🪵"]]:selectedAge===7?[["Which change is caused by heating ice?","It melts into water",["It turns into wood","It becomes sand","It grows roots"],"🧊"],["What makes a ball start moving when it is still?","A push or a pull",["A shadow","A smell","A colour"],"⚽"],["Which material lets most light pass through it?","Clear glass",["A brick","Thick cardboard","A wooden board"],"🔍"]]:[["In a fair test, why change only one thing at a time?","To see what caused the result",["To make the result impossible to compare","To change every result","To avoid observing anything"],"🧪"],["Which is an observation rather than a guess?","The water measured 20°C",["The water will probably freeze tomorrow","I think this is the best cup","It must be magic"],"🌡️"],["Why do we repeat an experiment?","To check whether the result is consistent",["To guarantee a different answer","To avoid recording results","To change the question each time"],"🔬"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Think about what you can observe, test or explain from evidence.");}
- if(k==="logic"){const pool=selectedAge<=5?[["Which one does not belong with the others?","Apple",["Shoe","Sock","Hat"],"🍎 👟 🧦 🧢"],["What comes next: red, blue, red, blue, …?","Red",["Green","Yellow","Purple"],"🔴 🔵 🔴 🔵 ?"],["Which object is used for writing?","Pencil",["Plate","Pillow","Shoe"],"✏️"]]:selectedAge===6?[["What comes next: 2, 4, 6, …?","8",["7","9","10"],"2 · 4 · 6 · ?"],["All the toy cars are red or blue. Which item could be a toy car?","A blue car",["A green apple","A red sock","A yellow book"],"🚗"],["Which comes first when planting a seed?","Put the seed in soil",["Pick the fruit","Watch a flower grow","Collect seeds from the plant"],"🌱"]]:selectedAge===7?[["What comes next: 5, 10, 15, …?","20",["16","18","25"],"5 · 10 · 15 · ?"],["Every zorb is a blue shape. Which must be true?","A zorb is blue",["Every blue thing is a zorb","A zorb is always a circle","No shapes are blue"],"🔵"],["Which instruction should happen immediately before putting on shoes?","Put on socks",["Take off your shoes","Go to bed","Wash a window"],"🧦"]]:[["A rule adds 3 each time. Starting at 4, what are the next two numbers?","7, 10",["6, 9","8, 12","7, 11"],"4 · ? · ?"],["If every glip is a square and this shape is a glip, what shape is it?","A square",["A circle","A triangle","A star"],"⬜"],["Which is the best first step to solve a multi-step problem?","Work out what the question is asking",["Guess without reading","Ignore the information","Change the question"],"🧠"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Look for the rule or clue, then apply it carefully.");}
- if(k==="world"){const pool=selectedAge===5||selectedAge===6?[["Which direction is opposite to left?","Right",["Up","Down","Behind"],"↔️"],["What can a map help you find?","Places and routes",["The taste of food","The sound of a song","The weight of a cloud"],"🗺️"],["Who helps care for sick people in a hospital?","Nurse",["Builder only","Pilot only","Baker only"],"🏥"]]:selectedAge===7?[["Which is a useful map symbol for a school?","A labelled school symbol",["A random colour with no key","A picture of dinner","A weather forecast"],"🏫"],["Why do communities have libraries?","People can borrow books and learn",["To stop people reading","To sell cars","To make the weather"],"📚"],["If north is at the top of a simple map, which way is east?","Right",["Left","Down","Behind the page"],"🧭"]]:[["What does a map key explain?","What the symbols mean",["How old the map is in minutes","The author's favourite food","The weather tomorrow"],"🗺️"],["Why might a town have parks and footpaths?","To give people places to play and walk",["To prevent people meeting","To make roads disappear","To stop plants growing"],"🌳"],["Which source would best help you find today's bus departure time?","A current bus timetable",["A storybook","A recipe","A plant label"],"🚌"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Think about how people use places, maps and community services.");}
- if(k==="life"){const pool=selectedAge===6?[["What should you do before crossing a road?","Stop, look and listen with an adult",["Run without looking","Follow a ball into the road","Close your eyes"],"🚦"],["When should you wash your hands?","Before eating and after using the toilet",["Never","Only once a month","Only when wearing gloves"],"🧼"],["What is a helpful way to solve a disagreement?","Talk calmly and listen",["Shout louder","Grab things","Refuse to listen"],"🤝"]]:selectedAge===7?[["An online message asks for your home address. What is safest?","Don't share it; tell a trusted adult",["Send it to anyone","Post it publicly","Guess a different address"],"🔒"],["What helps you remember several tasks?","Make a short checklist",["Ignore them all","Change the tasks each minute","Hide the instructions"],"📋"],["A friend feels left out. What could you do?","Invite them to join if they want",["Laugh at them","Tell everyone to ignore them","Take their belongings"],"💛"]]:[["Which password is generally strongest?","A long, unique password",["123456","Your first name","The word password"],"🔐"],["You are unsure whether an online claim is true. What should you do?","Check a trusted source with an adult",["Share it immediately","Assume every post is true","Invent a source"],"🔎"],["Why is it useful to plan spending money?","It helps you make choices and avoid running out",["It makes money unlimited","It means prices never change","It removes the need to choose"],"💰"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Choose the option that is safe, respectful and practical.");}
- if(k==="music"){const pool=selectedAge<=5?[["Which sound is usually loudest?","A drum being hit hard",["A whisper","A quiet leaf falling","A soft hum"],"🥁"],["What comes next in this beat: clap, tap, clap, tap, …?","Clap",["Jump","Sleep","Stop"],"👏 👆 👏 👆 ?"],["Which instrument can you shake to make a sound?","Maraca",["Pillow","Spoonful of water","Book"],"🪇"]]:selectedAge<=6?[["Which pattern repeats?","Clap, tap, clap, tap",["Clap, clap, tap, clap","Tap, clap, tap, tap","Clap, tap, tap, clap"],"👏 👆 👏 👆"],["Which word describes a sound that is not loud?","Quiet",["Huge","Bright","Heavy"],"🎵"],["Which instrument has keys?","Piano",["Drum","Triangle","Maraca"],"🎹"]]:selectedAge===7?[["If each beat is one second, how long are four beats?","4 seconds",["2 seconds","3 seconds","5 seconds"],"🎵 🎵 🎵 🎵"],["Which pair has opposite meanings for sound?","Loud and quiet",["Fast and quick","High and tall","Soft and gentle"],"🔊"],["What is a repeated musical pattern called?","A rhythm pattern",["A map key","A recipe","A shadow"],"🥁"]]:[["A pattern has 2 beats, then 3 beats, repeating. What comes after a 2-beat group?","A 3-beat group",["Another 2-beat group immediately","No beats","A 5-minute silence"],"👏👏 · 👏👏👏"],["Which change would make a rhythm faster?","Shorten the time between beats",["Lengthen every pause","Remove all sound","Make the instrument heavier"],"🥁"],["Why might musicians practise keeping a steady beat?","So the parts stay together",["So every note is random","So nobody can hear the music","So the song has no rhythm"],"🎶"]];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Listen to the pattern and notice what repeats or changes.");}
- return choiceQ("Ready for a challenge?","Let’s go!",["Not yet","Maybe","Stop"],"🚀","Have a go!");
+ if(k==="divide"){if(Math.random()<.5){let a=2+rand(10),b=2+rand(10);return numericQuestion(`What is ${a} × ${b}?`,a*b,"🧮","Use equal groups or a known times-table fact.",150)}let b=2+rand(9),a=b*(2+rand(10));return numericQuestion(`What is ${a} ÷ ${b}?`,a/b,"🍬","Sharing into equal groups can help.",100)}
+ if(k==="place"){let qs=[
+ ["What is the value of the 4 in 342?","40",["4","400","42"],"🔢"],
+ ["What number is 10 more than 68?","78",["69","77","178"],"➕"],
+ ["What comes next: 5, 10, 15, 20, …?","25",["21","30","24"],"🔁"],
+ ["Which number is the largest?","408",["84","398","401"],"💯"],
+ ["What is the value of the 7 in 572?","70",["7","700","72"],"🔢"],
+ ["What number is 100 more than 245?","345",["255","145","445"],"➕"],
+ ["What comes next: 2, 4, 6, 8, …?","10",["9","11","12"],"🔁"],
+ ["Which number is the smallest?","156",["165","516","561"],"💯"],
+ ["How many tens are in 80?","8",["80","18","10"],"🔢"],
+ ["What number is 10 less than 63?","53",["73","62","43"],"➖"],
+ ["What comes next: 10, 20, 30, 40, …?","50",["41","45","60"],"🔁"],
+ ["Which number has 3 hundreds, 2 tens and 6 ones?","326",["362","236","306"],"💯"]
+];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Look at the place value or the pattern.")}
+ if(k==="measure"){let qs=[
+ ["Which unit is best for measuring a pencil?","Centimetres",["Kilometres","Litres","Kilograms"],"📏"],
+ ["Which unit measures how heavy a bag is?","Kilograms",["Metres","Litres","Hours"],"⚖️"],
+ ["How many sides does a hexagon have?","6",["5","7","8"],"⬡"],
+ ["Which is usually the longest?","A school bus",["A pencil","A spoon","A shoe"],"📐"],
+ ["Which unit would you use to measure a long road?","Kilometres",["Centimetres","Grams","Litres"],"🛣️"],
+ ["Which unit is used to measure how much juice is in a bottle?","Litres",["Metres","Kilograms","Hours"],"🧃"],
+ ["How many sides does a triangle have?","3",["4","5","6"],"🔺"],
+ ["Which tool is best for measuring a table's length?","A ruler or tape measure",["A clock","A scale","A compass"],"📏"],
+ ["Which is heavier?","A full school bag",["A paper clip","A feather","An empty cup"],"⚖️"],
+ ["How many corners does a rectangle have?","4",["3","5","6"],"▭"],
+ ["Which unit measures time?","Minutes",["Metres","Litres","Kilograms"],"⏱️"],
+ ["Which shape has no corners?","Circle",["Square","Triangle","Rectangle"],"🔵"]
+];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Think about what is being measured.")}
+ if(k==="data"){let qs=[
+ ["A class votes: cats 5, dogs 8, fish 3. Which got the most votes?","Dogs",["Cats","Fish","They tied"],"📊"],
+ ["A tally shows 4 red, 6 blue and 2 green counters. How many counters altogether?","12",["10","11","14"],"🔴🔵🟢"],
+ ["In a pictograph, each ⭐ means 2 votes. Three stars mean how many votes?","6",["3","5","8"],"⭐ ⭐ ⭐"],
+ ["A chart shows 7 apples and 4 pears. How many more apples than pears?","3",["2","11","4"],"🍎🍐"],
+ ["There are 3 sunny days, 2 rainy days and 1 windy day. How many days are listed?","6",["5","4","7"],"🌞🌧️💨"],
+ ["A class chooses red 6 times and blue 6 times. What is true?","They are tied",["Red has more","Blue has more","There were no votes"],"📊"],
+ ["A pictograph uses 1 ⭐ for 5 votes. Two stars mean how many votes?","10",["2","5","7"],"⭐ ⭐"],
+ ["A tally shows 9 votes for cats and 5 for dogs. How many votes altogether?","14",["4","13","15"],"📊"],
+ ["Which category has the fewest: apples 8, pears 3, bananas 6?","Pears",["Apples","Bananas","They tie"],"🍎🍐🍌"],
+ ["A chart has 4 red, 4 blue and 4 green counters. How many counters are there?","12",["8","10","16"],"🔴🔵🟢"],
+ ["A picture graph shows 5 stars for Monday and 3 for Tuesday. How many more on Monday?","2",["3","8","5"],"⭐"],
+ ["Cats got 6 votes and dogs got 4 votes. How many more votes did cats get?","2",["1","10","3"],"📊"]
+];let q=pick(qs);return choiceQ(q[0],q[1],q[2],q[3],"Compare the values, or combine them if the question asks for a total.")}
+ if(k==="phonics"){
+  const sets4=[["Which word starts with the /s/ sound?","sun",["map","dog","fish"],"☀️"],["Which two words rhyme?","cat and hat",["cat and sun","dog and map","fish and bed"],"🐱"],["Which word starts with /m/?","moon",["sun","top","fish"],"🌙"],["Which word has two syllables?","rabbit",["cat","sun","fish"],"🐰"],["Which word begins with the same sound as ball?","banana",["sun","fish","dog"],"⚽"]];
+  const sets6=[["Which word begins with the /sh/ sound?","ship",["sip","chip","tip"],"🚢"],["Which word rhymes with light?","night",["late","lit","lot"],"🌙"],["Which word has the same first sound as thumb?","three",["tree","some","drum"],"👍"],["How many syllables are in 'banana'?","3",["1","2","4"],"🍌"]];
+  const q=pick(selectedAge<=5?sets4:sets6);return choiceQ(q[0],q[1],q[2],q[3],"Say the words aloud and listen carefully to their sounds.");
+ }
+ if(k==="reading"){
+  const pool=selectedAge===6?[
+   ["Mia put on her coat because it was raining. Why did she put it on?","To stay dry",["To go swimming","To feel sleepy","To make it sunny"],"🌧️"],
+   ["Tom fed the small brown dog. What did Tom do?","Fed the dog",["Walked a cat","Read a book","Watered a plant"],"🐕"],
+   ["The bell rang and the children went inside. What happened first?","The bell rang",["They ate dinner","They went home","They went inside"],"🔔"]
+  ]:selectedAge===7?[
+   ["Aroha planted seeds and watered them each day. What helped the seeds grow?","Watering them",["Keeping them in a box","Taking away the soil","Leaving them dry"],"🌱"],
+   ["Ben looked at the dark clouds and took an umbrella. What did he think might happen?","It might rain",["It would snow indoors","The sun would set at noon","The clouds would disappear at once"],"☂️"],
+   ["Luca had three books. He borrowed two more from the library. How many books did he have then?","Five",["One","Four","Six"],"📚"]
+  ]:[
+   ["The path was slippery after the rain, so Hana walked carefully. Why did she walk carefully?","The path could make her slip",["She was racing a friend","She wanted to get wet","She had forgotten her shoes"],"🌧️"],
+   ["A seedling leaned towards the sunny window. What does this suggest about the plant?","It grows towards light",["It prefers complete darkness","It does not need water","It is an animal"],"🌿"],
+   ["Sam checked the timetable before leaving. Why might he do that?","To find out when something happens",["To measure his height","To choose a new colour","To count the clouds"],"🗓️"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Look for clues in the passage and connect them to the question.");
+ }
+ if(k==="writing"){
+  const pool=selectedAge===6?[
+   ["Which sentence starts with a capital letter and ends with a full stop?","The dog is happy.",["the dog is happy.","The dog is happy","the Dog is happy."],"🐶"],
+   ["Which word completes this sentence: Birds can ___. ","fly",["blue","quickly","because"],"🐦"],
+   ["Which word describes a fluffy kitten?","soft",["yesterday","under","seven"],"🐱"]
+  ]:selectedAge===7?[
+   ["Choose the sentence with the correct end mark.","Where is my bag?",["Where is my bag.","Where is my bag!.","Where is my bag,"],"🎒"],
+   ["Which word is closest in meaning to 'tiny'?","Small",["Huge","Loud","Late"],"🐜"],
+   ["Choose the best joining word: I wore a coat ___ it was cold.","because",["but","or","under"],"🧥"]
+  ]:[
+   ["Which sentence uses a comma in a list correctly?","We packed apples, bread and cheese.",["We, packed apples bread and cheese.","We packed, apples bread and cheese.","We packed apples bread, and cheese."],"🧺"],
+   ["Which word is an adjective in 'The bright kite flew high'?","bright",["kite","flew","high"],"🪁"],
+   ["Which sentence is the clearest way to explain the result?","The ice melted because it got warm.",["Warm because the ice.","The melted warm got it.","Because warm ice result."],"🧊"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Read each option aloud and check that it communicates the idea clearly.");
+ }
+ if(k==="nature"){
+  const pool=[
+   ["What does a plant need to grow?","Water and light",["Plastic and darkness","Only stones","Toy blocks"],"🌱"],
+   ["Which animal is active mostly at night?","Owl",["Butterfly in daylight","Chicken at lunchtime","Bee in sunshine"],"🦉"],
+   ["Where would a fish usually live?","In water",["In a dry cupboard","In a tree nest","Under a bed"],"🐟"],
+   ["Which season is often the coldest in New Zealand?","Winter",["Summer","Late spring","Early autumn"],"❄️"],
+   ["Which part of a tree takes in water from the soil?","Roots",["Flowers","Fruit","Branches"],"🌳"],
+   ["Which of these is a living thing?","Fern",["Rock","Glass cup","Plastic spoon"],"🌿"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Think about what living things need and where they live.");
+ }
+ if(k==="scienceExpanded"){
+  const pool=selectedAge===6?[
+   ["Which material is usually attracted to a magnet?","Iron",["Paper","Wood","Rubber"],"🧲"],
+   ["What happens to a shadow when an object blocks light?","A dark shape appears",["The object becomes invisible forever","Sound stops","The object gets colder at once"],"🔦"],
+   ["Which object is most likely to float in water?","A cork",["A metal key","A stone","A steel spoon"],"🪵"]
+  ]:selectedAge===7?[
+   ["Which change is caused by heating ice?","It melts into water",["It turns into wood","It becomes sand","It grows roots"],"🧊"],
+   ["What makes a ball start moving when it is still?","A push or a pull",["A shadow","A smell","A colour"],"⚽"],
+   ["Which material lets most light pass through it?","Clear glass",["A brick","Thick cardboard","A wooden board"],"🔍"]
+  ]:[
+   ["In a fair test, why change only one thing at a time?","To see what caused the result",["To make the result impossible to compare","To change every result","To avoid observing anything"],"🧪"],
+   ["Which is an observation rather than a guess?","The water measured 20°C",["The water will probably freeze tomorrow","I think this is the best cup","It must be magic"],"🌡️"],
+   ["Why do we repeat an experiment?","To check whether the result is consistent",["To guarantee a different answer","To avoid recording results","To change the question each time"],"🔬"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Think about what you can observe, test or explain from evidence.");
+ }
+ if(k==="logic"){
+  const pool=selectedAge<=5?[
+   ["Which one does not belong with the others?","Apple",["Shoe","Sock","Hat"],"🍎 👟 🧦 🧢"],
+   ["What comes next: red, blue, red, blue, …?","Red",["Green","Yellow","Purple"],"🔴 🔵 🔴 🔵 ?"],
+   ["Which object is used for writing?","Pencil",["Plate","Pillow","Shoe"],"✏️"]
+  ]:selectedAge===6?[
+   ["What comes next: 2, 4, 6, …?","8",["7","9","10"],"2 · 4 · 6 · ?"],
+   ["All the toy cars are red or blue. Which item could be a toy car?","A blue car",["A green apple","A red sock","A yellow book"],"🚗"],
+   ["Which comes first when planting a seed?","Put the seed in soil",["Pick the fruit","Watch a flower grow","Collect seeds from the plant"],"🌱"]
+  ]:selectedAge===7?[
+   ["What comes next: 5, 10, 15, …?","20",["16","18","25"],"5 · 10 · 15 · ?"],
+   ["Every zorb is a blue shape. Which must be true?","A zorb is blue",["Every blue thing is a zorb","A zorb is always a circle","No shapes are blue"],"🔵"],
+   ["Which instruction should happen immediately before putting on shoes?","Put on socks",["Take off your shoes","Go to bed","Wash a window"],"🧦"]
+  ]:[
+   ["A rule adds 3 each time. Starting at 4, what are the next two numbers?","7, 10",["6, 9","8, 12","7, 11"],"4 · ? · ?"],
+   ["If every glip is a square and this shape is a glip, what shape is it?","A square",["A circle","A triangle","A star"],"⬜"],
+   ["Which is the best first step to solve a multi-step problem?","Work out what the question is asking",["Guess without reading","Ignore the information","Change the question"],"🧠"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Look for the rule or clue, then apply it carefully.");
+ }
+ if(k==="world"){
+  const pool=selectedAge===5||selectedAge===6?[
+   ["Which direction is opposite to left?","Right",["Up","Down","Behind"],"↔️"],
+   ["What can a map help you find?","Places and routes",["The taste of food","The sound of a song","The weight of a cloud"],"🗺️"],
+   ["Who helps care for sick people in a hospital?","Nurse",["Builder only","Pilot only","Baker only"],"🏥"]
+  ]:selectedAge===7?[
+   ["Which is a useful map symbol for a school?","A labelled school symbol",["A random colour with no key","A picture of dinner","A weather forecast"],"🏫"],
+   ["Why do communities have libraries?","People can borrow books and learn",["To stop people reading","To sell cars","To make the weather"],"📚"],
+   ["If north is at the top of a simple map, which way is east?","Right",["Left","Down","Behind the page"],"🧭"]
+  ]:[
+   ["What does a map key explain?","What the symbols mean",["How old the map is in minutes","The author's favourite food","The weather tomorrow"],"🗺️"],
+   ["Why might a town have parks and footpaths?","To give people places to play and walk",["To prevent people meeting","To make roads disappear","To stop plants growing"],"🌳"],
+   ["Which source would best help you find today's bus departure time?","A current bus timetable",["A storybook","A recipe","A plant label"],"🚌"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Think about how people use places, maps and community services.");
+ }
+ if(k==="life"){
+  const pool=selectedAge===6?[
+   ["What should you do before crossing a road?","Stop, look and listen with an adult",["Run without looking","Follow a ball into the road","Close your eyes"],"🚦"],
+   ["When should you wash your hands?","Before eating and after using the toilet",["Never","Only once a month","Only when wearing gloves"],"🧼"],
+   ["What is a helpful way to solve a disagreement?","Talk calmly and listen",["Shout louder","Grab things","Refuse to listen"],"🤝"]
+  ]:selectedAge===7?[
+   ["An online message asks for your home address. What is safest?","Don't share it; tell a trusted adult",["Send it to anyone","Post it publicly","Guess a different address"],"🔒"],
+   ["What helps you remember several tasks?","Make a short checklist",["Ignore them all","Change the tasks each minute","Hide the instructions"],"📋"],
+   ["A friend feels left out. What could you do?","Invite them to join if they want",["Laugh at them","Tell everyone to ignore them","Take their belongings"],"💛"]
+  ]:[
+   ["Which password is generally strongest?","A long, unique password",["123456","Your first name","The word password"],"🔐"],
+   ["You are unsure whether an online claim is true. What should you do?","Check a trusted source with an adult",["Share it immediately","Assume every post is true","Invent a source"],"🔎"],
+   ["Why is it useful to plan spending money?","It helps you make choices and avoid running out",["It makes money unlimited","It means prices never change","It removes the need to choose"],"💰"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Choose the option that is safe, respectful and practical.");
+ }
+ if(k==="music"){
+  const pool=selectedAge<=5?[
+   ["Which sound is usually loudest?","A drum being hit hard",["A whisper","A quiet leaf falling","A soft hum"],"🥁"],
+   ["What comes next in this beat: clap, tap, clap, tap, …?","Clap",["Jump","Sleep","Stop"],"👏 👆 👏 👆 ?"],
+   ["Which instrument can you shake to make a sound?","Maraca",["Pillow","Spoonful of water","Book"],"🪇"]
+  ]:selectedAge<=6?[
+   ["Which pattern repeats?","Clap, tap, clap, tap",["Clap, clap, tap, clap","Tap, clap, tap, tap","Clap, tap, tap, clap"],"👏 👆 👏 👆"],
+   ["Which word describes a sound that is not loud?","Quiet",["Huge","Bright","Heavy"],"🎵"],
+   ["Which instrument has keys?","Piano",["Drum","Triangle","Maraca"],"🎹"]
+  ]:selectedAge===7?[
+   ["If each beat is one second, how long are four beats?","4 seconds",["2 seconds","3 seconds","5 seconds"],"🎵 🎵 🎵 🎵"],
+   ["Which pair has opposite meanings for sound?","Loud and quiet",["Fast and quick","High and tall","Soft and gentle"],"🔊"],
+   ["What is a repeated musical pattern called?","A rhythm pattern",["A map key","A recipe","A shadow"],"🥁"]
+  ]:[
+   ["A pattern has 2 beats, then 3 beats, repeating. What comes after a 2-beat group?","A 3-beat group",["Another 2-beat group immediately","No beats","A 5-minute silence"],"👏👏 · 👏👏👏"],
+   ["Which change would make a rhythm faster?","Shorten the time between beats",["Lengthen every pause","Remove all sound","Make the instrument heavier"],"🥁"],
+   ["Why might musicians practise keeping a steady beat?","So the parts stay together",["So every note is random","So nobody can hear the music","So the song has no rhythm"],"🎶"]
+  ];const q=pick(pool);return choiceQ(q[0],q[1],q[2],q[3],"Listen to the pattern and notice what repeats or changes.");
+ }
+ return choiceQ("Ready for a challenge?","Let's go!",["Not yet","Maybe","Stop"],"🚀","Have a go!");
 }
 function validateQuestion(q,mod){
- if(!q||typeof q.prompt!="string"||!q.prompt.trim()||typeof q.answer!="string"||!q.answer.trim())return false;
+ if(!q||typeof q.prompt!=="string"||!q.prompt.trim()||typeof q.answer!=="string"||!q.answer.trim())return false;
  if(!Array.isArray(q.options)||q.options.length!==4)return false;
  const options=q.options.map(v=>String(v));
  if(new Set(options).size!==4)return false;
  if(options.filter(v=>v===q.answer).length!==1)return false;
- if(typeof q.explain!="string"||!q.explain.trim())return false;
+ if(typeof q.explain!=="string"||!q.explain.trim())return false;
  if(!mod||!Array.isArray(mod.ages)||!mod.ages.includes(selectedAge))return false;
+ // Age 4–6 questions should not contain advanced operation symbols or specialist terms.
  if(selectedAge<=5&&/[×÷]|\b(denominator|numerator|pictograph|kilometres|multiplication|division|inference|adjective|timetable)\b/i.test(q.prompt))return false;
  return true;
 }
 function safeFallbackQuestion(mod,seed=0){
  const kind=mod?.kind||"count20";
  const makeChoice=(prompt,answer,distractors,visual,explain)=>choiceQ(prompt,answer,distractors,visual,explain);
- if(kind==="count"||kind==="count20"){if(kind==="count"){const n=1+(seed%10),emoji=["⭐","🍎","🐞","🐟","🌼","🚗","🍓"][seed%7];return numericQuestion("How many can you count?",n,Array(n).fill(emoji).join(" "),"Count each picture once.",10)}const n=2+(seed%18),answer=n+1;return numericQuestion("What number comes next?",answer,`${n-1}, ${n}, ?`,"Count forward one number at a time.",20)}
- if(kind==="add5"){const a=seed%6,b=(seed*3+1)%6;return numericQuestion(`What is ${a} + ${b}?`,a+b,"🍎","Put the two groups together.",20)}
- if(kind==="shapes"){const shapes=[["circle","🔴"],["square","🟦"],["triangle","🔺"],["star","⭐"],["heart","❤️"]];const s=shapes[seed%shapes.length],others=shapes.filter(x=>x[0]!==s[0]).map(x=>x[0]);return makeChoice(seed%2?"Name the shape or symbol shown.":"Which shape or symbol is shown?",s[0],others.slice(seed%2,seed%2+3),s[1],`The picture shows a ${s[0]}.`);}
- if(kind==="words"){const w=words[seed%words.length],others=words.filter(x=>x[0]!==w[0]&&x[1]!==w[1]).map(x=>x[0]);const distractors=[0,1,2].map(offset=>others[(seed+offset)%others.length]);return makeChoice(seed%2?`Which word begins with the “${w[1]}” sound?`:`Which word starts with the “${w[1]}” sound?`,w[0],distractors,"🔊",`Listen for the first sound in ${w[0]}.`);}
- if(kind==="patterns"){const palette=["🔴","🔵","🟢","🟡","🟣","🟠"],a=palette[seed%palette.length],b=palette[(seed+1)%palette.length],others=palette.filter(x=>x!==a&&x!==b);return makeChoice(seed%2?"Which picture comes next?":"What comes next in the pattern?",a,[b,...others].slice(0,3),`${a} ${b} ${a} ${b} ?`,"Look for the part that repeats.");}
- if(kind==="animals"){const qs=[["Which animal lives in the ocean?","Dolphin",["Sheep","Kea","Rabbit"],"🐬"],["Which animal can fly?","Butterfly",["Eel","Seal","Cow"],"🦋"],["What do bees help many flowers do?","Make seeds",["Turn into rocks","Make snow","Grow feathers"],"🐝"],["Which animal is a bird?","Kea",["Gecko","Tuna","Wētā"],"🦜"]];const q=qs[seed%qs.length];return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Think about the animal and its features.");}
- if(kind==="add"){const a=seed%20+1,b=(seed*3)%15+1;return numericQuestion(`What is ${a} + ${b}?`,a+b,"🧠","Add the two numbers together.",100)}
- if(kind==="times"){const a=2+(seed%10),b=2+((seed*3)%8);return numericQuestion(`What is ${a} × ${b}?`,a*b,`${a} groups of ${b}`,"Multiplication is equal groups added together.",150)}
- if(kind==="divide"){const b=2+(seed%8),answer=2+((seed*3)%10),a=b*answer;return numericQuestion(`What is ${a} ÷ ${b}?`,answer,"🍬","Sharing into equal groups can help.",100)}
- if(kind==="fractions"){const qs=[["What is half of 10?",5,"🍕"],["How many quarters make one whole?",4,"🟡"],["Which fraction means one out of two equal parts?","1/2","◐"],["What is one quarter of 16?",4,"🍎"]];const q=qs[seed%qs.length],answer=String(q[1]),opts=typeof q[1]==="number"?[q[1]+1,q[1]+2,Math.max(0,q[1]-1)]:["1/4","1/3","2/2"];return makeChoice(seed%2?q[0]:q[0].replace("What is","Can you work out"),answer,opts,q[2],"Equal parts must be the same size.");}
- if(kind==="moneytime"){const qs=[["How many cents are in one dollar?","100 cents",["10 cents","50 cents","20 cents"],"💰"],["How many minutes are in one hour?","60 minutes",["30 minutes","100 minutes","24 minutes"],"🕒"],["Which coin is worth 20 cents?","20c",["10c","50c","$1"],"🪙"],["What time is 30 minutes after 3:00?","3:30",["3:15","4:00","2:30"],"⏰"]];const q=qs[seed%qs.length];return makeChoice(seed%2?q[0]:q[0].replace("How many","Can you tell how many"),q[1],q[2],q[3],"Think about the units and the amount of time or money.");}
- if(kind==="spelling"){const q=spellings[seed%spellings.length];return makeChoice(q[1],q[0],q[2],"🔤",`Look carefully at the order of the letters in ${q[0]}.`);}
- if(kind==="science"){const q=science[seed%science.length];return makeChoice(seed%2?q[0]:q[0].replace("What","Can you tell what"),q[1],q[2],"🌱",q[3]);}
- if(kind==="place"){const qs=[["What is the value of the 4 in 342?","40",["4","400","42"],"🔢"],["What number is 10 more than 68?","78",["69","77","178"],"➕"],["What comes next: 5, 10, 15, 20, …?","25",["21","30","24"],"🔁"]];const q=qs[seed%qs.length];return makeChoice(seed%2?q[0]:q[0].replace("What","Can you work out what"),q[1],q[2],q[3],"Look at the place value or the pattern.");}
- if(kind==="measure"){const qs=[["Which unit is best for measuring a pencil?","Centimetres",["Kilometres","Litres","Kilograms"],"📏"],["Which unit measures how heavy a bag is?","Kilograms",["Metres","Litres","Hours"],"⚖️"]];const q=qs[seed%qs.length];return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Think about what is being measured.");}
- if(kind==="data"){const qs=[["A class votes: cats 5, dogs 8, fish 3. Which got the most votes?","Dogs",["Cats","Fish","They tied"],"📊"],["A tally shows 4 red, 6 blue and 2 green counters. How many counters altogether?","12",["10","11","14"],"🔴🔵🟢"]];const q=qs[seed%qs.length];return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Compare the values, or combine them if the question asks for a total.");}
- if(["tractorBasics","tractorMath","tractorWords","tractorScience","tractorLogic"].includes(kind)){const fallback={tractorBasics:["What can a tractor pull?","A trailer",["A submarine","A cloud","A school desk"],"🚜","Tractors can pull trailers and farm equipment."],tractorMath:["A tractor has 4 wheels. How many wheels do 2 tractors have?","8",["4","6","10"],"🚜 🚜","Four plus four equals eight."],tractorWords:["Which word starts with the /t/ sound?","tractor",["barn","hay","mud"],"🔤","Tractor starts with the /t/ sound."],tractorScience:["Why do tractors have tyres?","To grip the ground",["To grow crops","To make rain","To fly"],"🛞","Tyres help vehicles grip the ground."],tractorLogic:["What comes next: 🚜 🌾 🚜 🌾 __?","🚜",["🌾","🐄","🛞"],"🚜 🌾 🚜 🌾 ?","The tractor and hay symbols alternate."]}[kind];return makeChoice(fallback[0],fallback[1],fallback[2],fallback[3],fallback[4]);}
- if(["phonics","reading","writing","nature","scienceExpanded","logic","world","life","music"].includes(kind)){const fallback={phonics:["Which word starts with the /s/ sound?","sun",["map","dog","fish"],"🔊","Listen to the first sound."],reading:["Mia wore a coat because it was cold. Why did she wear it?","To stay warm",["To go swimming","To eat lunch","To make a kite"],"🧥","Use a clue from the sentence."],writing:["Which sentence starts with a capital letter and ends with a full stop?","The cat is soft.",["the cat is soft.","The cat is soft","the Cat is soft."],"✏️","Check capitals and punctuation."],nature:["What does a plant need to grow?","Water and light",["Plastic and darkness","Only stones","Toy blocks"],"🌱","Living things have needs."],scienceExpanded:["What can a magnet attract?","An iron nail",["A paper leaf","A wooden block","A rubber band"],"🧲","Think about materials."],logic:["What comes next: 2, 4, 6, …?","8",["7","9","10"],"🔢","Look for the rule."],world:["What can a map help you find?","Places and routes",["The taste of food","The sound of a song","The weight of a cloud"],"🗺️","Maps show places and routes."],life:["What should you do before crossing a road?","Stop, look and listen with an adult",["Run without looking","Close your eyes","Follow a ball into the road"],"🚦","Choose the safer action."],music:["Which pattern repeats?","Clap, tap, clap, tap",["Clap, clap, tap, clap","Tap, clap, tap, tap","Clap, tap, tap, clap"],"👏 👆 👏 👆","Notice the repeated beat."]}[kind];return makeChoice(fallback[0],fallback[1],fallback[2],fallback[3],fallback[4]);}
- return makeChoice("Ready for a challenge?","Let’s go!",["Not yet","Maybe","Stop"],"🚀","Have a go!");
+ if(kind==="count"||kind==="count20"){
+  if(kind==="count"){
+   const n=1+(seed%10),emoji=["⭐","🍎","🐞","🐟","🌼","🚗","🍓"][seed%7];
+   return numericQuestion("How many can you count?",n,Array(n).fill(emoji).join(" "), "Count each picture once.",10);
+  }
+  const n=2+(seed%18),answer=n+1;
+  return numericQuestion("What number comes next?",answer,`${n-1}, ${n}, ?`,"Count forward one number at a time.",20);
+ }
+ if(kind==="add5"){
+  const a=seed%6,b=(seed*3+1)%6;
+  return numericQuestion(`What is ${a} + ${b}?`,a+b,"🍎","Put the two groups together.",20);
+ }
+ if(kind==="shapes"){
+  const shapes=[["circle","🔴"],["square","🟦"],["triangle","🔺"],["star","⭐"],["heart","❤️"]];
+  const s=shapes[seed%shapes.length],others=shapes.filter(x=>x[0]!==s[0]).map(x=>x[0]);
+  return makeChoice(seed%2?"Name the shape or symbol shown.":"Which shape or symbol is shown?",s[0],others.slice(seed%2,seed%2+3),s[1],`The picture shows a ${s[0]}.`);
+ }
+ if(kind==="words"){
+  const w=words[seed%words.length],others=words.filter(x=>x[0]!==w[0]&&x[1]!==w[1]).map(x=>x[0]);
+  const distractors=[0,1,2].map(offset=>others[(seed+offset)%others.length]);
+  return makeChoice(seed%2?`Which word begins with the “${w[1]}” sound?`:`Which word starts with the “${w[1]}” sound?`,w[0],distractors,"🔊",`Listen for the first sound in ${w[0]}.`);
+ }
+ if(kind==="patterns"){
+  const palette=["🔴","🔵","🟢","🟡","🟣","🟠"],a=palette[seed%palette.length];let b=palette[Math.floor(seed/palette.length)%palette.length];if(b===a)b=palette[(seed+1)%palette.length];const others=palette.filter(x=>x!==a&&x!==b);
+  return makeChoice(seed%2?"Which picture comes next?":"What comes next in the pattern?",a,[b,...others].slice(0,3),`${a} ${b} ${a} ${b} ?`,"Look for the part that repeats.");
+ }
+ if(kind==="animals"){
+  const qs=[
+   ["Which animal lives in the ocean?","Dolphin",["Sheep","Kea","Rabbit"],"🐬"],
+   ["Which animal can fly?","Butterfly",["Eel","Seal","Cow"],"🦋"],
+   ["What do bees help many flowers do?","Make seeds",["Turn into rocks","Make snow","Grow feathers"],"🐝"],
+   ["Which animal is a bird?","Kea",["Gecko","Tuna","Wētā"],"🦜"]
+  ];
+  const q=qs[seed%qs.length];
+  return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Think about the animal and its features.");
+ }
+ if(kind==="add"){
+  const a=seed%20+1,b=(seed*3)%15+1;
+  return numericQuestion(`What is ${a} + ${b}?`,a+b,"🧠","Add the two numbers together.",100);
+ }
+ if(kind==="times"){
+  const a=2+(seed%10),b=2+((seed*3)%8);
+  return numericQuestion(`What is ${a} × ${b}?`,a*b,`${a} groups of ${b}`,"Multiplication is equal groups added together.",150);
+ }
+ if(kind==="divide"){
+  const b=2+(seed%8),answer=2+((seed*3)%10),a=b*answer;
+  return numericQuestion(`What is ${a} ÷ ${b}?`,answer,"🍬","Sharing into equal groups can help.",100);
+ }
+ if(kind==="fractions"){
+  const qs=[["What is half of 10?",5,"🍕"],["How many quarters make one whole?",4,"🟡"],["Which fraction means one out of two equal parts?","1/2","◐"],["What is one quarter of 16?",4,"🍎"]];
+  const q=qs[seed%qs.length],answer=String(q[1]),opts=typeof q[1]==="number"?[q[1]+1,q[1]+2,Math.max(0,q[1]-1)]:["1/4","1/3","2/2"];
+  return makeChoice(seed%2?q[0]:q[0].replace("What is","Can you work out"),answer,opts,q[2],"Equal parts must be the same size.");
+ }
+ if(kind==="moneytime"){
+  const qs=[
+   ["How many cents are in one dollar?","100 cents",["10 cents","50 cents","20 cents"],"💰"],
+   ["How many minutes are in one hour?","60 minutes",["30 minutes","100 minutes","24 minutes"],"🕒"],
+   ["Which coin is worth 20 cents?","20c",["10c","50c","$1"],"🪙"],
+   ["What time is 30 minutes after 3:00?","3:30",["3:15","4:00","2:30"],"⏰"]
+  ];
+  const q=qs[seed%qs.length];
+  return makeChoice(seed%2?q[0]:q[0].replace("How many","Can you tell how many"),q[1],q[2],q[3],"Think about the units and the amount of time or money.");
+ }
+ if(kind==="spelling"){
+  const q=spellings[seed%spellings.length];
+  return makeChoice(q[1],q[0],q[2],"🔤",`Look carefully at the order of the letters in ${q[0]}.`);
+ }
+ if(kind==="science"){
+  const q=science[seed%science.length];
+  return makeChoice(seed%2?q[0]:q[0].replace("What","Can you tell what"),q[1],q[2],"🌱",q[3]);
+ }
+ if(kind==="place"){
+  const qs=[["What is the value of the 4 in 342?","40",["4","400","42"],"🔢"],["What number is 10 more than 68?","78",["69","77","178"],"➕"],["What comes next: 5, 10, 15, 20, …?","25",["21","30","24"],"🔁"],["Which number is the largest?","408",["84","398","401"],"💯"]];
+  const q=qs[seed%qs.length];
+  return makeChoice(seed%2?q[0]:q[0].replace("What","Can you work out what"),q[1],q[2],q[3],"Look at the place value or the pattern.");
+ }
+ if(kind==="measure"){
+  const qs=[["Which unit is best for measuring a pencil?","Centimetres",["Kilometres","Litres","Kilograms"],"📏"],["Which unit measures how heavy a bag is?","Kilograms",["Metres","Litres","Hours"],"⚖️"],["How many sides does a hexagon have?","6",["5","7","8"],"⬡"],["Which is usually the longest?","A school bus",["A pencil","A spoon","A shoe"],"📐"]];
+  const q=qs[seed%qs.length];
+  return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Think about what is being measured.");
+ }
+ if(kind==="data"){
+  const qs=[["A class votes: cats 5, dogs 8, fish 3. Which got the most votes?","Dogs",["Cats","Fish","They tied"],"📊"],["A tally shows 4 red, 6 blue and 2 green counters. How many counters altogether?","12",["10","11","14"],"🔴🔵🟢"],["In a pictograph, each ⭐ means 2 votes. Three stars mean how many votes?","6",["3","5","8"],"⭐ ⭐ ⭐"]];
+  const q=qs[seed%qs.length];
+  return makeChoice(seed%2?q[0]:q[0].replace("Which","Can you find which"),q[1],q[2],q[3],"Compare the values, or combine them if the question asks for a total.");
+ }
+ if(["tractorBasics","tractorMath","tractorWords","tractorScience","tractorLogic"].includes(kind)){
+  const fallback={
+   tractorBasics:["What can a tractor pull?","A trailer",["A submarine","A cloud","A school desk"],"🚜","Tractors can pull trailers and farm equipment."],
+   tractorMath:["A tractor has 4 wheels. How many wheels do 2 tractors have?","8",["4","6","10"],"🚜 🚜","Four plus four equals eight."],
+   tractorWords:["Which word starts with the /t/ sound?","tractor",["barn","hay","mud"],"🔤","Tractor starts with the /t/ sound."],
+   tractorScience:["Why do tractors have tyres?","To grip the ground",["To grow crops","To make rain","To fly"],"🛞","Tyres help vehicles grip the ground."],
+   tractorLogic:["What comes next: 🚜 🌾 🚜 🌾 __?","🚜",["🌾","🐄","🛞"],"🚜 🌾 🚜 🌾 ?","The tractor and hay symbols alternate."]
+  }[kind];
+  return makeChoice(fallback[0],fallback[1],fallback[2],fallback[3],fallback[4]);
+ }
+ if(["phonics","reading","writing","nature","scienceExpanded","logic","world","life","music"].includes(kind)){
+  const fallback={
+   phonics:["Which word starts with the /s/ sound?","sun",["map","dog","fish"],"🔊","Listen to the first sound."],
+   reading:["Mia wore a coat because it was cold. Why did she wear it?","To stay warm",["To go swimming","To eat lunch","To make a kite"],"🧥","Use a clue from the sentence."],
+   writing:["Which sentence starts with a capital letter and ends with a full stop?","The cat is soft.",["the cat is soft.","The cat is soft","the Cat is soft."],"✏️","Check capitals and punctuation."],
+   nature:["What does a plant need to grow?","Water and light",["Plastic and darkness","Only stones","Toy blocks"],"🌱","Living things have needs."],
+   scienceExpanded:["What can a magnet attract?","An iron nail",["A paper leaf","A wooden block","A rubber band"],"🧲","Think about materials."],
+   logic:["What comes next: 2, 4, 6, …?","8",["7","9","10"],"🔢","Look for the rule."],
+   world:["What can a map help you find?","Places and routes",["The taste of food","The sound of a song","The weight of a cloud"],"🗺️","Maps show places and routes."],
+   life:["What should you do before crossing a road?","Stop, look and listen with an adult",["Run without looking","Close your eyes","Follow a ball into the road"],"🚦","Choose the safer action."],
+   music:["Which pattern repeats?","Clap, tap, clap, tap",["Clap, clap, tap, clap","Tap, clap, tap, tap","Clap, tap, tap, clap"],"👏 👆 👏 👆","Notice the repeated beat."]
+  }[kind];
+  return makeChoice(fallback[0],fallback[1],fallback[2],fallback[3],fallback[4]);
+ }
+ return makeChoice("Ready for a challenge?","Let's go!",["Not yet","Maybe","Stop"],"🚀","Have a go!");
+}
+function normaliseQuestionText(value,replaceNumbers=false){
+ let text=String(value||"").toLowerCase().normalize("NFKC")
+  .replace(/×/g," multiply ").replace(/÷/g," divide ").replace(/[+]/g," plus ").replace(/[−–]/g," minus ");
+ if(replaceNumbers)text=text.replace(/[0-9]+(?:\.[0-9]+)?/g,"#");
+ return text.replace(/[“”‘’]/g,"'").replace(/[^\p{L}\p{N}#]+/gu," ").trim().replace(/\s+/g," ");
+}
+function questionKey(q){return normaliseQuestionText(q.prompt)+"|"+normaliseQuestionText(q.answer)+"|"+String(q.visual||"").normalize("NFKC").trim().replace(/\s+/g," ")}
+function questionFamily(q,mod){
+ const prompt=normaliseQuestionText(q.prompt,true);
+ // Generated number questions vary their values; cap identical templates within a round.
+ if(["add","add5"].includes(mod.kind))return "addition-template:"+prompt;
+ if(mod.kind==="times"||mod.kind==="divide")return "arithmetic-template:"+prompt;
+ if(mod.kind==="count")return "count-template:"+prompt;
+ if(mod.kind==="count20")return "number-template:"+prompt;
+ if(mod.kind==="shapes")return "shape-template:"+prompt+":"+String(q.visual||"");
+ if(mod.kind==="patterns"){
+  const symbols=String(q.visual||"").trim().split(/\s+/),map=new Map();let next=0;
+  const structure=symbols.map(symbol=>{if(symbol==="?")return "?";if(!map.has(symbol))map.set(symbol,String.fromCharCode(65+next++));return map.get(symbol)}).join("");
+  return "pattern-structure:"+structure;
+ }
+ return "prompt-template:"+prompt;
 }
 function buildValidatedQuestions(mod,count){
- const out=[],seen=new Set(),recentPrompts=[];
- for(let i=0;i<count;i++){
-  let accepted=null;
-  for(let attempt=0;attempt<80;attempt++){
-   const q=makeQuestion(mod);
-   if(!validateQuestion(q,mod))continue;
-   const key=normalizeQuestionKey(q);
-   if(seen.has(key) || recentPrompts.includes(key))continue;
-   accepted=q;seen.add(key);recentPrompts.push(key);if(recentPrompts.length>8)recentPrompts.shift();break;
+ const candidates=new Map();
+ const addCandidate=q=>{
+  if(!validateQuestion(q,mod))return;
+  const key=questionKey(q);
+  if(!candidates.has(key))candidates.set(key,q);
+ };
+ // Gather a broad sample so a random pick from a small bank cannot dominate the round.
+ const attempts=Math.max(160,count*35);
+ for(let i=0;i<attempts;i++)addCandidate(makeQuestion(mod));
+ // Do not pad small question banks with generic fallback questions: a shorter round is better than a near-duplicate.
+ const history=Array.isArray(state.questionHistory?.[mod.id])?state.questionHistory[mod.id]:[];
+ const recent=new Set(history.slice(-24));
+ const chosen=[],usedKeys=new Set(),familyCounts=new Map();
+ const familyLimit=(mod.kind==="add"||mod.kind==="add5"||mod.kind==="times"||mod.kind==="divide")?8:(mod.kind==="count"||mod.kind==="count20")?3:2;
+ while(chosen.length<count&&candidates.size){
+  let best=null,bestScore=Infinity;
+  for(const [key,q] of candidates){
+   if(usedKeys.has(key))continue;
+   const family=questionFamily(q,mod),familyCount=familyCounts.get(family)||0;
+   if(familyCount>=familyLimit)continue;
+   // Prefer unseen-recently questions; use randomness to vary order and ties.
+   const score=(recent.has(key)?100:0)+(familyCount*12)+Math.random()*8;
+   if(score<bestScore){bestScore=score;best={key,q,family}}
   }
-  if(!accepted){
-   for(let seed=0;seed<100;seed++){
-    const q=safeFallbackQuestion(mod,i+seed);
-    if(validateQuestion(q,mod)){
-     const key=normalizeQuestionKey(q);
-     if(!seen.has(key) && !recentPrompts.includes(key)){accepted=q;seen.add(key);recentPrompts.push(key);if(recentPrompts.length>8)recentPrompts.shift();break;}
-    }
-   }
-  }
-  if(!accepted)accepted=safeFallbackQuestion(mod,i);
-  out.push(accepted);
+  if(!best)break;
+  chosen.push(best.q);usedKeys.add(best.key);familyCounts.set(best.family,(familyCounts.get(best.family)||0)+1);
  }
- return out;
+ state.questionHistory=state.questionHistory||{};
+ state.questionHistory[mod.id]=[...history,...chosen.map(questionKey)].slice(-30);
+ saveState();
+ return shuffle(chosen);
 }
 function startGame(id){
  currentModule=MODULES.find(m=>m.id===id);if(!currentModule)return;
- $("crumbTopic").textContent=currentModule.title;
- $("gameTitle").textContent=currentModule.icon+" "+currentModule.title;
- $("learningObjective").textContent=(currentModule.area?currentModule.area+" · ":"")+ (currentModule.objective||"Keep learning one step at a time.");
+ $("crumbTopic").textContent=currentModule.title;$("gameTitle").textContent=currentModule.icon+" "+currentModule.title;$("learningObjective").textContent=(currentModule.area?currentModule.area+" · ":"")+(currentModule.objective||"Practise and build confidence with this skill.");
  $("gameResult").classList.add("hidden");
- $("nextBtn").classList.add("hidden");
- $("feedback").className="feedback";
- $("feedback").textContent="";
  if(id==="alphabet"){
-  $("gamePlaying").classList.add("hidden");
-  $("alphabetPlaying").classList.remove("hidden");
-  const frame=$("alphabetFrame");
-  frame.srcdoc=decodeEmbeddedHtml(ALPHABET_HTML_B64);
-  showScreen("game");
-  return;
+   $("roundNotice").classList.add("hidden");
+   $("gamePlaying").classList.add("hidden");$("alphabetPlaying").classList.remove("hidden");
+   const frame=$("alphabetFrame");frame.srcdoc=decodeEmbeddedHtml(ALPHABET_HTML_B64);
+   showScreen("game");return;
  }
- $("alphabetPlaying").classList.add("hidden");
- $("gamePlaying").classList.remove("hidden");
- questions=buildValidatedQuestions(currentModule,Number(state.roundLength));
- questionIndex=0;correctCount=0;answered=false;
- showScreen("game");
- renderQuestion();
+ $("alphabetPlaying").classList.add("hidden");$("gamePlaying").classList.remove("hidden");
+ questions=buildValidatedQuestions(currentModule,Number(state.roundLength));questionIndex=0;correctCount=0;answered=false;
+ const notice=$("roundNotice");
+ if(questions.length<Number(state.roundLength)){
+  notice.textContent=`This activity has ${questions.length} distinct questions available right now, so this round is shorter rather than repeating questions.`;
+  notice.classList.remove("hidden");
+ }else{notice.textContent="Questions are mixed each round, with repeats avoided where possible.";notice.classList.remove("hidden");}
+ showScreen("game");renderQuestion();
 }
 function renderQuestion(){
- answered=false;
- const q=questions[questionIndex];
- $("questionCount").textContent=`Question ${questionIndex+1} of ${questions.length}`;
- $("roundProgress").style.width=`${(questionIndex/questions.length)*100}%`;
- $("visual").textContent=q.visual||"";
- $("prompt").textContent=q.prompt;
- $("feedback").className="feedback";
- $("feedback").textContent="";
- $("nextBtn").classList.add("hidden");
- $("answers").innerHTML=q.options.map(o=>`<button class="answer" data-answer="${encodeURIComponent(o)}">${o}</button>`).join("");
+ answered=false;const q=questions[questionIndex];$("questionCount").textContent=`Question ${questionIndex+1} of ${questions.length}`;$("roundProgress").style.width=`${questionIndex/questions.length*100}%`;$("visual").textContent=q.visual||"";$("prompt").textContent=q.prompt;$("feedback").textContent="";$("feedback").className="feedback";$("nextBtn").classList.add("hidden");
+ $("answers").innerHTML=q.options.map((o,i)=>`<button class="answer" data-answer="${encodeURIComponent(o)}">${o}</button>`).join("");
  $("answers").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>answerQuestion(decodeURIComponent(b.dataset.answer),b)));
  if(state.soundOn&&"speechSynthesis"in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(q.prompt))}
 }
 function answerQuestion(value,button){
- if(answered)return;answered=true;
- const q=questions[questionIndex],correct=value===q.answer;
- if(correct)correctCount++;
- $("answers").querySelectorAll("button").forEach(b=>{
-  const ans=decodeURIComponent(b.dataset.answer);
-  b.disabled=true;
-  if(ans===q.answer)b.classList.add("correct");
-  else if(ans===value&&ans!==q.answer)b.classList.add("wrong");
- });
+ if(answered)return;answered=true;const q=questions[questionIndex],correct=value===q.answer;if(correct)correctCount++;
+ $("answers").querySelectorAll("button").forEach(b=>{b.disabled=true;const v=b.dataset.answer;if(v===q.answer)b.classList.add("correct")});
  if(!correct)button.classList.add("wrong");
- const fb=$("feedback");
- fb.className="feedback "+(correct?"good":"bad");
+ const fb=$("feedback");fb.className="feedback "+(correct?"good":"bad");
  fb.textContent=correct?(state.feedbackMode==="direct"?"Correct! ":"You got it! 🌟 ")+q.explain:(state.feedbackMode==="direct"?"Not quite. ":"Good try! 💛 ")+`The answer is ${q.answer}. ${q.explain}`;
- $("roundProgress").style.width=`${((questionIndex+1)/questions.length)*100}%`;
- $("nextBtn").textContent=questionIndex===questions.length-1?"See my results →":"Next question →";
- $("nextBtn").classList.remove("hidden");
+ $("roundProgress").style.width=`${(questionIndex+1)/questions.length*100}%`;
+ $("nextBtn").textContent=questionIndex===questions.length-1?"See my results →":"Next question →";$("nextBtn").classList.remove("hidden");
 }
 function nextQuestion(){if(!answered)return;if(questionIndex<questions.length-1){questionIndex++;renderQuestion()}else finishGame()}
 function finishGame(){
- $("gamePlaying").classList.add("hidden");
- $("gameResult").classList.remove("hidden");
- let pct=Math.round((correctCount/questions.length)*100) || 0;
- $("resultEmoji").textContent=pct>=80?"🏆":pct>=50?"🌟":"💪";
- $("resultTitle").textContent=pct>=80?"Fantastic work!":pct>=50?"Adventure complete!":"Good effort!";
+ $("gamePlaying").classList.add("hidden");$("gameResult").classList.remove("hidden");let pct=Math.round(correctCount/questions.length*100);
+ $("resultEmoji").textContent=pct>=80?"🏆":pct>=50?"🌟":"💪";$("resultTitle").textContent=pct>=80?"Fantastic work!":pct>=50?"Adventure complete!":"Good effort!";
  $("resultText").textContent=pct>=80?"You worked hard and showed what you know.":pct>=50?"Every round helps your brain grow. Keep practising!":"You gave it a go. Practising a little at a time helps.";
  $("resultCorrect").textContent=correctCount;$("resultTotal").textContent=questions.length;$("resultPercent").textContent=pct+"%";
- const p=state.progress[currentModule.id]||{rounds:0,correct:0,answered:0};
- p.rounds=(p.rounds||0)+1;
- p.correct=(p.correct||0)+correctCount;
- p.answered=(p.answered||0)+questions.length;
- p.accuracy=Math.round((p.correct/p.answered)*100);
- p.lastPlayed=new Date().toISOString();
- state.progress[currentModule.id]=p;
- saveState();
+ const p=state.progress[currentModule.id]||{rounds:0,correct:0,answered:0};p.rounds++;p.correct+=correctCount;p.answered+=questions.length;p.accuracy=Math.round(p.correct/p.answered*100);p.lastPlayed=new Date().toISOString();state.progress[currentModule.id]=p;saveState();
 }
-function leaveGame(){
- $("alphabetPlaying").classList.add("hidden");
- $("gamePlaying").classList.remove("hidden");
- $("gameResult").classList.add("hidden");
- $("nextBtn").classList.add("hidden");
- $("feedback").className="feedback";
- $("feedback").textContent="";
- $("visual").textContent="";
- $("prompt").textContent="";
- $("answers").innerHTML="";
- showScreen("home");
- renderHome();
-}
+function leaveGame(){$("alphabetPlaying").classList.add("hidden");$("gamePlaying").classList.remove("hidden");showScreen("home");renderHome()} 
 function renderAdult(){
- $("difficulty").value=state.difficulty||"steady";
- $("roundLength").value=String(state.roundLength);
- $("soundOn").checked=state.soundOn;
- $("feedbackMode").value=state.feedbackMode;
- $("moduleSettings").innerHTML=MODULES.map(m=>`<label class="module-row"><span style="font-size:1.35rem">${m.icon}</span><span class="module-name">${m.title}<small>${m.collection==="tractors"?"All About Tractors":"Age ${m.ages.join(', ')}"}</small></span><input type="checkbox" data-toggle="${m.id}" ${state.disabledModules.includes(m.id)?"":"checked"}></label>`).join("");
- $("moduleSettings").querySelectorAll("[data-toggle]").forEach(c=>c.addEventListener("change",()=>{const id=c.dataset.toggle;if(c.checked)state.disabledModules=state.disabledModules.filter(x=>x!==id);else if(!state.disabledModules.includes(id))state.disabledModules.push(id);saveState();renderHome();renderAdult();}));
- const vals=Object.values(state.progress);const total=vals.reduce((s,p)=>s+(p.rounds||0),0),correct=vals.reduce((s,p)=>s+(p.correct||0),0),answered=vals.reduce((s,p)=>s+(p.answered||0),0);
- $("totalRounds").textContent=String(total);
- $("overallAccuracy").textContent=answered?Math.round(correct/answered*100)+"%":"—";
- $("moduleCount").textContent=String(Object.keys(state.progress).length || 0);
- $("progressList").innerHTML=MODULES.filter(m=>state.progress[m.id]).length?MODULES.filter(m=>state.progress[m.id]).map(m=>{const p=state.progress[m.id];return `<div class="progress-item"><div class="stack"><strong>${m.icon} ${m.title}</strong><span>${p.rounds||0} rounds · ${(p.correct||0)}/${p.answered||0} correct</span></div><span class="pill">${p.accuracy||0}%</span></div>`;}).join(""):'<div class="empty-state">No saved activity data yet. Complete a round to start tracking progress.</div>';
+ $("difficulty").value=state.difficulty;$("roundLength").value=String(state.roundLength);$("soundOn").checked=state.soundOn;$("feedbackMode").value=state.feedbackMode;
+ $("moduleSettings").innerHTML=MODULES.map(m=>`<label class="module-row"><span style="font-size:1.35rem">${m.icon}</span><span class="module-name">${m.title}<small>${m.collection==="tractors"?"All About Tractors · Ages 4–8":`Ages ${m.ages.join(", ")}`}</small></span><input type="checkbox" data-toggle="${m.id}" ${visibleModules().some(v=>v.id===m.id)?"checked":""} aria-label="Show ${m.title}"></label>`).join("");
+ $("moduleSettings").querySelectorAll("[data-toggle]").forEach(c=>c.addEventListener("change",()=>{let id=c.dataset.toggle;if(c.checked)state.disabledModules=state.disabledModules.filter(x=>x!==id);else if(!state.disabledModules.includes(id))state.disabledModules.push(id);saveState();renderHome()}));
+ const vals=Object.values(state.progress);let total=vals.reduce((s,p)=>s+(p.rounds||0),0),correct=vals.reduce((s,p)=>s+(p.correct||0),0),answered=vals.reduce((s,p)=>s+(p.answered||0),0);
+ $("totalRounds").textContent=total;$("overallAccuracy").textContent=answered?Math.round(correct/answered*100)+"%":"—";
+ $("progressList").innerHTML=MODULES.filter(m=>state.progress[m.id]).length?MODULES.filter(m=>state.progress[m.id]).map(m=>{let p=state.progress[m.id];return `<div class="progress-item"><span>${m.icon}</span><span class="name">${m.title}<small style="display:block;color:var(--muted)">${p.rounds} rounds · ${p.correct}/${p.answered} answers correct</small></span><div class="mini-track"><span style="width:${p.accuracy}%"></span></div><strong>${p.accuracy}%</strong></div>`}).join(""):"<p style='color:var(--muted)'>No progress yet. Complete an adventure and your results will appear here.</p>";
 }
-$("homeBtn").addEventListener("click",()=>{showScreen("home");renderHome();});
-$("grownupBtn").addEventListener("click",()=>{renderAdult();showScreen("adult");});
-$("adultBack").addEventListener("click",()=>{showScreen("home");renderHome();});
+$("homeBtn").addEventListener("click",()=>{showScreen("home");renderHome()});
+$("grownupBtn").addEventListener("click",()=>{renderAdult();showScreen("adult")});
+$("adultBack").addEventListener("click",()=>{showScreen("home");renderHome()});
 $("backToTopics").addEventListener("click",leaveGame);$("resultHomeBtn").addEventListener("click",leaveGame);
 $("nextBtn").addEventListener("click",nextQuestion);$("quitBtn").addEventListener("click",()=>{if(confirm("Finish this round? Your results will be saved when you complete the round."))leaveGame()});
 $("retryBtn").addEventListener("click",()=>currentModule&&startGame(currentModule.id));
-$("difficulty").addEventListener("change",e=>{state.difficulty=e.target.value;saveState();});
-$("roundLength").addEventListener("change",e=>{state.roundLength=Number(e.target.value);saveState();});
-$("soundOn").addEventListener("change",e=>{state.soundOn=e.target.checked;saveState();});
-$("feedbackMode").addEventListener("change",e=>{state.feedbackMode=e.target.value;saveState();});
-$("clearProgress").addEventListener("click",()=>{if(!confirm("Clear all saved scores and round history for every module? Your settings and visible modules will be kept."))return;state.progress={};saveState();renderAdult();});
+$("difficulty").addEventListener("change",e=>{state.difficulty=e.target.value;saveState()});
+$("roundLength").addEventListener("change",e=>{state.roundLength=Number(e.target.value);saveState()});
+$("soundOn").addEventListener("change",e=>{state.soundOn=e.target.checked;saveState()});
+$("feedbackMode").addEventListener("change",e=>{state.feedbackMode=e.target.value;saveState()});
+$("clearProgress").addEventListener("click",()=>{if(!confirm("Clear all saved scores and round history for every module? Your settings and visible modules will be kept."))return;state.progress={};state.questionHistory={};saveState();renderAdult();renderHome();$("saveStatus").textContent="All progress cleared. Settings have been kept."});
 renderHome();
 </script>
 </body>
-</html>
+  </html>
