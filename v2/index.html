@@ -64,13 +64,14 @@ main{padding:22px 16px 48px}.welcome{margin-bottom:20px}.welcome h2{font-size:1.
     <h3 style="margin-top:0">Child profiles</h3>
     <p style="color:var(--muted);font-size:.9rem">Each child has separate settings and learning history. Profiles stay in this browser unless you export them. Age is optional context for adults, not an activity restriction. Subject navigation replaces age groups and theme collections; adaptive and skill evidence are early guides, not formal assessments.</p>
     <div class="setting"><div><label for="profileSelect">Current child</label><small>Switch to view or record another child's progress</small></div><select id="profileSelect" aria-label="Current child profile"></select></div>
+    <div class="setting"><div><label for="editProfileName">Edit current profile</label><small>Change the child's name or age</small></div><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><input id="editProfileName" maxlength="40" aria-label="Edited profile name" placeholder="Child's name" style="min-width:130px;max-width:200px;padding:9px;border:1px solid var(--line);border-radius:10px"><select id="editProfileAge" aria-label="Edited profile age"><option value="4">Age 4</option><option value="5">Age 5</option><option value="6">Age 6</option><option value="7">Age 7</option><option value="8">Age 8</option></select><button id="saveProfileEditBtn" class="primary">Save changes</button><button id="deleteProfileBtn" class="soft" style="color:#a32626;border-color:#e8bcbc">Delete profile</button></div></div>
     <div class="setting"><div><label for="newProfileName">Add a child</label><small>Use a first name, nickname or initials</small></div><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="newProfileName" maxlength="40" placeholder="Child's name" style="min-width:130px;max-width:200px;padding:9px;border:1px solid var(--line);border-radius:10px"><select id="newProfileAge" aria-label="Starting age"><option value="4">Age 4</option><option value="5">Age 5</option><option value="6">Age 6</option><option value="7">Age 7</option><option value="8">Age 8</option></select><button id="addProfileBtn" class="primary">Add profile</button></div></div>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button id="exportProfileBtn" class="soft">⬇️ Export current profile</button><button id="importProfileBtn" class="soft">⬆️ Import profile backup</button><input id="importProfileFile" type="file" accept="application/json,.json" hidden></div>
     <p id="profileStatus" role="status" style="color:var(--muted);font-size:.85rem;margin-bottom:0">Profiles are stored locally on this device.</p>
   </div>
   <div class="panel" style="margin-bottom:16px"><h3 style="margin-top:0">Learning overview</h3><p style="color:var(--muted);font-size:.9rem">The radar chart summarises answer evidence by learning area. Areas with no evidence are marked not assessed, not zero. This is a practice guide, not a formal assessment.</p><div id="radarOverview" class="radar-wrap"><p>Complete activities to build this overview.</p></div></div>
   <div class="panel" style="margin-bottom:16px"><h3 style="margin-top:0">Skill progression and next steps</h3><p style="color:var(--muted);font-size:.9rem">Progression statements are an initial working framework. Estimated stages are provisional, not official curriculum judgements.</p><div id="progressionOverview" class="stage-list"><p>Progression estimates will appear after the child answers mapped questions.</p></div></div>
-  <div class="panel" style="margin-bottom:16px"><h3 style="margin-top:0">Revision and challenge pathway</h3><p style="color:var(--muted);font-size:.9rem">Choose revision for supported practice or try a challenge when there is enough evidence of consistent success. Every activity remains available from the home screen.</p><div id="pathwayOverview" class="stage-list"><p>Pathway suggestions appear as progress is recorded.</p></div></div>
+  <div class="panel" style="margin-bottom:16px"><h3 style="margin-top:0">Revision and challenge pathway</h3><p style="color:var(--muted);font-size:.9rem">Suggestions use question-level skill mappings, recent answers, prerequisite signals and scheduled review dates. These are practice guides, not formal assessments; every activity remains available from the home screen.</p><div id="pathwayOverview" class="stage-list"><p>Pathway suggestions appear as progress is recorded.</p></div></div>
   <div class="adult-grid">
     <div class="panel">
       <h3 style="margin-top:0">Learning settings</h3>
@@ -240,7 +241,7 @@ const ADAPTIVE_ENGINE_VERSION="0.1.0";
 const LEGACY_STORE="learningAdventures_v1";
 const defaults={difficulty:"adaptive",roundLength:8,soundOn:false,feedbackMode:"gentle",disabledModules:[],progress:{},questionHistory:{},skillProgress:{}};
 let profiles={},activeProfileId="",state={...defaults},selectedAge=4,selectedSubject="All subjects",currentModule=null,questions=[],questionIndex=0,correctCount=0,answered=false,lastResult=null;
-let practiceMode="normal"; // normal, revision, or challenge; never changes the saved preference
+let practiceMode="normal",currentRoundId=""; // normal, revision, or challenge; never changes the saved preference
 const $=id=>document.getElementById(id);
 function freshState(){return JSON.parse(JSON.stringify(defaults))}
 function makeProfile(name,age,data){return {id:"child-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7),name,age:Number(age)||4,createdAt:new Date().toISOString(),data:{...freshState(),...(data||{}),progress:{...((data&&data.progress)||{})},questionHistory:{...((data&&data.questionHistory)||{})},skillProgress:{...((data&&data.skillProgress)||{})}}}}
@@ -256,7 +257,7 @@ function persistProfiles(){try{if(profiles[activeProfileId])profiles[activeProfi
 function saveState(){const ok=persistProfiles();const status=$("saveStatus");if(status)status.textContent=ok?`Saved for ${activeProfile().name} on this device.`:"Browser storage is full or unavailable; export a backup if possible."}
 function activeProfile(){return profiles[activeProfileId]||{name:"Child",age:selectedAge,data:state}}
 function setProfileStatus(message){const el=$("profileStatus");if(el)el.textContent=message}
-function renderProfileControls(){const select=$("profileSelect");if(!select)return;select.innerHTML=Object.values(profiles).map(p=>`<option value="${p.id.replace(/&/g,"&amp;").replace(/"/g,"&quot;")}">${escapeHtml(p.name)} · age ${p.age}</option>`).join("");select.value=activeProfileId}
+function renderProfileControls(){const select=$("profileSelect");if(!select)return;select.innerHTML=Object.values(profiles).map(p=>`<option value="${p.id.replace(/&/g,"&amp;").replace(/"/g,"&quot;")}">${escapeHtml(p.name)} · age ${p.age}</option>`).join("");select.value=activeProfileId;const p=activeProfile();if($("editProfileName"))$("editProfileName").value=p.name||"";if($("editProfileAge"))$("editProfileAge").value=String(p.age||4);if($("deleteProfileBtn"))$("deleteProfileBtn").disabled=Object.keys(profiles).length<=1}
 function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function switchProfile(id){if(!profiles[id]||id===activeProfileId)return;persistProfiles();activeProfileId=id;state={...freshState(),...(profiles[id].data||{}),skillProgress:{...((profiles[id].data||{}).skillProgress||{})}};selectedAge=Number(profiles[id].age)||4;persistProfiles();renderProfileControls();renderHome();renderAdult();setProfileStatus(`Now viewing ${profiles[id].name}'s separate profile.`)}
 function exportCurrentProfile(){const p=activeProfile();const payload={app:"Learning Adventures",schemaVersion:1,exportedAt:new Date().toISOString(),profile:{...p,data:state}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=`learning-adventures-${p.name.trim().toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"child"}-backup.json`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);setProfileStatus(`Backup exported for ${p.name}. Keep the JSON file somewhere safe.`)}
@@ -296,13 +297,19 @@ function renderHome(){
 function renderRecommendedActivity(modules){
  const host=$("recommendedPanel");if(!host)return;
  const scored=modules.map(m=>({m,p:state.progress[m.id]||{},subject:subjectForModule(m)}));
- const weak=scored.filter(x=>x.m.skillIds&&x.m.skillIds.some(id=>{const r=state.skillProgress?.[id];return r&&(r.attempts||0)>=3&&(r.correct||0)/r.attempts<.7}));
+ const dueIds=Object.entries(state.skillProgress||{}).filter(([id,r])=>r.nextReviewAt&&new Date(r.nextReviewAt).getTime()<=Date.now()).map(([id])=>id);
+ const due=scored.filter(x=>(x.m.skillIds||[]).some(id=>dueIds.includes(id)));
+ const weakSkillIds=Object.entries(state.skillProgress||{}).filter(([id,r])=>(r.attempts||0)>=3&&skillAccuracy(r)<70).map(([id])=>id);
+ const prerequisiteIds=[...new Set(weakSkillIds.flatMap(id=>prerequisitesFor(id).filter(pid=>{const r=state.skillProgress?.[pid];return !r||estimatedStage(r).stage<2;})))];
+ const prerequisiteModules=scored.filter(x=>(x.m.skillIds||[]).some(id=>prerequisiteIds.includes(id)));
+ const weak=scored.filter(x=>(x.m.skillIds||[]).some(id=>weakSkillIds.includes(id)));
  const practiced=scored.filter(x=>(x.p.rounds||0)>0).sort((a,b)=>(a.p.accuracy||0)-(b.p.accuracy||0));
- const pickItem=weak[0]||practiced[0]||scored.find(x=>x.m.id==="alphabet")||scored[0];
+ const pickItem=due[0]||prerequisiteModules[0]||weak[0]||practiced[0]||scored.find(x=>x.m.id==="alphabet")||scored[0];
  if(!pickItem){host.innerHTML="<div><strong>Ready to explore</strong><p>Enable activities in the Grown-up Corner to get started.</p></div>";return;}
- const why=weak.includes(pickItem)?"Suggested because a linked skill may benefit from more practice.":(pickItem.p.rounds?"Continue practising an activity you've already tried.":"A good place to start. You can choose something else at any time.");
+ const mode=due.includes(pickItem)||prerequisiteModules.includes(pickItem)||weak.includes(pickItem)?"revision":"normal";
+ const why=due.includes(pickItem)?"Suggested because a skill is due for a spaced review.":prerequisiteModules.includes(pickItem)?"Suggested because a foundational skill may be useful before moving on.":weak.includes(pickItem)?"Suggested because a mapped skill may benefit from supported practice.":(pickItem.p.rounds?"Continue practising an activity you've already tried.":"A good place to start. You can choose something else at any time.");
  host.innerHTML=`<div><strong>⭐ Recommended next for ${escapeHtml(activeProfile().name)}</strong><p>${escapeHtml(pickItem.m.title)} · ${escapeHtml(pickItem.subject)}</p><p>${escapeHtml(why)}</p></div><button type="button" class="primary" id="recommendedStartBtn">Start activity →</button>`;
- $("recommendedStartBtn").addEventListener("click",()=>startGame(pickItem.m.id,weak.includes(pickItem)?"revision":"normal"));
+ $("recommendedStartBtn").addEventListener("click",()=>startGame(pickItem.m.id,mode));
 }
 
 function rand(n){return Math.floor(Math.random()*n)}
@@ -321,13 +328,12 @@ function adaptiveDifficultyFor(mod=currentModule){
  return "steady";
 }
 function skillEvidenceLabel(record){
- const attempts=record?.attempts||0;
- if(attempts<5)return "Gathering evidence";
- const accuracy=(record.correct||0)/attempts;
- if(attempts>=12&&accuracy>=0.9)return "Strong evidence";
- if(accuracy>=0.75)return "Developing securely";
- if(accuracy>=0.55)return "Needs more practice";
- return "Priority for revision";
+ const attempts=record?.attempts||0,accuracy=attempts?(record.correct||0)/attempts:0;
+ if(attempts<5)return "Early evidence · keep practising";
+ if(attempts>=10&&accuracy>=.85&&(record.modulesSeen||[]).length>=2)return "Consistent across activities · revisit later";
+ if(attempts>=8&&accuracy>=.8)return "Promising · check with another example";
+ if(accuracy<.6)return "Needs supported practice";
+ return "Developing · gather more evidence";
 }
 function skillAccuracy(record){return record&&record.attempts?Math.round((record.correct||0)/record.attempts*100):null}
 function moduleForSkill(skillId){return MODULES.find(m=>(m.skillIds||[]).includes(skillId)&&m.id!=="alphabet")||MODULES.find(m=>(m.skillIds||[]).includes(skillId))||null}
@@ -837,6 +843,7 @@ function buildValidatedQuestions(mod,count){
  const candidates=new Map();
  const addCandidate=q=>{
   if(!validateQuestion(q,mod))return;
+  q.skillIds=skillsForQuestion(q,mod)?[skillsForQuestion(q,mod)]:[];
   const key=questionKey(q);
   if(!candidates.has(key))candidates.set(key,q);
  };
@@ -869,6 +876,7 @@ function buildValidatedQuestions(mod,count){
 function startGame(id,mode="normal"){
  practiceMode=(mode==="revision"||mode==="challenge")?mode:"normal";
  currentModule=MODULES.find(m=>m.id===id);if(!currentModule){practiceMode="normal";return;}
+ currentRoundId=`${currentModule.id}-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
  $("crumbTopic").textContent=currentModule.title;$("gameTitle").textContent=currentModule.icon+" "+currentModule.title;$("learningObjective").textContent=(currentModule.area?currentModule.area+" · ":"")+(currentModule.objective||"Practise and build confidence with this skill.");
  $("gameResult").classList.add("hidden");
  if(id==="alphabet"){
@@ -893,16 +901,67 @@ function renderQuestion(){
  $("answers").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>answerQuestion(decodeURIComponent(b.dataset.answer),b)));
  if(state.soundOn&&"speechSynthesis"in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(q.prompt))}
 }
-function recordSkillEvidence(correct){
+// Map each question to the narrowest skill supported by its wording and activity.
+// If a multi-skill question cannot be classified confidently, do not count it as evidence
+// for every skill in the activity. This intentionally favours less evidence over misleading evidence.
+function skillsForQuestion(q,mod){
+ const ids=mod?.skillIds||[]; if(ids.length===1)return ids[0];
+ const t=String(q.prompt||'').toLowerCase();
+ const choose=(...wanted)=>wanted.find(id=>ids.includes(id))||null;
+ const has=(re)=>re.test(t);
+ if(has(/letter|uppercase|lowercase|capital letter/))return choose('eng.letter-recognition');
+ if(has(/starts with|begins with|first sound|same sound|letter.sound|rhym|syllable|blend|phoneme/))return choose('eng.phonological-awareness','eng.letter-sounds');
+ if(has(/spell|spelled|spelling|which word fits/))return choose('eng.spelling','eng.letter-sounds');
+ if(has(/sentence|punctuation|capital and ends|joining word|adjective|comma|full stop|end mark/))return choose('eng.sentence-writing','eng.spelling');
+ if(has(/why did|what does this suggest|what happened first|what did .* do|according to|clue in|passage|text/))return choose('eng.comprehension');
+ if(has(/word means|meaning of|closest in meaning|describe|vocabulary|which word|what is a .* called/))return choose('eng.vocabulary');
+ if(has(/read|decode|sounds to read/))return choose('eng.decoding','eng.letter-sounds');
+ if(has(/how many more|how many fewer|altogether|total|more than|less than|add|subtract|minus|plus|combine|left over|difference/))return choose('math.add-subtract','math.statistics','math.counting');
+ if(has(/pattern|comes next|sequence|repeat|repeating|rule/))return choose('math.algebra-patterns','dt.logical-thinking','arts.music-patterns','math.numerals');
+ if(has(/value of the|tens and ones|hundreds|place value|10 more|10 less|100 more|largest|smallest|order these|how many tens/))return choose('math.place-value','math.numerals');
+ if(has(/numeral|which number|recognise the number|number is shown|match.*number/))return choose('math.numerals','math.counting');
+ if(has(/how many sides|how many corners|sides does|corners does|shape|triangle|rectangle|circle|hexagon|square|polygon/))return choose('math.geometry','math.measurement');
+ if(has(/count|how many|number of|how much|wheels do|objects/))return choose('math.counting','math.statistics');
+ if(has(/fraction|half|quarter|third|equal parts/))return choose('math.fractions','math.geometry');
+ if(has(/sides|corners|shape|triangle|rectangle|circle|hexagon|square|polygon/))return choose('math.geometry','math.measurement');
+ if(has(/measure|unit|kilogram|centimetre|kilometre|litre|heavier|longest|length|weight|capacity/))return choose('math.measurement','math.geometry');
+ if(has(/vote|chart|pictograph|tally|category|most votes|fewest|graph/))return choose('math.statistics','math.counting');
+ if(has(/plant|animal|living|habitat|roots|grow|season|fish live/))return choose('sci.living-world');
+ if(has(/magnet|shadow|float|material|light pass|heating|ice|push or pull|energy|wheel|engine|machine/))return choose('sci.physical-world');
+ if(has(/fair test|observation|experiment|repeat.*experiment|evidence|observe|test/))return choose('sci.inquiry');
+ if(has(/map|place|community|direction|route|people contribute/))return choose('soc.places-communities');
+ if(has(/safe|road|danger|care for|healthy|routine/))return choose('health.safe-choices');
+ if(has(/clap|beat|rhythm|sound pattern|music/))return choose('arts.music-patterns');
+ if(has(/sort|instruction|step|logic|does not belong|which one does not|solve|clue/))return choose('dt.logical-thinking','extension.general-reasoning');
+ if(mod?.id==='tractorBasics')return choose('sci.physical-world','sci.inquiry');
+ if(mod?.id==='tractorScience')return choose('sci.physical-world','sci.inquiry');
+ if(mod?.id==='tractorMath')return choose('math.counting','math.add-subtract','math.algebra-patterns');
+ if(mod?.id==='tractorWords')return choose('eng.vocabulary','eng.phonological-awareness');
+ if(mod?.id==='tractorLogic')return choose('dt.logical-thinking','math.algebra-patterns');
+ return null;
+}
+function recordSkillEvidence(correct,q){
  state.skillProgress=state.skillProgress||{};
- const skillIds=(currentModule&&currentModule.skillIds)||[];
- for(const skillId of skillIds){
-  const rec=state.skillProgress[skillId]||{attempts:0,correct:0,recentOutcomes:[],lastPracticed:null};
+ const skillId=q?.skillIds?.[0];
+ const now=new Date(),nowIso=now.toISOString();
+ if(skillId){
+  const rec=state.skillProgress[skillId]||{attempts:0,correct:0,recentOutcomes:[],lastPracticed:null,modulesSeen:[],consecutiveCorrect:0,reviewIntervalDays:0};
   rec.attempts=(rec.attempts||0)+1;
   if(correct)rec.correct=(rec.correct||0)+1;
   rec.recentOutcomes=[...(rec.recentOutcomes||[]),!!correct].slice(-20);
-  rec.lastPracticed=new Date().toISOString();
-  rec.lastModule=currentModule.id;
+  // Spacing advances between rounds, not after each answer in the same round.
+  if(rec.lastSessionId!==currentRoundId){
+   rec.consecutiveCorrect=correct?(rec.consecutiveCorrect||0)+1:0;
+   const intervals=[1,3,7,14,30];
+   rec.reviewIntervalDays=correct?intervals[Math.min(Math.max(0,rec.consecutiveCorrect-1),intervals.length-1)]:1;
+   rec.lastSessionId=currentRoundId;
+   const due=new Date(now);due.setDate(due.getDate()+rec.reviewIntervalDays);rec.nextReviewAt=due.toISOString();
+  }else if(!correct){
+   rec.consecutiveCorrect=0;rec.reviewIntervalDays=1;
+   const due=new Date(now);due.setDate(due.getDate()+1);rec.nextReviewAt=due.toISOString();
+  }
+  rec.lastPracticed=nowIso;rec.lastModule=currentModule.id;
+  rec.modulesSeen=[...new Set([...(rec.modulesSeen||[]),currentModule.id])];
   state.skillProgress[skillId]=rec;
  }
  const p=state.progress[currentModule.id]||{rounds:0,correct:0,answered:0};
@@ -912,7 +971,7 @@ function recordSkillEvidence(correct){
 }
 function answerQuestion(value,button){
  if(answered)return;answered=true;const q=questions[questionIndex],correct=value===q.answer;if(correct)correctCount++;
- recordSkillEvidence(correct);
+ recordSkillEvidence(correct,q);
  $("answers").querySelectorAll("button").forEach(b=>{b.disabled=true;const v=b.dataset.answer;if(v===q.answer)b.classList.add("correct")});
  if(!correct)button.classList.add("wrong");
  const fb=$("feedback");fb.className="feedback "+(correct?"good":"bad");
@@ -930,13 +989,12 @@ function finishGame(){
 }
 function leaveGame(){practiceMode="normal";$("alphabetPlaying").classList.add("hidden");$("gamePlaying").classList.remove("hidden");showScreen("home");renderHome()} 
 function estimatedStage(r){
- const n=r?.attempts||0,a=n?(r.correct||0)/n:0;
+ const n=r?.attempts||0,a=n?(r.correct||0)/n:0,recent=Array.isArray(r?.recentOutcomes)?r.recentOutcomes:[],recentAcc=recent.length?recent.filter(Boolean).length/recent.length:null;
  if(n<3)return {stage:0,label:"Not enough evidence",tip:"Answer a few more questions to establish a starting point."};
- if(n>=12&&a>=.9)return {stage:5,label:"Extension candidate",tip:"Try applying this skill in a new context."};
- if(n>=8&&a>=.85)return {stage:4,label:"Applying securely",tip:"Try varied or less familiar examples."};
- if(n>=5&&a>=.7)return {stage:3,label:"Developing confidence",tip:"Continue practice and revisit later."};
- if(a>=.5)return {stage:2,label:"Building the skill",tip:"Practise with supportive feedback."};
- return {stage:1,label:"Needs supported practice",tip:"Return to simpler examples and build confidence."};
+ if(a<.6||(recentAcc!==null&&recent.length>=4&&recentAcc<.5))return {stage:1,label:"Needs supported practice",tip:"Use simpler examples and supportive feedback. This is a practice signal, not a judgement about ability."};
+ if(n>=10&&a>=.85&&(r.modulesSeen||[]).length>=2&&recentAcc!==null&&recentAcc>=.75)return {stage:4,label:"Consistent evidence",tip:"Success has appeared across more than one activity. Revisit after a delay before treating it as secure."};
+ if(n>=6&&a>=.75)return {stage:3,label:"Developing confidence",tip:"Continue practice, then check the skill again in a different example."};
+ return {stage:2,label:"Building the skill",tip:"Practise with supportive feedback and gather more examples."};
 }
 function renderLearningOverview(){
  const host=$("radarOverview");if(!host)return;const skills=CURRICULUM_FRAMEWORK.skills;
@@ -956,25 +1014,27 @@ function renderProgressionOverview(){
  if(!rows.length){host.innerHTML="<p style='color:var(--muted)'>No progression evidence yet. Play activities linked to skills to see provisional estimates here.</p>";return;}
  host.innerHTML=rows.slice(0,12).map(({sk,r,p})=>{const stage=Math.max(1,p.stage),statement=sk.progression[stage-1]||sk.progression[0],pct=Math.round((r.correct||0)/r.attempts*100);return `<div class="stage-item"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><strong>${escapeHtml(sk.title)}</strong><small>${escapeHtml(p.label)}</small></div><p><strong>Practice target:</strong> ${escapeHtml(statement)}</p><p>${escapeHtml(p.tip)} ${r.correct||0}/${r.attempts} correct (${pct}%).</p><div class="stage-track"><span style="width:${stage*20}%"></span></div><small style="color:var(--muted)">${escapeHtml(sk.area)} · illustrative stage ${stage} of 5</small></div>`;}).join("");
 }
+function prerequisitesFor(skillId){return CURRICULUM_FRAMEWORK.skills[skillId]?.prerequisites||[]}
+function prerequisiteNote(skillId){
+ const missing=prerequisitesFor(skillId).filter(id=>{const r=state.skillProgress?.[id];return !r||estimatedStage(r).stage<2});
+ return missing.map(id=>CURRICULUM_FRAMEWORK.skills[id]?.title).filter(Boolean);
+}
 function renderPathwayOverview(){
  const host=$("pathwayOverview");if(!host)return;
  const skills=CURRICULUM_FRAMEWORK.skills||{};
  const assessed=Object.entries(state.skillProgress||{}).filter(([id,r])=>skills[id]&&(r.attempts||0)>0);
+ const now=Date.now();
+ const due=assessed.filter(([id,r])=>r.nextReviewAt&&new Date(r.nextReviewAt).getTime()<=now).sort((a,b)=>new Date(a[1].nextReviewAt)-new Date(b[1].nextReviewAt)).slice(0,3);
  const priorities=assessed.filter(([id,r])=>(r.attempts||0)>=3&&skillAccuracy(r)<70).sort((a,b)=>(skillAccuracy(a[1])||0)-(skillAccuracy(b[1])||0)).slice(0,3);
- const secure=assessed.filter(([id,r])=>(r.attempts||0)>=8&&(r.correct||0)/(r.attempts||1)>=0.85).sort((a,b)=>(b[1].attempts||0)-(a[1].attempts||0)).slice(0,3);
+ const secure=assessed.filter(([id,r])=>estimatedStage(r).stage>=4&&prerequisiteNote(id).length===0).sort((a,b)=>(b[1].attempts||0)-(a[1].attempts||0)).slice(0,3);
  const parts=[];
- if(priorities.length){
-  parts.push(`<h4 style="margin:4px 0">Suggested revision</h4>`+priorities.map(([id,r])=>{const sk=skills[id],mod=moduleForSkill(id);return `<div class="stage-item"><strong>${escapeHtml(sk.title)}</strong><p>${skillAccuracy(r)}% accuracy from ${r.attempts} answers. Try a short, gentler revision round.</p>${mod?`<div class="pathway-actions"><button class="soft" data-path-mode="revision" data-path-module="${escapeHtml(mod.id)}">Revise ${escapeHtml(mod.title)} →</button></div>`:`<p>No linked activity is available yet.</p>`}</div>`}).join(''));
- }else{
-  parts.push(`<div class="stage-item"><strong>Revision</strong><p>${assessed.length?"No assessed skill currently meets the initial revision trigger. You can still revisit any activity at any time.":"Play a few activities to start building personalised suggestions."}</p></div>`);
- }
- parts.push(`<h4 style="margin:10px 0 4px">Challenge opportunities</h4>`);
- if(secure.length){
-  parts.push(secure.map(([id,r])=>{const sk=skills[id],mod=moduleForSkill(id);return `<div class="stage-item"><div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><strong>${escapeHtml(sk.title)}</strong><span class="pathway-pill">Challenge candidate</span></div><p>${skillAccuracy(r)}% accuracy from ${r.attempts} answers. This meets the initial rule for trying an extension challenge, not proof of mastery.</p>${mod?`<div class="pathway-actions"><button class="primary" data-path-mode="challenge" data-path-module="${escapeHtml(mod.id)}">Try challenge: ${escapeHtml(mod.title)} →</button></div>`:""}</div>`}).join(''));
- }else{
-  parts.push(`<div class="stage-item"><strong>Not unlocked yet</strong><p>The current trial rule suggests a challenge after at least 8 recorded answers and 85% accuracy for a mapped skill. Children can still choose any activity freely; this is only a recommendation threshold.</p></div>`);
- }
- parts.push(`<h4 style="margin:10px 0 4px">Revisit any activity</h4><div class="stage-item"><p>Revision is always available, even for skills that look strong. Choose any activity below for a regular round.</p><div class="pathway-actions">${MODULES.filter(m=>m.id!=="alphabet").slice(0,10).map(m=>`<button class="soft" data-path-mode="normal" data-path-module="${escapeHtml(m.id)}">${m.icon} ${escapeHtml(m.title)}</button>`).join('')}</div><p style="margin-top:8px">Other activities remain available from the home screen, including Alphabet Adventure.</p></div>`);
+ if(due.length){parts.push('<h4 style="margin:4px 0">Spaced revision due</h4>'+due.map(([id,r])=>{const sk=skills[id],mod=moduleForSkill(id);return `<div class="stage-item"><strong>${escapeHtml(sk.title)}</strong><p>Scheduled for a revisit based on earlier answers. Retrieval after a gap helps check whether the skill is retained.</p>${mod?`<div class="pathway-actions"><button class="soft" data-path-mode="revision" data-path-module="${escapeHtml(mod.id)}">Review ${escapeHtml(mod.title)} →</button></div>`:'<p>No linked activity is available yet.</p>'}</div>`}).join(''));}
+ if(priorities.length){parts.push('<h4 style="margin:10px 0 4px">Skills to practise with support</h4>'+priorities.map(([id,r])=>{const sk=skills[id],missing=prerequisiteNote(id),targetSkill=missing.length?(sk.prerequisites||[]).find(pid=>missing.includes(skills[pid]?.title)):id,mod=moduleForSkill(targetSkill||id);return `<div class="stage-item"><strong>${escapeHtml(sk.title)}</strong><p>${skillAccuracy(r)}% accuracy from ${r.attempts} mapped answers. ${missing.length?`Consider reviewing prerequisite skills first: ${escapeHtml(missing.join(', '))}.`:'Try a short, gentler practice round.'}</p>${mod?`<div class="pathway-actions"><button class="soft" data-path-mode="revision" data-path-module="${escapeHtml(mod.id)}">${missing.length?'Review prerequisite: ':'Practise '}${escapeHtml(mod.title)} →</button></div>`:'<p>No linked activity is available yet.</p>'}</div>`}).join(''));}
+ if(!due.length&&!priorities.length)parts.push(`<div class="stage-item"><strong>Build a useful learning history</strong><p>${assessed.length?'No skill is currently flagged for immediate revision. A scheduled review may appear later.':'Play activities to begin building evidence. Individual questions are mapped to a specific skill where the prompt supports that mapping.'} You can always choose any activity.</p></div>`);
+ parts.push('<h4 style="margin:10px 0 4px">Challenge opportunities</h4>');
+ if(secure.length){parts.push(secure.map(([id,r])=>{const sk=skills[id],mod=moduleForSkill(id);return `<div class="stage-item"><div style="display:flex;justify-content:space-between;gap:8px;align-items:start"><strong>${escapeHtml(sk.title)}</strong><span class="pathway-pill">Try varied examples</span></div><p>${skillAccuracy(r)}% accuracy from ${r.attempts} answers across ${(r.modulesSeen||[]).length} activity/activities. This is a reason to try a challenge, not proof of mastery.</p>${mod?`<div class="pathway-actions"><button class="primary" data-path-mode="challenge" data-path-module="${escapeHtml(mod.id)}">Try challenge: ${escapeHtml(mod.title)} →</button></div>`:''}</div>`}).join(''));}
+ else parts.push('<div class="stage-item"><strong>Gather more varied evidence</strong><p>A challenge is suggested only after enough answers, high accuracy, recent success and evidence across more than one activity. Children can still choose any activity freely.</p></div>');
+ parts.push(`<h4 style="margin:10px 0 4px">All activities stay available</h4><div class="stage-item"><p>Recommendations guide practice but do not lock activities or force a curriculum sequence.</p><div class="pathway-actions">${MODULES.filter(m=>m.id!=="alphabet").slice(0,10).map(m=>`<button class="soft" data-path-mode="normal" data-path-module="${escapeHtml(m.id)}">${m.icon} ${escapeHtml(m.title)}</button>`).join('')}</div><p style="margin-top:8px">Other activities remain available from the home screen, including Alphabet Adventure.</p></div>`);
  host.innerHTML=parts.join('');
  host.querySelectorAll('[data-path-module]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.pathModule,mode=b.dataset.pathMode||'normal';showScreen('game');startGame(id,mode)}));
 }
@@ -987,14 +1047,16 @@ function renderAdult(){
  $("progressList").innerHTML=MODULES.filter(m=>state.progress[m.id]).length?MODULES.filter(m=>state.progress[m.id]).map(m=>{let p=state.progress[m.id];return `<div class="progress-item"><span>${m.icon}</span><span class="name">${m.title}<small style="display:block;color:var(--muted)">${p.rounds} rounds · ${p.correct}/${p.answered} answers correct</small></span><div class="mini-track"><span style="width:${p.accuracy}%"></span></div><strong>${p.accuracy}%</strong></div>`}).join(""):"<p style='color:var(--muted)'>No progress yet. Complete an adventure and your results will appear here.</p>";
  const knownSkills=Object.entries(state.skillProgress||{}).filter(([id,r])=>CURRICULUM_FRAMEWORK.skills[id]&&(r.attempts||0)>0).sort((a,b)=>(a[1].attempts||0)-(b[1].attempts||0));
  const displaySkills=knownSkills.slice().sort((a,b)=>((a[1].correct||0)/(a[1].attempts||1))-((b[1].correct||0)/(b[1].attempts||1))).slice(0,8);
- $("skillProgressList").innerHTML=displaySkills.length?displaySkills.map(([id,r])=>{const sk=CURRICULUM_FRAMEWORK.skills[id],pct=skillAccuracy(r)||0;return `<div class="progress-item"><span class="name">${escapeHtml(sk.title)}<small style="display:block;color:var(--muted)">${r.correct||0}/${r.attempts||0} correct · ${skillEvidenceLabel(r)}</small></span><div class="mini-track"><span style="width:${pct}%"></span></div><strong>${pct}%</strong></div>`}).join(""):"<p style='color:var(--muted)'>Skill evidence will appear as children answer questions in mapped activities.</p>";
+ $("skillProgressList").innerHTML=displaySkills.length?displaySkills.map(([id,r])=>{const sk=CURRICULUM_FRAMEWORK.skills[id],pct=skillAccuracy(r)||0,due=r.nextReviewAt?new Date(r.nextReviewAt):null,dueText=due?` · Review ${due.getTime()<=Date.now()?"due":`by ${due.toLocaleDateString()}`}`:"";return `<div class="progress-item"><span class="name">${escapeHtml(sk.title)}<small style="display:block;color:var(--muted)">${r.correct||0}/${r.attempts||0} correct · ${skillEvidenceLabel(r)}${escapeHtml(dueText)}</small></span><div class="mini-track"><span style="width:${pct}%"></span></div><strong>${pct}%</strong></div>`}).join(""):"<p style='color:var(--muted)'>Skill evidence will appear as children answer questions in mapped activities.</p>";
  const priorities=knownSkills.filter(([id,r])=>(r.attempts||0)>=5&&skillAccuracy(r)<75).sort((a,b)=>skillAccuracy(a[1])-skillAccuracy(b[1])).slice(0,3);
  const suggestions=priorities.map(([id,r])=>{const sk=CURRICULUM_FRAMEWORK.skills[id],mod=moduleForSkill(id);return `<div class="notice" style="margin-bottom:8px"><strong>Practise: ${escapeHtml(sk.title)}</strong><p style="margin:5px 0">${escapeHtml(sk.description)} (${skillAccuracy(r)}% across ${r.attempts} answers)</p>${mod?`<button class="soft" data-revise-module="${mod.id}">Practise ${escapeHtml(mod.title)} →</button>`:""}</div>`}).join("");
  $("adaptiveRecommendations").innerHTML=suggestions?`<h4>Suggested revision</h4>${suggestions}`:"<p style='color:var(--muted)'>After at least five answers per skill, suggested revision will appear here when the evidence indicates extra practice may help.</p>";
  $("adaptiveRecommendations").querySelectorAll("[data-revise-module]").forEach(b=>b.addEventListener("click",()=>{showScreen("game");startGame(b.dataset.reviseModule,"revision")}));
  renderLearningOverview();renderProgressionOverview();renderPathwayOverview();
 }
-$("profileSelect").addEventListener("change",e=>switchProfile(e.target.value));
+$("profileSelect").addEventListener("change",e=>{switchProfile(e.target.value);renderProfileControls()});
+$("saveProfileEditBtn").addEventListener("click",()=>{const p=profiles[activeProfileId];if(!p)return;const name=$("editProfileName").value.trim();if(!name){setProfileStatus("Enter a name or nickname for this profile.");$("editProfileName").focus();return}persistProfiles();p.name=name.slice(0,40);p.age=Number($("editProfileAge").value)||4;selectedAge=p.age;persistProfiles();renderProfileControls();renderHome();renderAdult();setProfileStatus(`Profile updated: ${p.name}, age ${p.age}. Learning progress has been kept.`)});
+$("deleteProfileBtn").addEventListener("click",()=>{const p=profiles[activeProfileId];if(!p)return;if(Object.keys(profiles).length<=1){setProfileStatus("You need to keep at least one profile. Add another profile before deleting this one.");return}if(!confirm(`Delete ${p.name}'s profile and all of its saved learning progress? This cannot be undone. Export a backup first if you may need it.`))return;delete profiles[activeProfileId];activeProfileId=Object.keys(profiles)[0];state={...freshState(),...(profiles[activeProfileId].data||{}),skillProgress:{...((profiles[activeProfileId].data||{}).skillProgress||{})}};selectedAge=Number(profiles[activeProfileId].age)||4;persistProfiles();renderProfileControls();renderHome();renderAdult();setProfileStatus(`Deleted ${p.name}'s profile. The other profiles and their progress were kept.`)});
 $("homeProfileSelect").addEventListener("change",e=>{switchProfile(e.target.value);renderHome()});
 $("manageProfilesBtn").addEventListener("click",()=>{renderAdult();showScreen("adult")});
 $("addProfileBtn").addEventListener("click",()=>{const name=$("newProfileName").value.trim();if(!name){setProfileStatus("Enter a name or nickname for the new profile.");$("newProfileName").focus();return}const p=makeProfile(name,$("newProfileAge").value);profiles[p.id]=p;activeProfileId=p.id;state={...freshState(),...p.data,skillProgress:{...(p.data.skillProgress||{})}};selectedAge=p.age;$("newProfileName").value="";persistProfiles();renderProfileControls();renderHome();renderAdult();setProfileStatus(`Created a separate profile for ${p.name}.`)});
