@@ -242,6 +242,7 @@ const LEGACY_STORE="learningAdventures_v1";
 const defaults={difficulty:"adaptive",roundLength:8,soundOn:false,feedbackMode:"gentle",disabledModules:[],progress:{},questionHistory:{},skillProgress:{}};
 let profiles={},activeProfileId="",state={...defaults},selectedAge=4,selectedSubject="All subjects",currentModule=null,questions=[],questionIndex=0,correctCount=0,answered=false,lastResult=null;
 let practiceMode="normal",currentRoundId=""; // normal, revision, or challenge; never changes the saved preference
+let missedQuestions=[],retryMissedQuestions=[],retryMode=false,firstPassTotal=0;
 const $=id=>document.getElementById(id);
 function freshState(){return JSON.parse(JSON.stringify(defaults))}
 function makeProfile(name,age,data){return {id:"child-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7),name,age:Number(age)||4,createdAt:new Date().toISOString(),data:{...freshState(),...(data||{}),progress:{...((data&&data.progress)||{})},questionHistory:{...((data&&data.questionHistory)||{})},skillProgress:{...((data&&data.skillProgress)||{})}}}}
@@ -315,13 +316,24 @@ function renderRecommendedActivity(modules){
 function rand(n){return Math.floor(Math.random()*n)}
 function pick(arr){return arr[rand(arr.length)]}
 function shuffle(arr){const out=[...arr];for(let i=out.length-1;i>0;i--){const j=rand(i+1);[out[i],out[j]]=[out[j],out[i]]}return out}
+function ageBaselineDifficulty(age=selectedAge){
+ // Age is a starting point, not a ceiling or a claim about a child's ability.
+ // Keep the youngest learners on smaller ranges; older ages can begin with
+ // broader ranges, then module-specific performance takes over after evidence.
+ const a=Number(age)||4;
+ if(a<=5)return "gentle";
+ if(a<=7)return "steady";
+ return "challenge";
+}
 function adaptiveDifficultyFor(mod=currentModule){
  if(practiceMode==="revision")return "gentle";
  if(practiceMode==="challenge")return "challenge";
  if(state.difficulty!=="adaptive")return state.difficulty;
  const p=mod?(state.progress[mod.id]||{}):{};
  const recent=Array.isArray(p.recentOutcomes)?p.recentOutcomes.slice(-12):[];
- if(recent.length<8)return "steady";
+ // New profiles/modules begin from the child's age baseline. Once at least
+ // eight recent answers exist in this module, use that module's own evidence.
+ if(recent.length<8)return ageBaselineDifficulty();
  const accuracy=recent.filter(Boolean).length/recent.length;
  if(accuracy>=0.85)return "challenge";
  if(accuracy<=0.55)return "gentle";
@@ -697,7 +709,8 @@ function validateQuestion(q,mod){
  if(new Set(options).size!==4)return false;
  if(options.filter(v=>v===q.answer).length!==1)return false;
  if(typeof q.explain!=="string"||!q.explain.trim())return false;
- if(!mod||!Array.isArray(mod.ages)||!mod.ages.includes(selectedAge))return false;
+ if(!mod)return false;
+ // Age is a profile/context setting, not an activity lock: any child may choose any module.
  // Age 4–6 questions should not contain advanced operation symbols or specialist terms.
  if(selectedAge<=5&&/[×÷]|\b(denominator|numerator|pictograph|kilometres|multiplication|division|inference|adjective|timetable)\b/i.test(q.prompt))return false;
  return true;
@@ -850,6 +863,10 @@ function buildValidatedQuestions(mod,count){
  // Gather a broad sample so a random pick from a small bank cannot dominate the round.
  const attempts=Math.max(160,count*35);
  for(let i=0;i<attempts;i++)addCandidate(makeQuestion(mod));
+ // If a module produces no valid questions, use its guarded fallback generator rather than opening an empty quiz.
+ if(!candidates.size){
+  for(let i=0;i<Math.max(12,count*4)&&!candidates.size;i++)addCandidate(safeFallbackQuestion(mod,i));
+ }
  // Do not pad small question banks with generic fallback questions: a shorter round is better than a near-duplicate.
  const history=Array.isArray(state.questionHistory?.[mod.id])?state.questionHistory[mod.id]:[];
  const recent=new Set(history.slice(-24));
@@ -888,15 +905,23 @@ function startGame(id,mode="normal"){
  $("alphabetPlaying").classList.add("hidden");$("gamePlaying").classList.remove("hidden");
  const requestedRoundLength=practiceMode==="revision"?5:practiceMode==="challenge"?8:Number(state.roundLength);
  questions=buildValidatedQuestions(currentModule,requestedRoundLength);questionIndex=0;correctCount=0;answered=false;
+ missedQuestions=[];retryMissedQuestions=[];retryMode=false;firstPassTotal=questions.length;
  const notice=$("roundNotice");
+ if(!questions.length){
+  questions=[safeFallbackQuestion(currentModule,0)];
+  if(!validateQuestion(questions[0],currentModule)){questions=[choiceQ("Ready to try a question?","Have a go!",["Try again","Maybe","Not yet"],currentModule.icon||"🌟","Take your time and choose the answer that fits.")];}
+  questions[0].skillIds=[];firstPassTotal=questions.length;
+  notice.textContent="A starter question is available while this activity’s question pool is checked.";notice.classList.remove("hidden");
+ }
+ if(practiceMode==="revision"&&!(state.progress[currentModule.id]?.rounds)){notice.textContent="No previous try yet? That’s fine — this revision activity will start as a gentle first practice round.";notice.classList.remove("hidden");}
  if(questions.length<requestedRoundLength){
   notice.textContent=`${practiceMode==="revision"?"Revision session: gentle, focused practice. ":practiceMode==="challenge"?"Challenge session: try a harder set. ":""}This activity has ${questions.length} distinct questions available right now, so this round is shorter rather than repeating questions.`;
   notice.classList.remove("hidden");
- }else{notice.textContent=practiceMode==="revision"?"Revision session: a shorter round with gentler question ranges where supported.":practiceMode==="challenge"?"Challenge session: a harder round where the activity supports adjustable difficulty.":state.difficulty==="adaptive"?`Adaptive challenge: ${({gentle:"building confidence",steady:"practising at a steady level",challenge:"ready for a bigger challenge"})[adaptiveDifficultyFor(currentModule)]}. The level uses recent answers in this activity.`:"Questions are mixed each round, with repeats avoided where possible.";notice.classList.remove("hidden");}
+ }else{notice.textContent=practiceMode==="revision"?"Revision session: a shorter round with gentler question ranges where supported.":practiceMode==="challenge"?"Challenge session: a harder round where the activity supports adjustable difficulty.":state.difficulty==="adaptive"?`Adaptive challenge: ${({gentle:"building confidence",steady:"practising at a steady level",challenge:"ready for a bigger challenge"})[adaptiveDifficultyFor(currentModule)]}. New activities start from an age-based baseline; after 8 recent answers, this activity's own results guide the level.`:"Questions are mixed each round, with repeats avoided where possible.";notice.classList.remove("hidden");}
  showScreen("game");renderQuestion();
 }
 function renderQuestion(){
- answered=false;const q=questions[questionIndex];$("questionCount").textContent=`Question ${questionIndex+1} of ${questions.length}`;$("roundProgress").style.width=`${questionIndex/questions.length*100}%`;$("visual").textContent=q.visual||"";$("prompt").textContent=q.prompt;$("feedback").textContent="";$("feedback").className="feedback";$("nextBtn").classList.add("hidden");
+ answered=false;const q=questions[questionIndex];$("questionCount").textContent=`${retryMode?"Practice question":"Question"} ${questionIndex+1} of ${questions.length}`;$("roundProgress").style.width=`${questionIndex/questions.length*100}%`;$("visual").textContent=q.visual||"";$("prompt").textContent=q.prompt;$("feedback").textContent="";$("feedback").className="feedback";$("nextBtn").classList.add("hidden");
  $("answers").innerHTML=q.options.map((o,i)=>`<button class="answer" data-answer="${encodeURIComponent(o)}">${o}</button>`).join("");
  $("answers").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>answerQuestion(decodeURIComponent(b.dataset.answer),b)));
  if(state.soundOn&&"speechSynthesis"in window){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(q.prompt))}
@@ -970,22 +995,35 @@ function recordSkillEvidence(correct,q){
  saveState();
 }
 function answerQuestion(value,button){
- if(answered)return;answered=true;const q=questions[questionIndex],correct=value===q.answer;if(correct)correctCount++;
- recordSkillEvidence(correct,q);
+ if(answered)return;answered=true;const q=questions[questionIndex],correct=value===q.answer;
+ if(retryMode){if(!correct)retryMissedQuestions.push(q);}
+ else{if(correct)correctCount++;else missedQuestions.push(q);recordSkillEvidence(correct,q);}
  $("answers").querySelectorAll("button").forEach(b=>{b.disabled=true;const v=b.dataset.answer;if(v===q.answer)b.classList.add("correct")});
  if(!correct)button.classList.add("wrong");
  const fb=$("feedback");fb.className="feedback "+(correct?"good":"bad");
  fb.textContent=correct?(state.feedbackMode==="direct"?"Correct! ":"You got it! 🌟 ")+q.explain:(state.feedbackMode==="direct"?"Not quite. ":"Good try! 💛 ")+`The answer is ${q.answer}. ${q.explain}`;
  $("roundProgress").style.width=`${(questionIndex+1)/questions.length*100}%`;
- $("nextBtn").textContent=questionIndex===questions.length-1?"See my results →":"Next question →";$("nextBtn").classList.remove("hidden");
+$("nextBtn").textContent=questionIndex===questions.length-1?(retryMode?(retryMissedQuestions.length?"Try missed questions again →":"See my results →"):(missedQuestions.length?"Practise missed questions →":"See my results →")):"Next question →";$("nextBtn").classList.remove("hidden");
 }
-function nextQuestion(){if(!answered)return;if(questionIndex<questions.length-1){questionIndex++;renderQuestion()}else finishGame()}
+function nextQuestion(){
+ if(!answered)return;
+ if(questionIndex<questions.length-1){questionIndex++;renderQuestion();return;}
+ if(!retryMode&&missedQuestions.length){
+  retryMode=true;retryMissedQuestions=[];questions=shuffle(missedQuestions.map(q=>({...q,options:shuffle([...q.options])})));questionIndex=0;answered=false;
+  const notice=$("roundNotice");notice.textContent=`Let’s practise the ${questions.length} question${questions.length===1?"":"s"} you missed. You’ll keep practising until each one is answered correctly.`;notice.classList.remove("hidden");renderQuestion();return;
+ }
+ if(retryMode&&retryMissedQuestions.length){
+  questions=shuffle(retryMissedQuestions.map(q=>({...q,options:shuffle([...q.options])})));retryMissedQuestions=[];questionIndex=0;answered=false;
+  const notice=$("roundNotice");notice.textContent=`A little more practice: ${questions.length} question${questions.length===1?"":"s"} to try again.`;notice.classList.remove("hidden");renderQuestion();return;
+ }
+ finishGame();
+}
 function finishGame(){
- $("gamePlaying").classList.add("hidden");$("gameResult").classList.remove("hidden");let pct=Math.round(correctCount/questions.length*100);
+ $("gamePlaying").classList.add("hidden");$("gameResult").classList.remove("hidden");let pct=Math.round(correctCount/Math.max(1,firstPassTotal)*100);
  $("resultEmoji").textContent=pct>=80?"🏆":pct>=50?"🌟":"💪";$("resultTitle").textContent=pct>=80?"Fantastic work!":pct>=50?"Adventure complete!":"Good effort!";
- $("resultText").textContent=(practiceMode==="revision"?"Revision round complete. Practising helps strengthen learning. ":practiceMode==="challenge"?"Challenge round complete. Trying harder examples helps learning grow. ":"")+(pct>=80?"You worked hard and showed what you know.":pct>=50?"Every round helps your brain grow. Keep practising!":"You gave it a go. Practising a little at a time helps.");
- $("resultCorrect").textContent=correctCount;$("resultTotal").textContent=questions.length;$("resultPercent").textContent=pct+"%";
- const p=state.progress[currentModule.id]||{rounds:0,correct:0,answered:0};p.rounds++;p.correct+=correctCount;p.answered+=questions.length;p.accuracy=Math.round(p.correct/p.answered*100);p.lastPlayed=new Date().toISOString();state.progress[currentModule.id]=p;saveState();practiceMode="normal";
+ $("resultText").textContent=(practiceMode==="revision"?"Revision round complete. Practising helps strengthen learning. ":practiceMode==="challenge"?"Challenge round complete. Trying harder examples helps learning grow. ":"")+(retryMode?`First try: ${correctCount} of ${firstPassTotal} correct. You also practised the missed questions until you got them right. `:"")+(pct>=80?"You worked hard and showed what you know.":pct>=50?"Every round helps your brain grow. Keep practising!":"You gave it a go. Practising a little at a time helps.");
+ $("resultCorrect").textContent=correctCount;$("resultTotal").textContent=firstPassTotal;$("resultPercent").textContent=pct+"%";
+ const p=state.progress[currentModule.id]||{rounds:0,correct:0,answered:0};p.rounds++;p.correct+=correctCount;p.answered+=firstPassTotal;p.accuracy=Math.round(p.correct/p.answered*100);p.lastPlayed=new Date().toISOString();state.progress[currentModule.id]=p;saveState();practiceMode="normal";retryMode=false;
 }
 function leaveGame(){practiceMode="normal";$("alphabetPlaying").classList.add("hidden");$("gamePlaying").classList.remove("hidden");showScreen("home");renderHome()} 
 function estimatedStage(r){
